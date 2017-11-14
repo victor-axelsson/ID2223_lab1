@@ -61,16 +61,5 @@ object Main {
         }}.sortBy(f => f._1).foreach(f => {
           println("Year: " + f._1 + " => " + f._2)
         })
-          /*
-          .map((f: (Int, Iterable[(Int, Double, Double)])) => {
-
-          })
-          */
-    /*
-      .keyBy{case (y, _, _) => y}
-        .map((f: (Int, (Int, Double, Double))) => {
-
-        })
-        */
   }
 }
