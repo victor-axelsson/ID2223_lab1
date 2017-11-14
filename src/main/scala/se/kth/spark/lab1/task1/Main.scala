@@ -1,9 +1,6 @@
 package se.kth.spark.lab1.task1
+import org.apache.spark.sql.functions.{min, max, mean}
 
-import se.kth.spark.lab1._
-
-import org.apache.spark.ml.feature.RegexTokenizer
-import org.apache.spark.ml.Pipeline
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.SQLContext
@@ -18,19 +15,62 @@ object Main {
     import sqlContext._
 
     val filePath = "src/main/resources/millionsong.txt"
-    val rawDF = ???
+    //val rawDF = sqlContext.read.text(filePath)
 
     val rdd = sc.textFile(filePath)
 
-    //Step1: print the first 5 rows, what is the delimiter, number of features and the data types?
+    //Step1: print the first 5 rows, what is the delimiter, number of features and the data types
+    rdd.top(5).foreach(l => {
+      println(l)
+    })
 
     //Step2: split each row into an array of features
-    val recordsRdd = rdd.map(???)
+    val recordsRdd = rdd.map(_.split(","))
 
     //Step3: map each row into a Song object by using the year label and the first three features  
-    val songsRdd = recordsRdd.map(???)
+    val songsRdd = recordsRdd.map((features: Array[String]) => {
+      (features(0).replace(".0", "").toInt, features(1).toDouble, features(2).toDouble)
+    })
 
-    //Step4: convert your rdd into a datafram
-    val songsDf = ???
+    //Step4: convert your rdd into a dataframe
+    val songsDf = songsRdd.toDF("year", "feature1", "feature2")
+    songsDf.show(5)
+
+    //Question 1
+    println("Total count: " + songsDf.count())
+
+    //Question 2
+    val nrBetween98And00 = songsRdd.filter{case(y, _, _) => { y >= 1998 && y < 2000}}.count()
+    println("Nr of songs between 1998 and 2000: " + nrBetween98And00)
+
+    //Question 3
+    songsDf.agg(min("year").as("min"), max("year").as("max"), mean("year").as("mean")).show
+
+    //Question 4
+    val songCountRdd = songsRdd.filter{case(y, _, _) => { y >= 2000 && y < 2010}}
+        .groupBy{case(y, _, _) => y}
+        .map{case (y:Int, iter:Iterable[(Int, _, _)]) => {
+
+          //Reduce
+          var sum = 0
+          iter.foreach {case (_y:Int, _, _) => {
+            sum += _y
+          }}
+
+          (y, sum)
+        }}.sortBy(f => f._1).foreach(f => {
+          println("Year: " + f._1 + " => " + f._2)
+        })
+          /*
+          .map((f: (Int, Iterable[(Int, Double, Double)])) => {
+
+          })
+          */
+    /*
+      .keyBy{case (y, _, _) => y}
+        .map((f: (Int, (Int, Double, Double))) => {
+
+        })
+        */
   }
 }
