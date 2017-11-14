@@ -20,9 +20,7 @@ object Main {
     val rdd = sc.textFile(filePath)
 
     //Step1: print the first 5 rows, what is the delimiter, number of features and the data types
-    rdd.top(5).foreach(l => {
-      println(l)
-    })
+    rdd.top(5).foreach(println)
 
     //Step2: split each row into an array of features
     val recordsRdd = rdd.map(_.split(","))

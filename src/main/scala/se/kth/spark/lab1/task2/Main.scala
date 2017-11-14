@@ -121,7 +121,7 @@ object Main {
     val modelDf = prediction.select("features", "label")
     modelDf.show(5)
 
-    pipelineModel.write.overwrite().save("src/main/resources/fittedTransformationModel")
+    //pipelineModel.write.overwrite().save("src/main/resources/fittedTransformationModel")
 
     /*
       model.write.overwrite().save("/tmp/spark-logistic-regression-model")
