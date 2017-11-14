@@ -29300,3 +29300,1945 @@ Caused by: java.lang.ClassCastException: org.apache.spark.ml.linalg.DenseVector 
 [16:48:23,517] INFO  {SparkContext} Successfully stopped SparkContext
 [16:48:23,518] INFO  {ShutdownHookManager} Shutdown hook called
 [16:48:23,519] INFO  {ShutdownHookManager} Deleting directory /tmp/spark-60b09376-158a-4fd2-a955-fdec8bd7dfaf
+[17:52:52,634] INFO  {SparkContext} Running Spark version 2.0.1
+[17:52:53,268] WARN  {NativeCodeLoader} Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[17:52:53,538] WARN  {Utils} Your hostname, victor resolves to a loopback address: 127.0.1.1; using 192.168.0.103 instead (on interface wlp4s0)
+[17:52:53,539] WARN  {Utils} Set SPARK_LOCAL_IP if you need to bind to another address
+[17:52:53,708] INFO  {SecurityManager} Changing view acls to: victor
+[17:52:53,713] INFO  {SecurityManager} Changing modify acls to: victor
+[17:52:53,714] INFO  {SecurityManager} Changing view acls groups to: 
+[17:52:53,715] INFO  {SecurityManager} Changing modify acls groups to: 
+[17:52:53,715] INFO  {SecurityManager} SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(victor); groups with view permissions: Set(); users  with modify permissions: Set(victor); groups with modify permissions: Set()
+[17:52:54,299] INFO  {Utils} Successfully started service 'sparkDriver' on port 43803.
+[17:52:54,402] INFO  {SparkEnv} Registering MapOutputTracker
+[17:52:54,490] INFO  {SparkEnv} Registering BlockManagerMaster
+[17:52:54,519] INFO  {DiskBlockManager} Created local directory at /tmp/blockmgr-e692adad-3dd8-48e3-a92a-679da2ef135d
+[17:52:54,579] INFO  {MemoryStore} MemoryStore started with capacity 1128.9 MB
+[17:52:54,682] INFO  {SparkEnv} Registering OutputCommitCoordinator
+[17:52:54,945] INFO  {log} Logging initialized @4069ms
+[17:52:55,207] INFO  {Server} jetty-9.2.z-SNAPSHOT
+[17:52:55,230] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@52066604{/jobs,null,AVAILABLE}
+[17:52:55,231] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@340b9973{/jobs/json,null,AVAILABLE}
+[17:52:55,231] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@56113384{/jobs/job,null,AVAILABLE}
+[17:52:55,231] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5669c5fb{/jobs/job/json,null,AVAILABLE}
+[17:52:55,231] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@373ebf74{/stages,null,AVAILABLE}
+[17:52:55,232] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5f9678e1{/stages/json,null,AVAILABLE}
+[17:52:55,232] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@c4ed84{/stages/stage,null,AVAILABLE}
+[17:52:55,232] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@189aa67a{/stages/stage/json,null,AVAILABLE}
+[17:52:55,233] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5a9d6f02{/stages/pool,null,AVAILABLE}
+[17:52:55,233] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@362045c0{/stages/pool/json,null,AVAILABLE}
+[17:52:55,234] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@112f364d{/storage,null,AVAILABLE}
+[17:52:55,234] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5ccbeb64{/storage/json,null,AVAILABLE}
+[17:52:55,235] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6d9f7a80{/storage/rdd,null,AVAILABLE}
+[17:52:55,236] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@59252cb6{/storage/rdd/json,null,AVAILABLE}
+[17:52:55,237] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@31d0e481{/environment,null,AVAILABLE}
+[17:52:55,238] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3243b914{/environment/json,null,AVAILABLE}
+[17:52:55,238] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@241e8ea6{/executors,null,AVAILABLE}
+[17:52:55,238] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@542e560f{/executors/json,null,AVAILABLE}
+[17:52:55,239] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@626c44e7{/executors/threadDump,null,AVAILABLE}
+[17:52:55,239] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@4dc8caa7{/executors/threadDump/json,null,AVAILABLE}
+[17:52:55,255] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@1d730606{/static,null,AVAILABLE}
+[17:52:55,256] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3bcbb589{/,null,AVAILABLE}
+[17:52:55,259] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3b00856b{/api,null,AVAILABLE}
+[17:52:55,259] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3016fd5e{/stages/stage/kill,null,AVAILABLE}
+[17:52:55,278] INFO  {ServerConnector} Started ServerConnector@c0c8e73{HTTP/1.1}{0.0.0.0:4040}
+[17:52:55,279] INFO  {Server} Started @4406ms
+[17:52:55,280] INFO  {Utils} Successfully started service 'SparkUI' on port 4040.
+[17:52:55,283] INFO  {SparkUI} Bound SparkUI to 0.0.0.0, and started at http://192.168.0.103:4040
+[17:52:55,544] INFO  {Executor} Starting executor ID driver on host localhost
+[17:52:55,688] INFO  {Utils} Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35565.
+[17:52:55,689] INFO  {NettyBlockTransferService} Server created on 192.168.0.103:35565
+[17:52:55,702] INFO  {BlockManagerMaster} Registering BlockManager BlockManagerId(driver, 192.168.0.103, 35565)
+[17:52:55,713] INFO  {BlockManagerMasterEndpoint} Registering block manager 192.168.0.103:35565 with 1128.9 MB RAM, BlockManagerId(driver, 192.168.0.103, 35565)
+[17:52:55,730] INFO  {BlockManagerMaster} Registered BlockManager BlockManagerId(driver, 192.168.0.103, 35565)
+[17:52:55,922] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@72ccd81a{/metrics/json,null,AVAILABLE}
+[17:52:56,157] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5ae76500{/SQL,null,AVAILABLE}
+[17:52:56,157] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@1133ec6e{/SQL/json,null,AVAILABLE}
+[17:52:56,158] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@60cf80e7{/SQL/execution,null,AVAILABLE}
+[17:52:56,159] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@770d0ea6{/SQL/execution/json,null,AVAILABLE}
+[17:52:56,161] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3bd7f8dc{/static/sql,null,AVAILABLE}
+[17:52:56,196] INFO  {SharedState} Warehouse path is '/home/victor/Desktop/ML/vt17-lab1/spark-warehouse'.
+[17:53:00,323] INFO  {FileSourceStrategy} Pruning directories with: 
+[17:53:00,345] INFO  {FileSourceStrategy} Post-Scan Filters: 
+[17:53:00,357] INFO  {FileSourceStrategy} Pruned Data Schema: struct<value: string>
+[17:53:00,358] INFO  {FileSourceStrategy} Pushed Filters: 
+[17:53:00,705] INFO  {MemoryStore} Block broadcast_0 stored as values in memory (estimated size 131.0 KB, free 1128.8 MB)
+[17:53:00,850] INFO  {MemoryStore} Block broadcast_0_piece0 stored as bytes in memory (estimated size 14.6 KB, free 1128.8 MB)
+[17:53:00,854] INFO  {BlockManagerInfo} Added broadcast_0_piece0 in memory on 192.168.0.103:35565 (size: 14.6 KB, free: 1128.9 MB)
+[17:53:00,877] INFO  {SparkContext} Created broadcast 0 from cache at Main.scala:24
+[17:53:00,885] INFO  {FileSourceStrategy} Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[17:53:01,909] INFO  {CodeGenerator} Code generated in 433.035619 ms
+[17:53:02,364] INFO  {CodeGenerator} Code generated in 29.372618 ms
+[17:53:02,435] INFO  {SparkContext} Starting job: show at Main.scala:34
+[17:53:02,496] INFO  {DAGScheduler} Got job 0 (show at Main.scala:34) with 1 output partitions
+[17:53:02,497] INFO  {DAGScheduler} Final stage: ResultStage 0 (show at Main.scala:34)
+[17:53:02,497] INFO  {DAGScheduler} Parents of final stage: List()
+[17:53:02,502] INFO  {DAGScheduler} Missing parents: List()
+[17:53:02,545] INFO  {DAGScheduler} Submitting ResultStage 0 (MapPartitionsRDD[5] at show at Main.scala:34), which has no missing parents
+[17:53:02,681] INFO  {MemoryStore} Block broadcast_1 stored as values in memory (estimated size 18.3 KB, free 1128.7 MB)
+[17:53:02,684] INFO  {MemoryStore} Block broadcast_1_piece0 stored as bytes in memory (estimated size 8.5 KB, free 1128.7 MB)
+[17:53:02,684] INFO  {BlockManagerInfo} Added broadcast_1_piece0 in memory on 192.168.0.103:35565 (size: 8.5 KB, free: 1128.9 MB)
+[17:53:02,685] INFO  {SparkContext} Created broadcast 1 from broadcast at DAGScheduler.scala:1012
+[17:53:02,688] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[5] at show at Main.scala:34)
+[17:53:02,690] INFO  {TaskSchedulerImpl} Adding task set 0.0 with 1 tasks
+[17:53:02,743] INFO  {TaskSetManager} Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:53:02,752] INFO  {Executor} Running task 0.0 in stage 0.0 (TID 0)
+[17:53:02,811] INFO  {FileScanRDD} Reading File path: file:///home/victor/Desktop/ML/vt17-lab1/src/main/resources/millionsong.txt, range: 0-1248115, partition values: [empty row]
+[17:53:02,825] INFO  {CodeGenerator} Code generated in 10.062726 ms
+[17:53:03,049] INFO  {MemoryStore} Block rdd_2_0 stored as values in memory (estimated size 1239.2 KB, free 1127.5 MB)
+[17:53:03,050] INFO  {BlockManagerInfo} Added rdd_2_0 in memory on 192.168.0.103:35565 (size: 1239.2 KB, free: 1127.7 MB)
+[17:53:03,073] INFO  {CodeGenerator} Code generated in 5.792949 ms
+[17:53:03,103] INFO  {CodeGenerator} Code generated in 23.460946 ms
+[17:53:03,157] WARN  {Executor} 1 block locks were not released by TID = 0:
+[rdd_2_0]
+[17:53:03,165] INFO  {Executor} Finished task 0.0 in stage 0.0 (TID 0). 4550 bytes result sent to driver
+[17:53:03,185] INFO  {TaskSetManager} Finished task 0.0 in stage 0.0 (TID 0) in 456 ms on localhost (1/1)
+[17:53:03,187] INFO  {TaskSchedulerImpl} Removed TaskSet 0.0, whose tasks have all completed, from pool 
+[17:53:03,189] INFO  {DAGScheduler} ResultStage 0 (show at Main.scala:34) finished in 0.491 s
+[17:53:03,194] INFO  {DAGScheduler} Job 0 finished: show at Main.scala:34, took 0.758633 s
+[17:53:03,255] INFO  {CodeGenerator} Code generated in 18.320273 ms
+[17:53:03,388] INFO  {CodeGenerator} Code generated in 41.736633 ms
+[17:53:03,407] INFO  {SparkContext} Starting job: show at Main.scala:43
+[17:53:03,408] INFO  {DAGScheduler} Got job 1 (show at Main.scala:43) with 1 output partitions
+[17:53:03,408] INFO  {DAGScheduler} Final stage: ResultStage 1 (show at Main.scala:43)
+[17:53:03,408] INFO  {DAGScheduler} Parents of final stage: List()
+[17:53:03,411] INFO  {DAGScheduler} Missing parents: List()
+[17:53:03,411] INFO  {DAGScheduler} Submitting ResultStage 1 (MapPartitionsRDD[8] at show at Main.scala:43), which has no missing parents
+[17:53:03,416] INFO  {MemoryStore} Block broadcast_2 stored as values in memory (estimated size 25.6 KB, free 1127.5 MB)
+[17:53:03,418] INFO  {MemoryStore} Block broadcast_2_piece0 stored as bytes in memory (estimated size 10.0 KB, free 1127.5 MB)
+[17:53:03,419] INFO  {BlockManagerInfo} Added broadcast_2_piece0 in memory on 192.168.0.103:35565 (size: 10.0 KB, free: 1127.7 MB)
+[17:53:03,419] INFO  {SparkContext} Created broadcast 2 from broadcast at DAGScheduler.scala:1012
+[17:53:03,419] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[8] at show at Main.scala:43)
+[17:53:03,419] INFO  {TaskSchedulerImpl} Adding task set 1.0 with 1 tasks
+[17:53:03,425] INFO  {TaskSetManager} Starting task 0.0 in stage 1.0 (TID 1, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:53:03,425] INFO  {Executor} Running task 0.0 in stage 1.0 (TID 1)
+[17:53:03,436] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:53:03,619] WARN  {Executor} 1 block locks were not released by TID = 1:
+[rdd_2_0]
+[17:53:03,621] INFO  {Executor} Finished task 0.0 in stage 1.0 (TID 1). 3929 bytes result sent to driver
+[17:53:03,623] INFO  {TaskSetManager} Finished task 0.0 in stage 1.0 (TID 1) in 201 ms on localhost (1/1)
+[17:53:03,623] INFO  {TaskSchedulerImpl} Removed TaskSet 1.0, whose tasks have all completed, from pool 
+[17:53:03,624] INFO  {DAGScheduler} ResultStage 1 (show at Main.scala:43) finished in 0.202 s
+[17:53:03,624] INFO  {DAGScheduler} Job 1 finished: show at Main.scala:43, took 0.216919 s
+[17:53:03,651] INFO  {CodeGenerator} Code generated in 15.934345 ms
+[17:53:03,765] INFO  {ContextCleaner} Cleaned accumulator 3
+[17:53:03,766] INFO  {ContextCleaner} Cleaned accumulator 4
+[17:53:03,923] INFO  {BlockManagerInfo} Removed broadcast_1_piece0 on 192.168.0.103:35565 in memory (size: 8.5 KB, free: 1127.7 MB)
+[17:53:03,975] INFO  {ContextCleaner} Cleaned accumulator 49
+[17:53:03,975] INFO  {ContextCleaner} Cleaned accumulator 50
+[17:53:03,977] INFO  {BlockManagerInfo} Removed broadcast_2_piece0 on 192.168.0.103:35565 in memory (size: 10.0 KB, free: 1127.7 MB)
+[17:53:04,082] INFO  {CodeGenerator} Code generated in 100.74347 ms
+[17:53:04,108] INFO  {SparkContext} Starting job: show at Main.scala:52
+[17:53:04,112] INFO  {DAGScheduler} Got job 2 (show at Main.scala:52) with 1 output partitions
+[17:53:04,112] INFO  {DAGScheduler} Final stage: ResultStage 2 (show at Main.scala:52)
+[17:53:04,112] INFO  {DAGScheduler} Parents of final stage: List()
+[17:53:04,114] INFO  {DAGScheduler} Missing parents: List()
+[17:53:04,115] INFO  {DAGScheduler} Submitting ResultStage 2 (MapPartitionsRDD[11] at show at Main.scala:52), which has no missing parents
+[17:53:04,142] INFO  {MemoryStore} Block broadcast_3 stored as values in memory (estimated size 34.3 KB, free 1127.5 MB)
+[17:53:04,154] INFO  {MemoryStore} Block broadcast_3_piece0 stored as bytes in memory (estimated size 11.7 KB, free 1127.5 MB)
+[17:53:04,166] INFO  {BlockManagerInfo} Added broadcast_3_piece0 in memory on 192.168.0.103:35565 (size: 11.7 KB, free: 1127.7 MB)
+[17:53:04,168] INFO  {SparkContext} Created broadcast 3 from broadcast at DAGScheduler.scala:1012
+[17:53:04,169] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[11] at show at Main.scala:52)
+[17:53:04,169] INFO  {TaskSchedulerImpl} Adding task set 2.0 with 1 tasks
+[17:53:04,175] INFO  {TaskSetManager} Starting task 0.0 in stage 2.0 (TID 2, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:53:04,176] INFO  {Executor} Running task 0.0 in stage 2.0 (TID 2)
+[17:53:04,189] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:53:04,234] WARN  {Executor} 1 block locks were not released by TID = 2:
+[rdd_2_0]
+[17:53:04,237] INFO  {Executor} Finished task 0.0 in stage 2.0 (TID 2). 4003 bytes result sent to driver
+[17:53:04,250] INFO  {TaskSetManager} Finished task 0.0 in stage 2.0 (TID 2) in 75 ms on localhost (1/1)
+[17:53:04,250] INFO  {TaskSchedulerImpl} Removed TaskSet 2.0, whose tasks have all completed, from pool 
+[17:53:04,255] INFO  {DAGScheduler} ResultStage 2 (show at Main.scala:52) finished in 0.084 s
+[17:53:04,257] INFO  {DAGScheduler} Job 2 finished: show at Main.scala:52, took 0.147275 s
+[17:53:04,352] INFO  {CodeGenerator} Code generated in 90.588803 ms
+[17:53:04,500] INFO  {CodeGenerator} Code generated in 44.171372 ms
+[17:53:04,511] INFO  {SparkContext} Starting job: show at Main.scala:62
+[17:53:04,512] INFO  {DAGScheduler} Got job 3 (show at Main.scala:62) with 1 output partitions
+[17:53:04,512] INFO  {DAGScheduler} Final stage: ResultStage 3 (show at Main.scala:62)
+[17:53:04,512] INFO  {DAGScheduler} Parents of final stage: List()
+[17:53:04,513] INFO  {DAGScheduler} Missing parents: List()
+[17:53:04,513] INFO  {DAGScheduler} Submitting ResultStage 3 (MapPartitionsRDD[14] at show at Main.scala:62), which has no missing parents
+[17:53:04,517] INFO  {MemoryStore} Block broadcast_4 stored as values in memory (estimated size 40.2 KB, free 1127.5 MB)
+[17:53:04,520] INFO  {MemoryStore} Block broadcast_4_piece0 stored as bytes in memory (estimated size 13.3 KB, free 1127.5 MB)
+[17:53:04,521] INFO  {BlockManagerInfo} Added broadcast_4_piece0 in memory on 192.168.0.103:35565 (size: 13.3 KB, free: 1127.7 MB)
+[17:53:04,521] INFO  {SparkContext} Created broadcast 4 from broadcast at DAGScheduler.scala:1012
+[17:53:04,522] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[14] at show at Main.scala:62)
+[17:53:04,522] INFO  {TaskSchedulerImpl} Adding task set 3.0 with 1 tasks
+[17:53:04,524] INFO  {TaskSetManager} Starting task 0.0 in stage 3.0 (TID 3, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:53:04,524] INFO  {Executor} Running task 0.0 in stage 3.0 (TID 3)
+[17:53:04,531] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:53:04,539] WARN  {Executor} 1 block locks were not released by TID = 3:
+[rdd_2_0]
+[17:53:04,540] INFO  {Executor} Finished task 0.0 in stage 3.0 (TID 3). 4099 bytes result sent to driver
+[17:53:04,541] INFO  {TaskSetManager} Finished task 0.0 in stage 3.0 (TID 3) in 18 ms on localhost (1/1)
+[17:53:04,541] INFO  {TaskSchedulerImpl} Removed TaskSet 3.0, whose tasks have all completed, from pool 
+[17:53:04,542] INFO  {DAGScheduler} ResultStage 3 (show at Main.scala:62) finished in 0.020 s
+[17:53:04,542] INFO  {DAGScheduler} Job 3 finished: show at Main.scala:62, took 0.030782 s
+[17:53:04,560] INFO  {CodeGenerator} Code generated in 14.896049 ms
+[17:53:04,743] INFO  {CodeGenerator} Code generated in 22.398898 ms
+[17:53:04,768] INFO  {CodeGenerator} Code generated in 18.963978 ms
+[17:53:04,842] INFO  {SparkContext} Starting job: collect at Main.scala:67
+[17:53:04,844] INFO  {DAGScheduler} Registering RDD 17 (collect at Main.scala:67)
+[17:53:04,845] INFO  {DAGScheduler} Got job 4 (collect at Main.scala:67) with 1 output partitions
+[17:53:04,845] INFO  {DAGScheduler} Final stage: ResultStage 5 (collect at Main.scala:67)
+[17:53:04,845] INFO  {DAGScheduler} Parents of final stage: List(ShuffleMapStage 4)
+[17:53:04,846] INFO  {DAGScheduler} Missing parents: List(ShuffleMapStage 4)
+[17:53:04,847] INFO  {DAGScheduler} Submitting ShuffleMapStage 4 (MapPartitionsRDD[17] at collect at Main.scala:67), which has no missing parents
+[17:53:04,858] INFO  {MemoryStore} Block broadcast_5 stored as values in memory (estimated size 24.5 KB, free 1127.4 MB)
+[17:53:04,861] INFO  {MemoryStore} Block broadcast_5_piece0 stored as bytes in memory (estimated size 10.2 KB, free 1127.4 MB)
+[17:53:04,862] INFO  {BlockManagerInfo} Added broadcast_5_piece0 in memory on 192.168.0.103:35565 (size: 10.2 KB, free: 1127.6 MB)
+[17:53:04,862] INFO  {SparkContext} Created broadcast 5 from broadcast at DAGScheduler.scala:1012
+[17:53:04,865] INFO  {DAGScheduler} Submitting 1 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[17] at collect at Main.scala:67)
+[17:53:04,865] INFO  {TaskSchedulerImpl} Adding task set 4.0 with 1 tasks
+[17:53:04,868] INFO  {TaskSetManager} Starting task 0.0 in stage 4.0 (TID 4, localhost, partition 0, PROCESS_LOCAL, 5978 bytes)
+[17:53:04,869] INFO  {Executor} Running task 0.0 in stage 4.0 (TID 4)
+[17:53:04,877] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:53:05,119] INFO  {BlockManagerInfo} Removed broadcast_4_piece0 on 192.168.0.103:35565 in memory (size: 13.3 KB, free: 1127.7 MB)
+[17:53:05,121] INFO  {ContextCleaner} Cleaned accumulator 187
+[17:53:05,121] INFO  {ContextCleaner} Cleaned accumulator 95
+[17:53:05,121] INFO  {ContextCleaner} Cleaned accumulator 96
+[17:53:05,122] INFO  {BlockManagerInfo} Removed broadcast_3_piece0 on 192.168.0.103:35565 in memory (size: 11.7 KB, free: 1127.7 MB)
+[17:53:05,124] INFO  {ContextCleaner} Cleaned accumulator 141
+[17:53:05,124] INFO  {ContextCleaner} Cleaned accumulator 142
+[17:53:05,218] INFO  {Executor} Finished task 0.0 in stage 4.0 (TID 4). 2484 bytes result sent to driver
+[17:53:05,221] INFO  {TaskSetManager} Finished task 0.0 in stage 4.0 (TID 4) in 355 ms on localhost (1/1)
+[17:53:05,221] INFO  {TaskSchedulerImpl} Removed TaskSet 4.0, whose tasks have all completed, from pool 
+[17:53:05,222] INFO  {DAGScheduler} ShuffleMapStage 4 (collect at Main.scala:67) finished in 0.357 s
+[17:53:05,223] INFO  {DAGScheduler} looking for newly runnable stages
+[17:53:05,223] INFO  {DAGScheduler} running: Set()
+[17:53:05,224] INFO  {DAGScheduler} waiting: Set(ResultStage 5)
+[17:53:05,224] INFO  {DAGScheduler} failed: Set()
+[17:53:05,225] INFO  {DAGScheduler} Submitting ResultStage 5 (MapPartitionsRDD[20] at collect at Main.scala:67), which has no missing parents
+[17:53:05,229] INFO  {MemoryStore} Block broadcast_6 stored as values in memory (estimated size 7.3 KB, free 1127.5 MB)
+[17:53:05,231] INFO  {MemoryStore} Block broadcast_6_piece0 stored as bytes in memory (estimated size 3.9 KB, free 1127.5 MB)
+[17:53:05,232] INFO  {BlockManagerInfo} Added broadcast_6_piece0 in memory on 192.168.0.103:35565 (size: 3.9 KB, free: 1127.7 MB)
+[17:53:05,232] INFO  {SparkContext} Created broadcast 6 from broadcast at DAGScheduler.scala:1012
+[17:53:05,233] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[20] at collect at Main.scala:67)
+[17:53:05,233] INFO  {TaskSchedulerImpl} Adding task set 5.0 with 1 tasks
+[17:53:05,236] INFO  {TaskSetManager} Starting task 0.0 in stage 5.0 (TID 5, localhost, partition 0, ANY, 5317 bytes)
+[17:53:05,237] INFO  {Executor} Running task 0.0 in stage 5.0 (TID 5)
+[17:53:05,254] INFO  {ShuffleBlockFetcherIterator} Getting 1 non-empty blocks out of 1 blocks
+[17:53:05,256] INFO  {ShuffleBlockFetcherIterator} Started 0 remote fetches in 4 ms
+[17:53:05,283] INFO  {Executor} Finished task 0.0 in stage 5.0 (TID 5). 1955 bytes result sent to driver
+[17:53:05,284] INFO  {TaskSetManager} Finished task 0.0 in stage 5.0 (TID 5) in 50 ms on localhost (1/1)
+[17:53:05,284] INFO  {TaskSchedulerImpl} Removed TaskSet 5.0, whose tasks have all completed, from pool 
+[17:53:05,284] INFO  {DAGScheduler} ResultStage 5 (collect at Main.scala:67) finished in 0.050 s
+[17:53:05,285] INFO  {DAGScheduler} Job 4 finished: collect at Main.scala:67, took 0.443184 s
+[17:53:05,294] INFO  {CodeGenerator} Code generated in 5.73974 ms
+[17:53:05,335] INFO  {CodeGenerator} Code generated in 9.304593 ms
+[17:53:05,358] INFO  {CodeGenerator} Code generated in 18.834089 ms
+[17:53:05,376] INFO  {SparkContext} Starting job: collect at Main.scala:68
+[17:53:05,377] INFO  {DAGScheduler} Registering RDD 23 (collect at Main.scala:68)
+[17:53:05,378] INFO  {DAGScheduler} Got job 5 (collect at Main.scala:68) with 1 output partitions
+[17:53:05,378] INFO  {DAGScheduler} Final stage: ResultStage 7 (collect at Main.scala:68)
+[17:53:05,378] INFO  {DAGScheduler} Parents of final stage: List(ShuffleMapStage 6)
+[17:53:05,378] INFO  {DAGScheduler} Missing parents: List(ShuffleMapStage 6)
+[17:53:05,379] INFO  {DAGScheduler} Submitting ShuffleMapStage 6 (MapPartitionsRDD[23] at collect at Main.scala:68), which has no missing parents
+[17:53:05,383] INFO  {MemoryStore} Block broadcast_7 stored as values in memory (estimated size 24.5 KB, free 1127.5 MB)
+[17:53:05,385] INFO  {MemoryStore} Block broadcast_7_piece0 stored as bytes in memory (estimated size 10.2 KB, free 1127.5 MB)
+[17:53:05,386] INFO  {BlockManagerInfo} Added broadcast_7_piece0 in memory on 192.168.0.103:35565 (size: 10.2 KB, free: 1127.7 MB)
+[17:53:05,387] INFO  {SparkContext} Created broadcast 7 from broadcast at DAGScheduler.scala:1012
+[17:53:05,387] INFO  {DAGScheduler} Submitting 1 missing tasks from ShuffleMapStage 6 (MapPartitionsRDD[23] at collect at Main.scala:68)
+[17:53:05,387] INFO  {TaskSchedulerImpl} Adding task set 6.0 with 1 tasks
+[17:53:05,390] INFO  {TaskSetManager} Starting task 0.0 in stage 6.0 (TID 6, localhost, partition 0, PROCESS_LOCAL, 5978 bytes)
+[17:53:05,390] INFO  {Executor} Running task 0.0 in stage 6.0 (TID 6)
+[17:53:05,396] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:53:05,522] INFO  {Executor} Finished task 0.0 in stage 6.0 (TID 6). 2324 bytes result sent to driver
+[17:53:05,524] INFO  {TaskSetManager} Finished task 0.0 in stage 6.0 (TID 6) in 135 ms on localhost (1/1)
+[17:53:05,524] INFO  {TaskSchedulerImpl} Removed TaskSet 6.0, whose tasks have all completed, from pool 
+[17:53:05,524] INFO  {DAGScheduler} ShuffleMapStage 6 (collect at Main.scala:68) finished in 0.137 s
+[17:53:05,524] INFO  {DAGScheduler} looking for newly runnable stages
+[17:53:05,525] INFO  {DAGScheduler} running: Set()
+[17:53:05,525] INFO  {DAGScheduler} waiting: Set(ResultStage 7)
+[17:53:05,525] INFO  {DAGScheduler} failed: Set()
+[17:53:05,526] INFO  {DAGScheduler} Submitting ResultStage 7 (MapPartitionsRDD[26] at collect at Main.scala:68), which has no missing parents
+[17:53:05,528] INFO  {MemoryStore} Block broadcast_8 stored as values in memory (estimated size 7.3 KB, free 1127.5 MB)
+[17:53:05,531] INFO  {MemoryStore} Block broadcast_8_piece0 stored as bytes in memory (estimated size 3.9 KB, free 1127.5 MB)
+[17:53:05,531] INFO  {BlockManagerInfo} Added broadcast_8_piece0 in memory on 192.168.0.103:35565 (size: 3.9 KB, free: 1127.6 MB)
+[17:53:05,532] INFO  {SparkContext} Created broadcast 8 from broadcast at DAGScheduler.scala:1012
+[17:53:05,532] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[26] at collect at Main.scala:68)
+[17:53:05,532] INFO  {TaskSchedulerImpl} Adding task set 7.0 with 1 tasks
+[17:53:05,534] INFO  {TaskSetManager} Starting task 0.0 in stage 7.0 (TID 7, localhost, partition 0, ANY, 5317 bytes)
+[17:53:05,534] INFO  {Executor} Running task 0.0 in stage 7.0 (TID 7)
+[17:53:05,538] INFO  {ShuffleBlockFetcherIterator} Getting 1 non-empty blocks out of 1 blocks
+[17:53:05,538] INFO  {ShuffleBlockFetcherIterator} Started 0 remote fetches in 0 ms
+[17:53:05,541] INFO  {Executor} Finished task 0.0 in stage 7.0 (TID 7). 1868 bytes result sent to driver
+[17:53:05,543] INFO  {TaskSetManager} Finished task 0.0 in stage 7.0 (TID 7) in 9 ms on localhost (1/1)
+[17:53:05,543] INFO  {TaskSchedulerImpl} Removed TaskSet 7.0, whose tasks have all completed, from pool 
+[17:53:05,543] INFO  {DAGScheduler} ResultStage 7 (collect at Main.scala:68) finished in 0.010 s
+[17:53:05,544] INFO  {DAGScheduler} Job 5 finished: collect at Main.scala:68, took 0.167179 s
+[17:53:05,688] INFO  {CodeGenerator} Code generated in 56.507354 ms
+[17:53:05,699] INFO  {SparkContext} Starting job: show at Main.scala:83
+[17:53:05,700] INFO  {DAGScheduler} Got job 6 (show at Main.scala:83) with 1 output partitions
+[17:53:05,700] INFO  {DAGScheduler} Final stage: ResultStage 8 (show at Main.scala:83)
+[17:53:05,700] INFO  {DAGScheduler} Parents of final stage: List()
+[17:53:05,701] INFO  {DAGScheduler} Missing parents: List()
+[17:53:05,701] INFO  {DAGScheduler} Submitting ResultStage 8 (MapPartitionsRDD[29] at show at Main.scala:83), which has no missing parents
+[17:53:05,704] INFO  {MemoryStore} Block broadcast_9 stored as values in memory (estimated size 53.4 KB, free 1127.4 MB)
+[17:53:05,706] INFO  {MemoryStore} Block broadcast_9_piece0 stored as bytes in memory (estimated size 15.0 KB, free 1127.4 MB)
+[17:53:05,707] INFO  {BlockManagerInfo} Added broadcast_9_piece0 in memory on 192.168.0.103:35565 (size: 15.0 KB, free: 1127.6 MB)
+[17:53:05,707] INFO  {SparkContext} Created broadcast 9 from broadcast at DAGScheduler.scala:1012
+[17:53:05,707] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 8 (MapPartitionsRDD[29] at show at Main.scala:83)
+[17:53:05,707] INFO  {TaskSchedulerImpl} Adding task set 8.0 with 1 tasks
+[17:53:05,710] INFO  {TaskSetManager} Starting task 0.0 in stage 8.0 (TID 8, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:53:05,710] INFO  {Executor} Running task 0.0 in stage 8.0 (TID 8)
+[17:53:05,715] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:53:05,721] WARN  {Executor} 1 block locks were not released by TID = 8:
+[rdd_2_0]
+[17:53:05,722] INFO  {Executor} Finished task 0.0 in stage 8.0 (TID 8). 4020 bytes result sent to driver
+[17:53:05,723] INFO  {TaskSetManager} Finished task 0.0 in stage 8.0 (TID 8) in 15 ms on localhost (1/1)
+[17:53:05,723] INFO  {TaskSchedulerImpl} Removed TaskSet 8.0, whose tasks have all completed, from pool 
+[17:53:05,723] INFO  {DAGScheduler} ResultStage 8 (show at Main.scala:83) finished in 0.015 s
+[17:53:05,724] INFO  {DAGScheduler} Job 6 finished: show at Main.scala:83, took 0.024321 s
+[17:53:05,742] INFO  {CodeGenerator} Code generated in 15.580152 ms
+[17:53:05,909] INFO  {CodeGenerator} Code generated in 69.951124 ms
+[17:53:05,932] INFO  {SparkContext} Starting job: show at Main.scala:92
+[17:53:05,933] INFO  {DAGScheduler} Got job 7 (show at Main.scala:92) with 1 output partitions
+[17:53:05,933] INFO  {DAGScheduler} Final stage: ResultStage 9 (show at Main.scala:92)
+[17:53:05,933] INFO  {DAGScheduler} Parents of final stage: List()
+[17:53:05,935] INFO  {DAGScheduler} Missing parents: List()
+[17:53:05,936] INFO  {DAGScheduler} Submitting ResultStage 9 (MapPartitionsRDD[32] at show at Main.scala:92), which has no missing parents
+[17:53:05,944] INFO  {MemoryStore} Block broadcast_10 stored as values in memory (estimated size 62.1 KB, free 1127.3 MB)
+[17:53:05,949] INFO  {MemoryStore} Block broadcast_10_piece0 stored as bytes in memory (estimated size 16.4 KB, free 1127.3 MB)
+[17:53:05,960] INFO  {BlockManagerInfo} Added broadcast_10_piece0 in memory on 192.168.0.103:35565 (size: 16.4 KB, free: 1127.6 MB)
+[17:53:05,962] INFO  {SparkContext} Created broadcast 10 from broadcast at DAGScheduler.scala:1012
+[17:53:05,969] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 9 (MapPartitionsRDD[32] at show at Main.scala:92)
+[17:53:05,971] INFO  {TaskSchedulerImpl} Adding task set 9.0 with 1 tasks
+[17:53:05,977] INFO  {TaskSetManager} Starting task 0.0 in stage 9.0 (TID 9, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:53:05,978] INFO  {Executor} Running task 0.0 in stage 9.0 (TID 9)
+[17:53:06,005] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:53:06,060] WARN  {Executor} 1 block locks were not released by TID = 9:
+[rdd_2_0]
+[17:53:06,065] INFO  {Executor} Finished task 0.0 in stage 9.0 (TID 9). 4170 bytes result sent to driver
+[17:53:06,072] INFO  {TaskSetManager} Finished task 0.0 in stage 9.0 (TID 9) in 97 ms on localhost (1/1)
+[17:53:06,072] INFO  {TaskSchedulerImpl} Removed TaskSet 9.0, whose tasks have all completed, from pool 
+[17:53:06,074] INFO  {DAGScheduler} ResultStage 9 (show at Main.scala:92) finished in 0.098 s
+[17:53:06,078] INFO  {DAGScheduler} Job 7 finished: show at Main.scala:92, took 0.146008 s
+[17:53:06,142] INFO  {CodeGenerator} Code generated in 57.016067 ms
+[17:53:06,357] INFO  {ContextCleaner} Cleaned accumulator 188
+[17:53:06,357] INFO  {ContextCleaner} Cleaned accumulator 189
+[17:53:06,357] INFO  {ContextCleaner} Cleaned accumulator 190
+[17:53:06,357] INFO  {ContextCleaner} Cleaned accumulator 191
+[17:53:06,357] INFO  {ContextCleaner} Cleaned accumulator 192
+[17:53:06,357] INFO  {ContextCleaner} Cleaned accumulator 193
+[17:53:06,357] INFO  {ContextCleaner} Cleaned accumulator 194
+[17:53:06,357] INFO  {ContextCleaner} Cleaned accumulator 195
+[17:53:06,358] INFO  {ContextCleaner} Cleaned accumulator 196
+[17:53:06,358] INFO  {ContextCleaner} Cleaned accumulator 197
+[17:53:06,358] INFO  {ContextCleaner} Cleaned accumulator 198
+[17:53:06,358] INFO  {ContextCleaner} Cleaned accumulator 199
+[17:53:06,367] INFO  {ContextCleaner} Cleaned shuffle 0
+[17:53:06,370] INFO  {BlockManagerInfo} Removed broadcast_8_piece0 on 192.168.0.103:35565 in memory (size: 3.9 KB, free: 1127.6 MB)
+[17:53:06,384] INFO  {ContextCleaner} Cleaned accumulator 389
+[17:53:06,385] INFO  {ContextCleaner} Cleaned accumulator 390
+[17:53:06,387] INFO  {BlockManagerInfo} Removed broadcast_9_piece0 on 192.168.0.103:35565 in memory (size: 15.0 KB, free: 1127.6 MB)
+[17:53:06,392] INFO  {ContextCleaner} Cleaned accumulator 435
+[17:53:06,392] INFO  {ContextCleaner} Cleaned accumulator 436
+[17:53:06,393] INFO  {BlockManagerInfo} Removed broadcast_10_piece0 on 192.168.0.103:35565 in memory (size: 16.4 KB, free: 1127.7 MB)
+[17:53:06,409] INFO  {BlockManagerInfo} Removed broadcast_5_piece0 on 192.168.0.103:35565 in memory (size: 10.2 KB, free: 1127.7 MB)
+[17:53:06,417] INFO  {BlockManagerInfo} Removed broadcast_6_piece0 on 192.168.0.103:35565 in memory (size: 3.9 KB, free: 1127.7 MB)
+[17:53:06,419] INFO  {ContextCleaner} Cleaned accumulator 288
+[17:53:06,419] INFO  {ContextCleaner} Cleaned accumulator 289
+[17:53:06,419] INFO  {ContextCleaner} Cleaned accumulator 290
+[17:53:06,419] INFO  {ContextCleaner} Cleaned accumulator 291
+[17:53:06,419] INFO  {ContextCleaner} Cleaned accumulator 292
+[17:53:06,419] INFO  {ContextCleaner} Cleaned accumulator 293
+[17:53:06,419] INFO  {ContextCleaner} Cleaned accumulator 294
+[17:53:06,420] INFO  {ContextCleaner} Cleaned accumulator 295
+[17:53:06,420] INFO  {ContextCleaner} Cleaned accumulator 296
+[17:53:06,420] INFO  {ContextCleaner} Cleaned accumulator 297
+[17:53:06,420] INFO  {ContextCleaner} Cleaned accumulator 298
+[17:53:06,420] INFO  {ContextCleaner} Cleaned accumulator 299
+[17:53:06,420] INFO  {ContextCleaner} Cleaned accumulator 300
+[17:53:06,422] INFO  {ContextCleaner} Cleaned shuffle 1
+[17:53:06,428] INFO  {BlockManagerInfo} Removed broadcast_7_piece0 on 192.168.0.103:35565 in memory (size: 10.2 KB, free: 1127.7 MB)
+[17:53:06,973] INFO  {CodeGenerator} Code generated in 17.845039 ms
+[17:53:07,026] INFO  {CodeGenerator} Code generated in 17.34454 ms
+[17:53:07,081] INFO  {CodeGenerator} Code generated in 12.869638 ms
+[17:53:07,100] INFO  {CodeGenerator} Code generated in 8.048517 ms
+[17:53:07,106] INFO  {SparkContext} Invoking stop() from shutdown hook
+[17:53:07,112] INFO  {ServerConnector} Stopped ServerConnector@c0c8e73{HTTP/1.1}{0.0.0.0:4040}
+[17:53:07,114] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3016fd5e{/stages/stage/kill,null,UNAVAILABLE}
+[17:53:07,115] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3b00856b{/api,null,UNAVAILABLE}
+[17:53:07,115] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3bcbb589{/,null,UNAVAILABLE}
+[17:53:07,115] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@1d730606{/static,null,UNAVAILABLE}
+[17:53:07,115] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@4dc8caa7{/executors/threadDump/json,null,UNAVAILABLE}
+[17:53:07,115] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@626c44e7{/executors/threadDump,null,UNAVAILABLE}
+[17:53:07,115] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@542e560f{/executors/json,null,UNAVAILABLE}
+[17:53:07,116] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@241e8ea6{/executors,null,UNAVAILABLE}
+[17:53:07,116] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3243b914{/environment/json,null,UNAVAILABLE}
+[17:53:07,116] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@31d0e481{/environment,null,UNAVAILABLE}
+[17:53:07,116] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@59252cb6{/storage/rdd/json,null,UNAVAILABLE}
+[17:53:07,116] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@6d9f7a80{/storage/rdd,null,UNAVAILABLE}
+[17:53:07,116] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5ccbeb64{/storage/json,null,UNAVAILABLE}
+[17:53:07,116] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@112f364d{/storage,null,UNAVAILABLE}
+[17:53:07,116] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@362045c0{/stages/pool/json,null,UNAVAILABLE}
+[17:53:07,117] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5a9d6f02{/stages/pool,null,UNAVAILABLE}
+[17:53:07,117] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@189aa67a{/stages/stage/json,null,UNAVAILABLE}
+[17:53:07,117] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@c4ed84{/stages/stage,null,UNAVAILABLE}
+[17:53:07,117] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5f9678e1{/stages/json,null,UNAVAILABLE}
+[17:53:07,117] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@373ebf74{/stages,null,UNAVAILABLE}
+[17:53:07,117] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5669c5fb{/jobs/job/json,null,UNAVAILABLE}
+[17:53:07,117] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@56113384{/jobs/job,null,UNAVAILABLE}
+[17:53:07,118] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@340b9973{/jobs/json,null,UNAVAILABLE}
+[17:53:07,118] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@52066604{/jobs,null,UNAVAILABLE}
+[17:53:07,120] INFO  {SparkUI} Stopped Spark web UI at http://192.168.0.103:4040
+[17:53:07,132] INFO  {MapOutputTrackerMasterEndpoint} MapOutputTrackerMasterEndpoint stopped!
+[17:53:07,149] INFO  {MemoryStore} MemoryStore cleared
+[17:53:07,149] INFO  {BlockManager} BlockManager stopped
+[17:53:07,152] INFO  {BlockManagerMaster} BlockManagerMaster stopped
+[17:53:07,159] INFO  {OutputCommitCoordinator$OutputCommitCoordinatorEndpoint} OutputCommitCoordinator stopped!
+[17:53:07,178] INFO  {SparkContext} Successfully stopped SparkContext
+[17:53:07,179] INFO  {ShutdownHookManager} Shutdown hook called
+[17:53:07,180] INFO  {ShutdownHookManager} Deleting directory /tmp/spark-7b9209de-2cfe-4902-b1b0-4bb0ef10f501
+[17:53:52,304] INFO  {SparkContext} Running Spark version 2.0.1
+[17:53:52,626] WARN  {NativeCodeLoader} Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[17:53:52,830] WARN  {Utils} Your hostname, victor resolves to a loopback address: 127.0.1.1; using 192.168.0.103 instead (on interface wlp4s0)
+[17:53:52,831] WARN  {Utils} Set SPARK_LOCAL_IP if you need to bind to another address
+[17:53:52,930] INFO  {SecurityManager} Changing view acls to: victor
+[17:53:52,932] INFO  {SecurityManager} Changing modify acls to: victor
+[17:53:52,933] INFO  {SecurityManager} Changing view acls groups to: 
+[17:53:52,935] INFO  {SecurityManager} Changing modify acls groups to: 
+[17:53:52,936] INFO  {SecurityManager} SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(victor); groups with view permissions: Set(); users  with modify permissions: Set(victor); groups with modify permissions: Set()
+[17:53:53,358] INFO  {Utils} Successfully started service 'sparkDriver' on port 39255.
+[17:53:53,377] INFO  {SparkEnv} Registering MapOutputTracker
+[17:53:53,392] INFO  {SparkEnv} Registering BlockManagerMaster
+[17:53:53,413] INFO  {DiskBlockManager} Created local directory at /tmp/blockmgr-be377247-b2da-47a6-9915-d8d3be985ec9
+[17:53:53,429] INFO  {MemoryStore} MemoryStore started with capacity 1128.9 MB
+[17:53:53,485] INFO  {SparkEnv} Registering OutputCommitCoordinator
+[17:53:53,570] INFO  {log} Logging initialized @2102ms
+[17:53:53,705] INFO  {Server} jetty-9.2.z-SNAPSHOT
+[17:53:53,722] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@52066604{/jobs,null,AVAILABLE}
+[17:53:53,722] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@340b9973{/jobs/json,null,AVAILABLE}
+[17:53:53,722] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@56113384{/jobs/job,null,AVAILABLE}
+[17:53:53,723] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5669c5fb{/jobs/job/json,null,AVAILABLE}
+[17:53:53,723] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@373ebf74{/stages,null,AVAILABLE}
+[17:53:53,723] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5f9678e1{/stages/json,null,AVAILABLE}
+[17:53:53,724] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@c4ed84{/stages/stage,null,AVAILABLE}
+[17:53:53,724] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@189aa67a{/stages/stage/json,null,AVAILABLE}
+[17:53:53,725] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5a9d6f02{/stages/pool,null,AVAILABLE}
+[17:53:53,725] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@362045c0{/stages/pool/json,null,AVAILABLE}
+[17:53:53,726] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@112f364d{/storage,null,AVAILABLE}
+[17:53:53,727] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5ccbeb64{/storage/json,null,AVAILABLE}
+[17:53:53,728] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6d9f7a80{/storage/rdd,null,AVAILABLE}
+[17:53:53,728] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@59252cb6{/storage/rdd/json,null,AVAILABLE}
+[17:53:53,729] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@31d0e481{/environment,null,AVAILABLE}
+[17:53:53,730] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3243b914{/environment/json,null,AVAILABLE}
+[17:53:53,731] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@241e8ea6{/executors,null,AVAILABLE}
+[17:53:53,731] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@542e560f{/executors/json,null,AVAILABLE}
+[17:53:53,731] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@626c44e7{/executors/threadDump,null,AVAILABLE}
+[17:53:53,732] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@4dc8caa7{/executors/threadDump/json,null,AVAILABLE}
+[17:53:53,744] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@1d730606{/static,null,AVAILABLE}
+[17:53:53,744] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3bcbb589{/,null,AVAILABLE}
+[17:53:53,745] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3b00856b{/api,null,AVAILABLE}
+[17:53:53,745] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3016fd5e{/stages/stage/kill,null,AVAILABLE}
+[17:53:53,757] INFO  {ServerConnector} Started ServerConnector@4b2a01d4{HTTP/1.1}{0.0.0.0:4040}
+[17:53:53,757] INFO  {Server} Started @2290ms
+[17:53:53,757] INFO  {Utils} Successfully started service 'SparkUI' on port 4040.
+[17:53:53,759] INFO  {SparkUI} Bound SparkUI to 0.0.0.0, and started at http://192.168.0.103:4040
+[17:53:53,857] INFO  {Executor} Starting executor ID driver on host localhost
+[17:53:53,899] INFO  {Utils} Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37941.
+[17:53:53,900] INFO  {NettyBlockTransferService} Server created on 192.168.0.103:37941
+[17:53:53,902] INFO  {BlockManagerMaster} Registering BlockManager BlockManagerId(driver, 192.168.0.103, 37941)
+[17:53:53,906] INFO  {BlockManagerMasterEndpoint} Registering block manager 192.168.0.103:37941 with 1128.9 MB RAM, BlockManagerId(driver, 192.168.0.103, 37941)
+[17:53:53,910] INFO  {BlockManagerMaster} Registered BlockManager BlockManagerId(driver, 192.168.0.103, 37941)
+[17:53:54,092] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6d8792db{/metrics/json,null,AVAILABLE}
+[17:53:54,169] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6063d80a{/SQL,null,AVAILABLE}
+[17:53:54,170] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@355e34c7{/SQL/json,null,AVAILABLE}
+[17:53:54,171] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@302fec27{/SQL/execution,null,AVAILABLE}
+[17:53:54,171] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@48c40605{/SQL/execution/json,null,AVAILABLE}
+[17:53:54,174] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@2f2bf0e2{/static/sql,null,AVAILABLE}
+[17:53:54,200] INFO  {SharedState} Warehouse path is '/home/victor/Desktop/ML/vt17-lab1/spark-warehouse'.
+[17:53:56,398] INFO  {FileSourceStrategy} Pruning directories with: 
+[17:53:56,401] INFO  {FileSourceStrategy} Post-Scan Filters: 
+[17:53:56,409] INFO  {FileSourceStrategy} Pruned Data Schema: struct<value: string>
+[17:53:56,410] INFO  {FileSourceStrategy} Pushed Filters: 
+[17:53:56,529] INFO  {MemoryStore} Block broadcast_0 stored as values in memory (estimated size 131.0 KB, free 1128.8 MB)
+[17:53:56,583] INFO  {MemoryStore} Block broadcast_0_piece0 stored as bytes in memory (estimated size 14.6 KB, free 1128.8 MB)
+[17:53:56,611] INFO  {BlockManagerInfo} Added broadcast_0_piece0 in memory on 192.168.0.103:37941 (size: 14.6 KB, free: 1128.9 MB)
+[17:53:56,619] INFO  {SparkContext} Created broadcast 0 from cache at Main.scala:23
+[17:53:56,624] INFO  {FileSourceStrategy} Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[17:53:57,228] INFO  {CodeGenerator} Code generated in 282.549645 ms
+[17:53:57,465] INFO  {CodeGenerator} Code generated in 33.775679 ms
+[17:53:57,523] INFO  {SparkContext} Starting job: show at Main.scala:33
+[17:53:57,540] INFO  {DAGScheduler} Got job 0 (show at Main.scala:33) with 1 output partitions
+[17:53:57,540] INFO  {DAGScheduler} Final stage: ResultStage 0 (show at Main.scala:33)
+[17:53:57,540] INFO  {DAGScheduler} Parents of final stage: List()
+[17:53:57,544] INFO  {DAGScheduler} Missing parents: List()
+[17:53:57,549] INFO  {DAGScheduler} Submitting ResultStage 0 (MapPartitionsRDD[5] at show at Main.scala:33), which has no missing parents
+[17:53:57,613] INFO  {MemoryStore} Block broadcast_1 stored as values in memory (estimated size 18.3 KB, free 1128.7 MB)
+[17:53:57,615] INFO  {MemoryStore} Block broadcast_1_piece0 stored as bytes in memory (estimated size 8.5 KB, free 1128.7 MB)
+[17:53:57,616] INFO  {BlockManagerInfo} Added broadcast_1_piece0 in memory on 192.168.0.103:37941 (size: 8.5 KB, free: 1128.9 MB)
+[17:53:57,617] INFO  {SparkContext} Created broadcast 1 from broadcast at DAGScheduler.scala:1012
+[17:53:57,621] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[5] at show at Main.scala:33)
+[17:53:57,625] INFO  {TaskSchedulerImpl} Adding task set 0.0 with 1 tasks
+[17:53:57,672] INFO  {TaskSetManager} Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:53:57,681] INFO  {Executor} Running task 0.0 in stage 0.0 (TID 0)
+[17:53:57,736] INFO  {FileScanRDD} Reading File path: file:///home/victor/Desktop/ML/vt17-lab1/src/main/resources/millionsong.txt, range: 0-1248115, partition values: [empty row]
+[17:53:57,750] INFO  {CodeGenerator} Code generated in 10.754102 ms
+[17:53:57,919] INFO  {MemoryStore} Block rdd_2_0 stored as values in memory (estimated size 1239.2 KB, free 1127.5 MB)
+[17:53:57,920] INFO  {BlockManagerInfo} Added rdd_2_0 in memory on 192.168.0.103:37941 (size: 1239.2 KB, free: 1127.7 MB)
+[17:53:57,935] INFO  {CodeGenerator} Code generated in 4.722974 ms
+[17:53:57,967] INFO  {CodeGenerator} Code generated in 25.532676 ms
+[17:53:57,991] WARN  {Executor} 1 block locks were not released by TID = 0:
+[rdd_2_0]
+[17:53:57,997] INFO  {Executor} Finished task 0.0 in stage 0.0 (TID 0). 4550 bytes result sent to driver
+[17:53:58,006] INFO  {TaskSetManager} Finished task 0.0 in stage 0.0 (TID 0) in 353 ms on localhost (1/1)
+[17:53:58,007] INFO  {TaskSchedulerImpl} Removed TaskSet 0.0, whose tasks have all completed, from pool 
+[17:53:58,010] INFO  {DAGScheduler} ResultStage 0 (show at Main.scala:33) finished in 0.370 s
+[17:53:58,015] INFO  {DAGScheduler} Job 0 finished: show at Main.scala:33, took 0.491401 s
+[17:53:58,054] INFO  {CodeGenerator} Code generated in 18.384155 ms
+[17:53:58,200] INFO  {ContextCleaner} Cleaned accumulator 3
+[17:53:58,200] INFO  {ContextCleaner} Cleaned accumulator 4
+[17:53:58,224] INFO  {BlockManagerInfo} Removed broadcast_1_piece0 on 192.168.0.103:37941 in memory (size: 8.5 KB, free: 1127.7 MB)
+[17:53:58,255] INFO  {CodeGenerator} Code generated in 109.987731 ms
+[17:53:58,280] INFO  {SparkContext} Starting job: show at Main.scala:42
+[17:53:58,281] INFO  {DAGScheduler} Got job 1 (show at Main.scala:42) with 1 output partitions
+[17:53:58,281] INFO  {DAGScheduler} Final stage: ResultStage 1 (show at Main.scala:42)
+[17:53:58,281] INFO  {DAGScheduler} Parents of final stage: List()
+[17:53:58,294] INFO  {DAGScheduler} Missing parents: List()
+[17:53:58,295] INFO  {DAGScheduler} Submitting ResultStage 1 (MapPartitionsRDD[8] at show at Main.scala:42), which has no missing parents
+[17:53:58,309] INFO  {MemoryStore} Block broadcast_2 stored as values in memory (estimated size 25.6 KB, free 1127.5 MB)
+[17:53:58,314] INFO  {MemoryStore} Block broadcast_2_piece0 stored as bytes in memory (estimated size 10.0 KB, free 1127.5 MB)
+[17:53:58,316] INFO  {BlockManagerInfo} Added broadcast_2_piece0 in memory on 192.168.0.103:37941 (size: 10.0 KB, free: 1127.7 MB)
+[17:53:58,318] INFO  {SparkContext} Created broadcast 2 from broadcast at DAGScheduler.scala:1012
+[17:53:58,320] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[8] at show at Main.scala:42)
+[17:53:58,320] INFO  {TaskSchedulerImpl} Adding task set 1.0 with 1 tasks
+[17:53:58,327] INFO  {TaskSetManager} Starting task 0.0 in stage 1.0 (TID 1, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:53:58,327] INFO  {Executor} Running task 0.0 in stage 1.0 (TID 1)
+[17:53:58,339] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:53:58,358] WARN  {Executor} 1 block locks were not released by TID = 1:
+[rdd_2_0]
+[17:53:58,359] INFO  {Executor} Finished task 0.0 in stage 1.0 (TID 1). 3929 bytes result sent to driver
+[17:53:58,366] INFO  {TaskSetManager} Finished task 0.0 in stage 1.0 (TID 1) in 42 ms on localhost (1/1)
+[17:53:58,366] INFO  {TaskSchedulerImpl} Removed TaskSet 1.0, whose tasks have all completed, from pool 
+[17:53:58,367] INFO  {DAGScheduler} ResultStage 1 (show at Main.scala:42) finished in 0.043 s
+[17:53:58,368] INFO  {DAGScheduler} Job 1 finished: show at Main.scala:42, took 0.087648 s
+[17:53:58,393] INFO  {CodeGenerator} Code generated in 17.722964 ms
+[17:53:58,533] INFO  {ContextCleaner} Cleaned accumulator 49
+[17:53:58,533] INFO  {ContextCleaner} Cleaned accumulator 50
+[17:53:58,540] INFO  {BlockManagerInfo} Removed broadcast_2_piece0 on 192.168.0.103:37941 in memory (size: 10.0 KB, free: 1127.7 MB)
+[17:53:58,780] INFO  {CodeGenerator} Code generated in 124.031524 ms
+[17:53:58,826] INFO  {SparkContext} Starting job: show at Main.scala:51
+[17:53:58,828] INFO  {DAGScheduler} Got job 2 (show at Main.scala:51) with 1 output partitions
+[17:53:58,828] INFO  {DAGScheduler} Final stage: ResultStage 2 (show at Main.scala:51)
+[17:53:58,828] INFO  {DAGScheduler} Parents of final stage: List()
+[17:53:58,830] INFO  {DAGScheduler} Missing parents: List()
+[17:53:58,830] INFO  {DAGScheduler} Submitting ResultStage 2 (MapPartitionsRDD[11] at show at Main.scala:51), which has no missing parents
+[17:53:58,837] INFO  {MemoryStore} Block broadcast_3 stored as values in memory (estimated size 34.3 KB, free 1127.5 MB)
+[17:53:58,840] INFO  {MemoryStore} Block broadcast_3_piece0 stored as bytes in memory (estimated size 11.7 KB, free 1127.5 MB)
+[17:53:58,840] INFO  {BlockManagerInfo} Added broadcast_3_piece0 in memory on 192.168.0.103:37941 (size: 11.7 KB, free: 1127.7 MB)
+[17:53:58,842] INFO  {SparkContext} Created broadcast 3 from broadcast at DAGScheduler.scala:1012
+[17:53:58,842] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[11] at show at Main.scala:51)
+[17:53:58,842] INFO  {TaskSchedulerImpl} Adding task set 2.0 with 1 tasks
+[17:53:58,845] INFO  {TaskSetManager} Starting task 0.0 in stage 2.0 (TID 2, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:53:58,846] INFO  {Executor} Running task 0.0 in stage 2.0 (TID 2)
+[17:53:58,876] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:53:58,912] WARN  {Executor} 1 block locks were not released by TID = 2:
+[rdd_2_0]
+[17:53:58,916] INFO  {Executor} Finished task 0.0 in stage 2.0 (TID 2). 4003 bytes result sent to driver
+[17:53:58,929] INFO  {TaskSetManager} Finished task 0.0 in stage 2.0 (TID 2) in 86 ms on localhost (1/1)
+[17:53:58,929] INFO  {TaskSchedulerImpl} Removed TaskSet 2.0, whose tasks have all completed, from pool 
+[17:53:58,930] INFO  {DAGScheduler} ResultStage 2 (show at Main.scala:51) finished in 0.087 s
+[17:53:58,931] INFO  {DAGScheduler} Job 2 finished: show at Main.scala:51, took 0.104186 s
+[17:53:59,007] INFO  {CodeGenerator} Code generated in 71.131537 ms
+[17:53:59,269] INFO  {CodeGenerator} Code generated in 131.982906 ms
+[17:53:59,318] INFO  {SparkContext} Starting job: show at Main.scala:61
+[17:53:59,320] INFO  {DAGScheduler} Got job 3 (show at Main.scala:61) with 1 output partitions
+[17:53:59,320] INFO  {DAGScheduler} Final stage: ResultStage 3 (show at Main.scala:61)
+[17:53:59,320] INFO  {DAGScheduler} Parents of final stage: List()
+[17:53:59,321] INFO  {DAGScheduler} Missing parents: List()
+[17:53:59,321] INFO  {DAGScheduler} Submitting ResultStage 3 (MapPartitionsRDD[14] at show at Main.scala:61), which has no missing parents
+[17:53:59,327] INFO  {MemoryStore} Block broadcast_4 stored as values in memory (estimated size 40.2 KB, free 1127.5 MB)
+[17:53:59,330] INFO  {MemoryStore} Block broadcast_4_piece0 stored as bytes in memory (estimated size 13.3 KB, free 1127.5 MB)
+[17:53:59,330] INFO  {BlockManagerInfo} Added broadcast_4_piece0 in memory on 192.168.0.103:37941 (size: 13.3 KB, free: 1127.7 MB)
+[17:53:59,333] INFO  {SparkContext} Created broadcast 4 from broadcast at DAGScheduler.scala:1012
+[17:53:59,333] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[14] at show at Main.scala:61)
+[17:53:59,333] INFO  {TaskSchedulerImpl} Adding task set 3.0 with 1 tasks
+[17:53:59,336] INFO  {TaskSetManager} Starting task 0.0 in stage 3.0 (TID 3, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:53:59,337] INFO  {Executor} Running task 0.0 in stage 3.0 (TID 3)
+[17:53:59,351] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:53:59,375] WARN  {Executor} 1 block locks were not released by TID = 3:
+[rdd_2_0]
+[17:53:59,377] INFO  {Executor} Finished task 0.0 in stage 3.0 (TID 3). 4099 bytes result sent to driver
+[17:53:59,379] INFO  {TaskSetManager} Finished task 0.0 in stage 3.0 (TID 3) in 45 ms on localhost (1/1)
+[17:53:59,379] INFO  {TaskSchedulerImpl} Removed TaskSet 3.0, whose tasks have all completed, from pool 
+[17:53:59,379] INFO  {DAGScheduler} ResultStage 3 (show at Main.scala:61) finished in 0.043 s
+[17:53:59,380] INFO  {DAGScheduler} Job 3 finished: show at Main.scala:61, took 0.062140 s
+[17:53:59,408] INFO  {CodeGenerator} Code generated in 24.211175 ms
+[17:53:59,595] INFO  {CodeGenerator} Code generated in 13.764336 ms
+[17:53:59,642] INFO  {CodeGenerator} Code generated in 40.446586 ms
+[17:53:59,771] INFO  {SparkContext} Starting job: collect at Main.scala:66
+[17:53:59,778] INFO  {DAGScheduler} Registering RDD 17 (collect at Main.scala:66)
+[17:53:59,782] INFO  {DAGScheduler} Got job 4 (collect at Main.scala:66) with 1 output partitions
+[17:53:59,782] INFO  {DAGScheduler} Final stage: ResultStage 5 (collect at Main.scala:66)
+[17:53:59,782] INFO  {DAGScheduler} Parents of final stage: List(ShuffleMapStage 4)
+[17:53:59,782] INFO  {DAGScheduler} Missing parents: List(ShuffleMapStage 4)
+[17:53:59,784] INFO  {DAGScheduler} Submitting ShuffleMapStage 4 (MapPartitionsRDD[17] at collect at Main.scala:66), which has no missing parents
+[17:53:59,793] INFO  {MemoryStore} Block broadcast_5 stored as values in memory (estimated size 24.5 KB, free 1127.4 MB)
+[17:53:59,796] INFO  {MemoryStore} Block broadcast_5_piece0 stored as bytes in memory (estimated size 10.2 KB, free 1127.4 MB)
+[17:53:59,797] INFO  {BlockManagerInfo} Added broadcast_5_piece0 in memory on 192.168.0.103:37941 (size: 10.2 KB, free: 1127.6 MB)
+[17:53:59,798] INFO  {SparkContext} Created broadcast 5 from broadcast at DAGScheduler.scala:1012
+[17:53:59,805] INFO  {DAGScheduler} Submitting 1 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[17] at collect at Main.scala:66)
+[17:53:59,805] INFO  {TaskSchedulerImpl} Adding task set 4.0 with 1 tasks
+[17:53:59,808] INFO  {TaskSetManager} Starting task 0.0 in stage 4.0 (TID 4, localhost, partition 0, PROCESS_LOCAL, 5978 bytes)
+[17:53:59,808] INFO  {Executor} Running task 0.0 in stage 4.0 (TID 4)
+[17:53:59,817] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:54:00,176] INFO  {Executor} Finished task 0.0 in stage 4.0 (TID 4). 2411 bytes result sent to driver
+[17:54:00,179] INFO  {TaskSetManager} Finished task 0.0 in stage 4.0 (TID 4) in 372 ms on localhost (1/1)
+[17:54:00,179] INFO  {TaskSchedulerImpl} Removed TaskSet 4.0, whose tasks have all completed, from pool 
+[17:54:00,180] INFO  {DAGScheduler} ShuffleMapStage 4 (collect at Main.scala:66) finished in 0.375 s
+[17:54:00,181] INFO  {DAGScheduler} looking for newly runnable stages
+[17:54:00,181] INFO  {DAGScheduler} running: Set()
+[17:54:00,182] INFO  {DAGScheduler} waiting: Set(ResultStage 5)
+[17:54:00,182] INFO  {DAGScheduler} failed: Set()
+[17:54:00,184] INFO  {DAGScheduler} Submitting ResultStage 5 (MapPartitionsRDD[20] at collect at Main.scala:66), which has no missing parents
+[17:54:00,188] INFO  {MemoryStore} Block broadcast_6 stored as values in memory (estimated size 7.3 KB, free 1127.4 MB)
+[17:54:00,191] INFO  {MemoryStore} Block broadcast_6_piece0 stored as bytes in memory (estimated size 3.9 KB, free 1127.4 MB)
+[17:54:00,191] INFO  {BlockManagerInfo} Added broadcast_6_piece0 in memory on 192.168.0.103:37941 (size: 3.9 KB, free: 1127.6 MB)
+[17:54:00,192] INFO  {SparkContext} Created broadcast 6 from broadcast at DAGScheduler.scala:1012
+[17:54:00,192] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[20] at collect at Main.scala:66)
+[17:54:00,192] INFO  {TaskSchedulerImpl} Adding task set 5.0 with 1 tasks
+[17:54:00,195] INFO  {TaskSetManager} Starting task 0.0 in stage 5.0 (TID 5, localhost, partition 0, ANY, 5317 bytes)
+[17:54:00,195] INFO  {Executor} Running task 0.0 in stage 5.0 (TID 5)
+[17:54:00,210] INFO  {ShuffleBlockFetcherIterator} Getting 1 non-empty blocks out of 1 blocks
+[17:54:00,213] INFO  {ShuffleBlockFetcherIterator} Started 0 remote fetches in 7 ms
+[17:54:00,233] INFO  {Executor} Finished task 0.0 in stage 5.0 (TID 5). 1955 bytes result sent to driver
+[17:54:00,234] INFO  {TaskSetManager} Finished task 0.0 in stage 5.0 (TID 5) in 41 ms on localhost (1/1)
+[17:54:00,234] INFO  {TaskSchedulerImpl} Removed TaskSet 5.0, whose tasks have all completed, from pool 
+[17:54:00,235] INFO  {DAGScheduler} ResultStage 5 (collect at Main.scala:66) finished in 0.042 s
+[17:54:00,235] INFO  {DAGScheduler} Job 4 finished: collect at Main.scala:66, took 0.464044 s
+[17:54:00,244] INFO  {CodeGenerator} Code generated in 5.565517 ms
+[17:54:00,305] INFO  {CodeGenerator} Code generated in 23.294207 ms
+[17:54:00,331] INFO  {CodeGenerator} Code generated in 18.705827 ms
+[17:54:00,353] INFO  {SparkContext} Starting job: collect at Main.scala:67
+[17:54:00,356] INFO  {DAGScheduler} Registering RDD 23 (collect at Main.scala:67)
+[17:54:00,356] INFO  {DAGScheduler} Got job 5 (collect at Main.scala:67) with 1 output partitions
+[17:54:00,356] INFO  {DAGScheduler} Final stage: ResultStage 7 (collect at Main.scala:67)
+[17:54:00,357] INFO  {DAGScheduler} Parents of final stage: List(ShuffleMapStage 6)
+[17:54:00,357] INFO  {DAGScheduler} Missing parents: List(ShuffleMapStage 6)
+[17:54:00,358] INFO  {DAGScheduler} Submitting ShuffleMapStage 6 (MapPartitionsRDD[23] at collect at Main.scala:67), which has no missing parents
+[17:54:00,362] INFO  {MemoryStore} Block broadcast_7 stored as values in memory (estimated size 24.5 KB, free 1127.4 MB)
+[17:54:00,365] INFO  {MemoryStore} Block broadcast_7_piece0 stored as bytes in memory (estimated size 10.2 KB, free 1127.4 MB)
+[17:54:00,366] INFO  {BlockManagerInfo} Added broadcast_7_piece0 in memory on 192.168.0.103:37941 (size: 10.2 KB, free: 1127.6 MB)
+[17:54:00,366] INFO  {SparkContext} Created broadcast 7 from broadcast at DAGScheduler.scala:1012
+[17:54:00,367] INFO  {DAGScheduler} Submitting 1 missing tasks from ShuffleMapStage 6 (MapPartitionsRDD[23] at collect at Main.scala:67)
+[17:54:00,367] INFO  {TaskSchedulerImpl} Adding task set 6.0 with 1 tasks
+[17:54:00,369] INFO  {TaskSetManager} Starting task 0.0 in stage 6.0 (TID 6, localhost, partition 0, PROCESS_LOCAL, 5978 bytes)
+[17:54:00,369] INFO  {Executor} Running task 0.0 in stage 6.0 (TID 6)
+[17:54:00,374] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:54:00,507] INFO  {Executor} Finished task 0.0 in stage 6.0 (TID 6). 2324 bytes result sent to driver
+[17:54:00,509] INFO  {TaskSetManager} Finished task 0.0 in stage 6.0 (TID 6) in 140 ms on localhost (1/1)
+[17:54:00,509] INFO  {TaskSchedulerImpl} Removed TaskSet 6.0, whose tasks have all completed, from pool 
+[17:54:00,509] INFO  {DAGScheduler} ShuffleMapStage 6 (collect at Main.scala:67) finished in 0.142 s
+[17:54:00,509] INFO  {DAGScheduler} looking for newly runnable stages
+[17:54:00,509] INFO  {DAGScheduler} running: Set()
+[17:54:00,509] INFO  {DAGScheduler} waiting: Set(ResultStage 7)
+[17:54:00,509] INFO  {DAGScheduler} failed: Set()
+[17:54:00,510] INFO  {DAGScheduler} Submitting ResultStage 7 (MapPartitionsRDD[26] at collect at Main.scala:67), which has no missing parents
+[17:54:00,512] INFO  {MemoryStore} Block broadcast_8 stored as values in memory (estimated size 7.3 KB, free 1127.4 MB)
+[17:54:00,513] INFO  {MemoryStore} Block broadcast_8_piece0 stored as bytes in memory (estimated size 3.9 KB, free 1127.4 MB)
+[17:54:00,514] INFO  {BlockManagerInfo} Added broadcast_8_piece0 in memory on 192.168.0.103:37941 (size: 3.9 KB, free: 1127.6 MB)
+[17:54:00,515] INFO  {SparkContext} Created broadcast 8 from broadcast at DAGScheduler.scala:1012
+[17:54:00,515] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[26] at collect at Main.scala:67)
+[17:54:00,515] INFO  {TaskSchedulerImpl} Adding task set 7.0 with 1 tasks
+[17:54:00,516] INFO  {TaskSetManager} Starting task 0.0 in stage 7.0 (TID 7, localhost, partition 0, ANY, 5317 bytes)
+[17:54:00,517] INFO  {Executor} Running task 0.0 in stage 7.0 (TID 7)
+[17:54:00,519] INFO  {ShuffleBlockFetcherIterator} Getting 1 non-empty blocks out of 1 blocks
+[17:54:00,520] INFO  {ShuffleBlockFetcherIterator} Started 0 remote fetches in 1 ms
+[17:54:00,523] INFO  {Executor} Finished task 0.0 in stage 7.0 (TID 7). 1955 bytes result sent to driver
+[17:54:00,524] INFO  {TaskSetManager} Finished task 0.0 in stage 7.0 (TID 7) in 8 ms on localhost (1/1)
+[17:54:00,524] INFO  {TaskSchedulerImpl} Removed TaskSet 7.0, whose tasks have all completed, from pool 
+[17:54:00,525] INFO  {DAGScheduler} ResultStage 7 (collect at Main.scala:67) finished in 0.010 s
+[17:54:00,525] INFO  {DAGScheduler} Job 5 finished: collect at Main.scala:67, took 0.171529 s
+[17:54:00,605] INFO  {ContextCleaner} Cleaned accumulator 293
+[17:54:00,605] INFO  {ContextCleaner} Cleaned accumulator 294
+[17:54:00,605] INFO  {ContextCleaner} Cleaned accumulator 295
+[17:54:00,605] INFO  {ContextCleaner} Cleaned accumulator 296
+[17:54:00,605] INFO  {ContextCleaner} Cleaned accumulator 297
+[17:54:00,605] INFO  {ContextCleaner} Cleaned accumulator 298
+[17:54:00,605] INFO  {ContextCleaner} Cleaned accumulator 299
+[17:54:00,606] INFO  {ContextCleaner} Cleaned accumulator 300
+[17:54:00,617] INFO  {ContextCleaner} Cleaned shuffle 1
+[17:54:00,621] INFO  {BlockManagerInfo} Removed broadcast_7_piece0 on 192.168.0.103:37941 in memory (size: 10.2 KB, free: 1127.6 MB)
+[17:54:00,623] INFO  {BlockManagerInfo} Removed broadcast_8_piece0 on 192.168.0.103:37941 in memory (size: 3.9 KB, free: 1127.6 MB)
+[17:54:00,624] INFO  {ContextCleaner} Cleaned accumulator 95
+[17:54:00,624] INFO  {ContextCleaner} Cleaned accumulator 96
+[17:54:00,625] INFO  {BlockManagerInfo} Removed broadcast_3_piece0 on 192.168.0.103:37941 in memory (size: 11.7 KB, free: 1127.6 MB)
+[17:54:00,626] INFO  {ContextCleaner} Cleaned accumulator 141
+[17:54:00,626] INFO  {ContextCleaner} Cleaned accumulator 142
+[17:54:00,627] INFO  {BlockManagerInfo} Removed broadcast_4_piece0 on 192.168.0.103:37941 in memory (size: 13.3 KB, free: 1127.7 MB)
+[17:54:00,627] INFO  {ContextCleaner} Cleaned accumulator 187
+[17:54:00,628] INFO  {ContextCleaner} Cleaned accumulator 188
+[17:54:00,628] INFO  {ContextCleaner} Cleaned accumulator 189
+[17:54:00,628] INFO  {ContextCleaner} Cleaned accumulator 190
+[17:54:00,628] INFO  {ContextCleaner} Cleaned accumulator 191
+[17:54:00,628] INFO  {ContextCleaner} Cleaned accumulator 192
+[17:54:00,629] INFO  {BlockManagerInfo} Removed broadcast_5_piece0 on 192.168.0.103:37941 in memory (size: 10.2 KB, free: 1127.7 MB)
+[17:54:00,630] INFO  {BlockManagerInfo} Removed broadcast_6_piece0 on 192.168.0.103:37941 in memory (size: 3.9 KB, free: 1127.7 MB)
+[17:54:00,631] INFO  {ContextCleaner} Cleaned accumulator 288
+[17:54:00,632] INFO  {ContextCleaner} Cleaned accumulator 289
+[17:54:00,632] INFO  {ContextCleaner} Cleaned accumulator 290
+[17:54:00,632] INFO  {ContextCleaner} Cleaned accumulator 291
+[17:54:00,632] INFO  {ContextCleaner} Cleaned accumulator 292
+[17:54:00,632] INFO  {ContextCleaner} Cleaned accumulator 193
+[17:54:00,632] INFO  {ContextCleaner} Cleaned accumulator 194
+[17:54:00,632] INFO  {ContextCleaner} Cleaned accumulator 195
+[17:54:00,632] INFO  {ContextCleaner} Cleaned accumulator 196
+[17:54:00,632] INFO  {ContextCleaner} Cleaned accumulator 197
+[17:54:00,633] INFO  {ContextCleaner} Cleaned accumulator 198
+[17:54:00,633] INFO  {ContextCleaner} Cleaned accumulator 199
+[17:54:00,633] INFO  {ContextCleaner} Cleaned shuffle 0
+[17:54:00,673] INFO  {CodeGenerator} Code generated in 49.378151 ms
+[17:54:00,693] INFO  {SparkContext} Starting job: show at Main.scala:82
+[17:54:00,694] INFO  {DAGScheduler} Got job 6 (show at Main.scala:82) with 1 output partitions
+[17:54:00,694] INFO  {DAGScheduler} Final stage: ResultStage 8 (show at Main.scala:82)
+[17:54:00,694] INFO  {DAGScheduler} Parents of final stage: List()
+[17:54:00,695] INFO  {DAGScheduler} Missing parents: List()
+[17:54:00,695] INFO  {DAGScheduler} Submitting ResultStage 8 (MapPartitionsRDD[29] at show at Main.scala:82), which has no missing parents
+[17:54:00,698] INFO  {MemoryStore} Block broadcast_9 stored as values in memory (estimated size 53.4 KB, free 1127.5 MB)
+[17:54:00,701] INFO  {MemoryStore} Block broadcast_9_piece0 stored as bytes in memory (estimated size 15.1 KB, free 1127.5 MB)
+[17:54:00,705] INFO  {BlockManagerInfo} Added broadcast_9_piece0 in memory on 192.168.0.103:37941 (size: 15.1 KB, free: 1127.7 MB)
+[17:54:00,706] INFO  {SparkContext} Created broadcast 9 from broadcast at DAGScheduler.scala:1012
+[17:54:00,706] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 8 (MapPartitionsRDD[29] at show at Main.scala:82)
+[17:54:00,706] INFO  {TaskSchedulerImpl} Adding task set 8.0 with 1 tasks
+[17:54:00,709] INFO  {TaskSetManager} Starting task 0.0 in stage 8.0 (TID 8, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:54:00,710] INFO  {Executor} Running task 0.0 in stage 8.0 (TID 8)
+[17:54:00,716] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:54:00,724] WARN  {Executor} 1 block locks were not released by TID = 8:
+[rdd_2_0]
+[17:54:00,725] INFO  {Executor} Finished task 0.0 in stage 8.0 (TID 8). 4020 bytes result sent to driver
+[17:54:00,726] INFO  {TaskSetManager} Finished task 0.0 in stage 8.0 (TID 8) in 19 ms on localhost (1/1)
+[17:54:00,726] INFO  {TaskSchedulerImpl} Removed TaskSet 8.0, whose tasks have all completed, from pool 
+[17:54:00,727] INFO  {DAGScheduler} ResultStage 8 (show at Main.scala:82) finished in 0.020 s
+[17:54:00,727] INFO  {DAGScheduler} Job 6 finished: show at Main.scala:82, took 0.033695 s
+[17:54:00,759] INFO  {CodeGenerator} Code generated in 28.390097 ms
+[17:54:00,948] INFO  {CodeGenerator} Code generated in 70.502792 ms
+[17:54:00,969] INFO  {SparkContext} Starting job: show at Main.scala:91
+[17:54:00,970] INFO  {DAGScheduler} Got job 7 (show at Main.scala:91) with 1 output partitions
+[17:54:00,970] INFO  {DAGScheduler} Final stage: ResultStage 9 (show at Main.scala:91)
+[17:54:00,970] INFO  {DAGScheduler} Parents of final stage: List()
+[17:54:00,974] INFO  {DAGScheduler} Missing parents: List()
+[17:54:00,974] INFO  {DAGScheduler} Submitting ResultStage 9 (MapPartitionsRDD[32] at show at Main.scala:91), which has no missing parents
+[17:54:00,980] INFO  {MemoryStore} Block broadcast_10 stored as values in memory (estimated size 62.1 KB, free 1127.4 MB)
+[17:54:00,984] INFO  {MemoryStore} Block broadcast_10_piece0 stored as bytes in memory (estimated size 16.4 KB, free 1127.4 MB)
+[17:54:00,985] INFO  {BlockManagerInfo} Added broadcast_10_piece0 in memory on 192.168.0.103:37941 (size: 16.4 KB, free: 1127.6 MB)
+[17:54:00,987] INFO  {SparkContext} Created broadcast 10 from broadcast at DAGScheduler.scala:1012
+[17:54:00,991] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 9 (MapPartitionsRDD[32] at show at Main.scala:91)
+[17:54:00,992] INFO  {TaskSchedulerImpl} Adding task set 9.0 with 1 tasks
+[17:54:00,994] INFO  {TaskSetManager} Starting task 0.0 in stage 9.0 (TID 9, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[17:54:00,994] INFO  {Executor} Running task 0.0 in stage 9.0 (TID 9)
+[17:54:01,000] INFO  {BlockManager} Found block rdd_2_0 locally
+[17:54:01,011] WARN  {Executor} 1 block locks were not released by TID = 9:
+[rdd_2_0]
+[17:54:01,012] INFO  {Executor} Finished task 0.0 in stage 9.0 (TID 9). 4083 bytes result sent to driver
+[17:54:01,015] INFO  {TaskSetManager} Finished task 0.0 in stage 9.0 (TID 9) in 22 ms on localhost (1/1)
+[17:54:01,016] INFO  {TaskSchedulerImpl} Removed TaskSet 9.0, whose tasks have all completed, from pool 
+[17:54:01,020] INFO  {DAGScheduler} ResultStage 9 (show at Main.scala:91) finished in 0.028 s
+[17:54:01,021] INFO  {DAGScheduler} Job 7 finished: show at Main.scala:91, took 0.051777 s
+[17:54:01,063] INFO  {CodeGenerator} Code generated in 36.977941 ms
+[17:54:01,757] INFO  {CodeGenerator} Code generated in 28.208956 ms
+[17:54:01,789] INFO  {CodeGenerator} Code generated in 21.884017 ms
+[17:54:01,834] INFO  {CodeGenerator} Code generated in 9.203797 ms
+[17:54:01,854] INFO  {CodeGenerator} Code generated in 12.576881 ms
+[17:54:01,866] INFO  {SparkContext} Invoking stop() from shutdown hook
+[17:54:01,873] INFO  {ServerConnector} Stopped ServerConnector@4b2a01d4{HTTP/1.1}{0.0.0.0:4040}
+[17:54:01,876] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3016fd5e{/stages/stage/kill,null,UNAVAILABLE}
+[17:54:01,876] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3b00856b{/api,null,UNAVAILABLE}
+[17:54:01,876] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3bcbb589{/,null,UNAVAILABLE}
+[17:54:01,877] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@1d730606{/static,null,UNAVAILABLE}
+[17:54:01,877] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@4dc8caa7{/executors/threadDump/json,null,UNAVAILABLE}
+[17:54:01,877] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@626c44e7{/executors/threadDump,null,UNAVAILABLE}
+[17:54:01,877] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@542e560f{/executors/json,null,UNAVAILABLE}
+[17:54:01,877] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@241e8ea6{/executors,null,UNAVAILABLE}
+[17:54:01,877] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3243b914{/environment/json,null,UNAVAILABLE}
+[17:54:01,877] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@31d0e481{/environment,null,UNAVAILABLE}
+[17:54:01,878] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@59252cb6{/storage/rdd/json,null,UNAVAILABLE}
+[17:54:01,878] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@6d9f7a80{/storage/rdd,null,UNAVAILABLE}
+[17:54:01,878] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5ccbeb64{/storage/json,null,UNAVAILABLE}
+[17:54:01,878] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@112f364d{/storage,null,UNAVAILABLE}
+[17:54:01,878] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@362045c0{/stages/pool/json,null,UNAVAILABLE}
+[17:54:01,878] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5a9d6f02{/stages/pool,null,UNAVAILABLE}
+[17:54:01,878] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@189aa67a{/stages/stage/json,null,UNAVAILABLE}
+[17:54:01,878] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@c4ed84{/stages/stage,null,UNAVAILABLE}
+[17:54:01,879] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5f9678e1{/stages/json,null,UNAVAILABLE}
+[17:54:01,879] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@373ebf74{/stages,null,UNAVAILABLE}
+[17:54:01,879] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5669c5fb{/jobs/job/json,null,UNAVAILABLE}
+[17:54:01,879] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@56113384{/jobs/job,null,UNAVAILABLE}
+[17:54:01,879] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@340b9973{/jobs/json,null,UNAVAILABLE}
+[17:54:01,879] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@52066604{/jobs,null,UNAVAILABLE}
+[17:54:01,883] INFO  {SparkUI} Stopped Spark web UI at http://192.168.0.103:4040
+[17:54:01,897] INFO  {MapOutputTrackerMasterEndpoint} MapOutputTrackerMasterEndpoint stopped!
+[17:54:01,907] INFO  {MemoryStore} MemoryStore cleared
+[17:54:01,909] INFO  {BlockManager} BlockManager stopped
+[17:54:01,914] INFO  {BlockManagerMaster} BlockManagerMaster stopped
+[17:54:01,924] INFO  {OutputCommitCoordinator$OutputCommitCoordinatorEndpoint} OutputCommitCoordinator stopped!
+[17:54:01,933] INFO  {SparkContext} Successfully stopped SparkContext
+[17:54:01,934] INFO  {ShutdownHookManager} Shutdown hook called
+[17:54:01,935] INFO  {ShutdownHookManager} Deleting directory /tmp/spark-25afd4fa-a2c5-47c8-b8b4-46223ebd60da
+[18:06:45,780] INFO  {SparkContext} Running Spark version 2.0.1
+[18:06:46,356] WARN  {NativeCodeLoader} Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[18:06:46,635] WARN  {Utils} Your hostname, victor resolves to a loopback address: 127.0.1.1; using 192.168.0.103 instead (on interface wlp4s0)
+[18:06:46,638] WARN  {Utils} Set SPARK_LOCAL_IP if you need to bind to another address
+[18:06:46,849] INFO  {SecurityManager} Changing view acls to: victor
+[18:06:46,850] INFO  {SecurityManager} Changing modify acls to: victor
+[18:06:46,851] INFO  {SecurityManager} Changing view acls groups to: 
+[18:06:46,853] INFO  {SecurityManager} Changing modify acls groups to: 
+[18:06:46,854] INFO  {SecurityManager} SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(victor); groups with view permissions: Set(); users  with modify permissions: Set(victor); groups with modify permissions: Set()
+[18:06:47,751] INFO  {Utils} Successfully started service 'sparkDriver' on port 34081.
+[18:06:47,788] INFO  {SparkEnv} Registering MapOutputTracker
+[18:06:47,826] INFO  {SparkEnv} Registering BlockManagerMaster
+[18:06:47,863] INFO  {DiskBlockManager} Created local directory at /tmp/blockmgr-a940b71e-dc82-47a1-8025-876fb44508b6
+[18:06:47,905] INFO  {MemoryStore} MemoryStore started with capacity 1128.9 MB
+[18:06:48,016] INFO  {SparkEnv} Registering OutputCommitCoordinator
+[18:06:48,198] INFO  {log} Logging initialized @3982ms
+[18:06:48,461] INFO  {Server} jetty-9.2.z-SNAPSHOT
+[18:06:48,484] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@52066604{/jobs,null,AVAILABLE}
+[18:06:48,485] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@340b9973{/jobs/json,null,AVAILABLE}
+[18:06:48,485] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@56113384{/jobs/job,null,AVAILABLE}
+[18:06:48,485] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5669c5fb{/jobs/job/json,null,AVAILABLE}
+[18:06:48,485] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@373ebf74{/stages,null,AVAILABLE}
+[18:06:48,486] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5f9678e1{/stages/json,null,AVAILABLE}
+[18:06:48,486] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@c4ed84{/stages/stage,null,AVAILABLE}
+[18:06:48,486] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@189aa67a{/stages/stage/json,null,AVAILABLE}
+[18:06:48,486] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5a9d6f02{/stages/pool,null,AVAILABLE}
+[18:06:48,487] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@362045c0{/stages/pool/json,null,AVAILABLE}
+[18:06:48,487] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@112f364d{/storage,null,AVAILABLE}
+[18:06:48,487] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5ccbeb64{/storage/json,null,AVAILABLE}
+[18:06:48,487] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6d9f7a80{/storage/rdd,null,AVAILABLE}
+[18:06:48,488] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@59252cb6{/storage/rdd/json,null,AVAILABLE}
+[18:06:48,488] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@31d0e481{/environment,null,AVAILABLE}
+[18:06:48,488] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3243b914{/environment/json,null,AVAILABLE}
+[18:06:48,488] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@241e8ea6{/executors,null,AVAILABLE}
+[18:06:48,488] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@542e560f{/executors/json,null,AVAILABLE}
+[18:06:48,489] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@626c44e7{/executors/threadDump,null,AVAILABLE}
+[18:06:48,489] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@4dc8caa7{/executors/threadDump/json,null,AVAILABLE}
+[18:06:48,497] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@1d730606{/static,null,AVAILABLE}
+[18:06:48,497] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3bcbb589{/,null,AVAILABLE}
+[18:06:48,499] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3b00856b{/api,null,AVAILABLE}
+[18:06:48,499] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3016fd5e{/stages/stage/kill,null,AVAILABLE}
+[18:06:48,506] INFO  {ServerConnector} Started ServerConnector@4b2a01d4{HTTP/1.1}{0.0.0.0:4040}
+[18:06:48,507] INFO  {Server} Started @4294ms
+[18:06:48,507] INFO  {Utils} Successfully started service 'SparkUI' on port 4040.
+[18:06:48,509] INFO  {SparkUI} Bound SparkUI to 0.0.0.0, and started at http://192.168.0.103:4040
+[18:06:48,596] INFO  {Executor} Starting executor ID driver on host localhost
+[18:06:48,630] INFO  {Utils} Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44681.
+[18:06:48,632] INFO  {NettyBlockTransferService} Server created on 192.168.0.103:44681
+[18:06:48,634] INFO  {BlockManagerMaster} Registering BlockManager BlockManagerId(driver, 192.168.0.103, 44681)
+[18:06:48,638] INFO  {BlockManagerMasterEndpoint} Registering block manager 192.168.0.103:44681 with 1128.9 MB RAM, BlockManagerId(driver, 192.168.0.103, 44681)
+[18:06:48,642] INFO  {BlockManagerMaster} Registered BlockManager BlockManagerId(driver, 192.168.0.103, 44681)
+[18:06:48,799] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6d8792db{/metrics/json,null,AVAILABLE}
+[18:06:48,844] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6063d80a{/SQL,null,AVAILABLE}
+[18:06:48,845] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@355e34c7{/SQL/json,null,AVAILABLE}
+[18:06:48,846] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@302fec27{/SQL/execution,null,AVAILABLE}
+[18:06:48,847] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@48c40605{/SQL/execution/json,null,AVAILABLE}
+[18:06:48,849] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@2f2bf0e2{/static/sql,null,AVAILABLE}
+[18:06:48,864] INFO  {SharedState} Warehouse path is '/home/victor/Desktop/ML/vt17-lab1/spark-warehouse'.
+[18:06:50,944] INFO  {FileSourceStrategy} Pruning directories with: 
+[18:06:50,947] INFO  {FileSourceStrategy} Post-Scan Filters: 
+[18:06:50,952] INFO  {FileSourceStrategy} Pruned Data Schema: struct<value: string>
+[18:06:50,953] INFO  {FileSourceStrategy} Pushed Filters: 
+[18:06:51,077] INFO  {MemoryStore} Block broadcast_0 stored as values in memory (estimated size 131.0 KB, free 1128.8 MB)
+[18:06:51,125] INFO  {MemoryStore} Block broadcast_0_piece0 stored as bytes in memory (estimated size 14.6 KB, free 1128.8 MB)
+[18:06:51,153] INFO  {BlockManagerInfo} Added broadcast_0_piece0 in memory on 192.168.0.103:44681 (size: 14.6 KB, free: 1128.9 MB)
+[18:06:51,161] INFO  {SparkContext} Created broadcast 0 from cache at Main.scala:23
+[18:06:51,167] INFO  {FileSourceStrategy} Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[18:06:51,672] INFO  {CodeGenerator} Code generated in 219.082758 ms
+[18:06:51,890] INFO  {CodeGenerator} Code generated in 29.421116 ms
+[18:06:51,946] INFO  {SparkContext} Starting job: show at Main.scala:33
+[18:06:51,972] INFO  {DAGScheduler} Got job 0 (show at Main.scala:33) with 1 output partitions
+[18:06:51,973] INFO  {DAGScheduler} Final stage: ResultStage 0 (show at Main.scala:33)
+[18:06:51,973] INFO  {DAGScheduler} Parents of final stage: List()
+[18:06:51,978] INFO  {DAGScheduler} Missing parents: List()
+[18:06:51,983] INFO  {DAGScheduler} Submitting ResultStage 0 (MapPartitionsRDD[5] at show at Main.scala:33), which has no missing parents
+[18:06:52,047] INFO  {MemoryStore} Block broadcast_1 stored as values in memory (estimated size 18.3 KB, free 1128.7 MB)
+[18:06:52,050] INFO  {MemoryStore} Block broadcast_1_piece0 stored as bytes in memory (estimated size 8.5 KB, free 1128.7 MB)
+[18:06:52,051] INFO  {BlockManagerInfo} Added broadcast_1_piece0 in memory on 192.168.0.103:44681 (size: 8.5 KB, free: 1128.9 MB)
+[18:06:52,052] INFO  {SparkContext} Created broadcast 1 from broadcast at DAGScheduler.scala:1012
+[18:06:52,055] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[5] at show at Main.scala:33)
+[18:06:52,057] INFO  {TaskSchedulerImpl} Adding task set 0.0 with 1 tasks
+[18:06:52,101] INFO  {TaskSetManager} Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:06:52,109] INFO  {Executor} Running task 0.0 in stage 0.0 (TID 0)
+[18:06:52,150] INFO  {FileScanRDD} Reading File path: file:///home/victor/Desktop/ML/vt17-lab1/src/main/resources/millionsong.txt, range: 0-1248115, partition values: [empty row]
+[18:06:52,164] INFO  {CodeGenerator} Code generated in 9.806367 ms
+[18:06:52,302] INFO  {MemoryStore} Block rdd_2_0 stored as values in memory (estimated size 1239.2 KB, free 1127.5 MB)
+[18:06:52,303] INFO  {BlockManagerInfo} Added rdd_2_0 in memory on 192.168.0.103:44681 (size: 1239.2 KB, free: 1127.7 MB)
+[18:06:52,316] INFO  {CodeGenerator} Code generated in 3.873347 ms
+[18:06:52,349] INFO  {CodeGenerator} Code generated in 25.72946 ms
+[18:06:52,369] WARN  {Executor} 1 block locks were not released by TID = 0:
+[rdd_2_0]
+[18:06:52,378] INFO  {Executor} Finished task 0.0 in stage 0.0 (TID 0). 4550 bytes result sent to driver
+[18:06:52,386] INFO  {TaskSetManager} Finished task 0.0 in stage 0.0 (TID 0) in 302 ms on localhost (1/1)
+[18:06:52,387] INFO  {TaskSchedulerImpl} Removed TaskSet 0.0, whose tasks have all completed, from pool 
+[18:06:52,392] INFO  {DAGScheduler} ResultStage 0 (show at Main.scala:33) finished in 0.320 s
+[18:06:52,398] INFO  {DAGScheduler} Job 0 finished: show at Main.scala:33, took 0.452262 s
+[18:06:52,441] INFO  {CodeGenerator} Code generated in 22.147375 ms
+[18:06:52,510] INFO  {ContextCleaner} Cleaned accumulator 3
+[18:06:52,510] INFO  {ContextCleaner} Cleaned accumulator 4
+[18:06:52,526] INFO  {BlockManagerInfo} Removed broadcast_1_piece0 on 192.168.0.103:44681 in memory (size: 8.5 KB, free: 1127.7 MB)
+[18:06:52,621] INFO  {CodeGenerator} Code generated in 56.703071 ms
+[18:06:52,640] INFO  {SparkContext} Starting job: show at Main.scala:42
+[18:06:52,642] INFO  {DAGScheduler} Got job 1 (show at Main.scala:42) with 1 output partitions
+[18:06:52,642] INFO  {DAGScheduler} Final stage: ResultStage 1 (show at Main.scala:42)
+[18:06:52,642] INFO  {DAGScheduler} Parents of final stage: List()
+[18:06:52,645] INFO  {DAGScheduler} Missing parents: List()
+[18:06:52,645] INFO  {DAGScheduler} Submitting ResultStage 1 (MapPartitionsRDD[8] at show at Main.scala:42), which has no missing parents
+[18:06:52,654] INFO  {MemoryStore} Block broadcast_2 stored as values in memory (estimated size 25.6 KB, free 1127.5 MB)
+[18:06:52,656] INFO  {MemoryStore} Block broadcast_2_piece0 stored as bytes in memory (estimated size 10.0 KB, free 1127.5 MB)
+[18:06:52,657] INFO  {BlockManagerInfo} Added broadcast_2_piece0 in memory on 192.168.0.103:44681 (size: 10.0 KB, free: 1127.7 MB)
+[18:06:52,657] INFO  {SparkContext} Created broadcast 2 from broadcast at DAGScheduler.scala:1012
+[18:06:52,657] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[8] at show at Main.scala:42)
+[18:06:52,657] INFO  {TaskSchedulerImpl} Adding task set 1.0 with 1 tasks
+[18:06:52,665] INFO  {TaskSetManager} Starting task 0.0 in stage 1.0 (TID 1, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:06:52,665] INFO  {Executor} Running task 0.0 in stage 1.0 (TID 1)
+[18:06:52,680] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:06:52,701] WARN  {Executor} 1 block locks were not released by TID = 1:
+[rdd_2_0]
+[18:06:52,702] INFO  {Executor} Finished task 0.0 in stage 1.0 (TID 1). 3929 bytes result sent to driver
+[18:06:52,704] INFO  {TaskSetManager} Finished task 0.0 in stage 1.0 (TID 1) in 42 ms on localhost (1/1)
+[18:06:52,704] INFO  {TaskSchedulerImpl} Removed TaskSet 1.0, whose tasks have all completed, from pool 
+[18:06:52,705] INFO  {DAGScheduler} ResultStage 1 (show at Main.scala:42) finished in 0.043 s
+[18:06:52,705] INFO  {DAGScheduler} Job 1 finished: show at Main.scala:42, took 0.065033 s
+[18:06:52,741] INFO  {CodeGenerator} Code generated in 25.40945 ms
+[18:06:52,881] INFO  {ContextCleaner} Cleaned accumulator 49
+[18:06:52,882] INFO  {ContextCleaner} Cleaned accumulator 50
+[18:06:52,884] INFO  {BlockManagerInfo} Removed broadcast_2_piece0 on 192.168.0.103:44681 in memory (size: 10.0 KB, free: 1127.7 MB)
+[18:06:53,077] INFO  {CodeGenerator} Code generated in 90.43803 ms
+[18:06:53,096] INFO  {SparkContext} Starting job: show at Main.scala:51
+[18:06:53,097] INFO  {DAGScheduler} Got job 2 (show at Main.scala:51) with 1 output partitions
+[18:06:53,098] INFO  {DAGScheduler} Final stage: ResultStage 2 (show at Main.scala:51)
+[18:06:53,098] INFO  {DAGScheduler} Parents of final stage: List()
+[18:06:53,099] INFO  {DAGScheduler} Missing parents: List()
+[18:06:53,100] INFO  {DAGScheduler} Submitting ResultStage 2 (MapPartitionsRDD[11] at show at Main.scala:51), which has no missing parents
+[18:06:53,109] INFO  {MemoryStore} Block broadcast_3 stored as values in memory (estimated size 34.3 KB, free 1127.5 MB)
+[18:06:53,113] INFO  {MemoryStore} Block broadcast_3_piece0 stored as bytes in memory (estimated size 11.7 KB, free 1127.5 MB)
+[18:06:53,113] INFO  {BlockManagerInfo} Added broadcast_3_piece0 in memory on 192.168.0.103:44681 (size: 11.7 KB, free: 1127.7 MB)
+[18:06:53,115] INFO  {SparkContext} Created broadcast 3 from broadcast at DAGScheduler.scala:1012
+[18:06:53,115] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[11] at show at Main.scala:51)
+[18:06:53,115] INFO  {TaskSchedulerImpl} Adding task set 2.0 with 1 tasks
+[18:06:53,118] INFO  {TaskSetManager} Starting task 0.0 in stage 2.0 (TID 2, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:06:53,119] INFO  {Executor} Running task 0.0 in stage 2.0 (TID 2)
+[18:06:53,140] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:06:53,170] WARN  {Executor} 1 block locks were not released by TID = 2:
+[rdd_2_0]
+[18:06:53,173] INFO  {Executor} Finished task 0.0 in stage 2.0 (TID 2). 4003 bytes result sent to driver
+[18:06:53,178] INFO  {TaskSetManager} Finished task 0.0 in stage 2.0 (TID 2) in 62 ms on localhost (1/1)
+[18:06:53,178] INFO  {TaskSchedulerImpl} Removed TaskSet 2.0, whose tasks have all completed, from pool 
+[18:06:53,181] INFO  {DAGScheduler} ResultStage 2 (show at Main.scala:51) finished in 0.065 s
+[18:06:53,184] INFO  {DAGScheduler} Job 2 finished: show at Main.scala:51, took 0.087584 s
+[18:06:53,228] INFO  {CodeGenerator} Code generated in 36.736831 ms
+[18:06:53,426] INFO  {CodeGenerator} Code generated in 86.5525 ms
+[18:06:53,453] INFO  {SparkContext} Starting job: show at Main.scala:61
+[18:06:53,454] INFO  {DAGScheduler} Got job 3 (show at Main.scala:61) with 1 output partitions
+[18:06:53,454] INFO  {DAGScheduler} Final stage: ResultStage 3 (show at Main.scala:61)
+[18:06:53,454] INFO  {DAGScheduler} Parents of final stage: List()
+[18:06:53,456] INFO  {DAGScheduler} Missing parents: List()
+[18:06:53,456] INFO  {DAGScheduler} Submitting ResultStage 3 (MapPartitionsRDD[14] at show at Main.scala:61), which has no missing parents
+[18:06:53,461] INFO  {MemoryStore} Block broadcast_4 stored as values in memory (estimated size 40.2 KB, free 1127.5 MB)
+[18:06:53,463] INFO  {MemoryStore} Block broadcast_4_piece0 stored as bytes in memory (estimated size 13.3 KB, free 1127.5 MB)
+[18:06:53,464] INFO  {BlockManagerInfo} Added broadcast_4_piece0 in memory on 192.168.0.103:44681 (size: 13.3 KB, free: 1127.7 MB)
+[18:06:53,465] INFO  {SparkContext} Created broadcast 4 from broadcast at DAGScheduler.scala:1012
+[18:06:53,465] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[14] at show at Main.scala:61)
+[18:06:53,465] INFO  {TaskSchedulerImpl} Adding task set 3.0 with 1 tasks
+[18:06:53,467] INFO  {TaskSetManager} Starting task 0.0 in stage 3.0 (TID 3, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:06:53,468] INFO  {Executor} Running task 0.0 in stage 3.0 (TID 3)
+[18:06:53,481] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:06:53,493] WARN  {Executor} 1 block locks were not released by TID = 3:
+[rdd_2_0]
+[18:06:53,494] INFO  {Executor} Finished task 0.0 in stage 3.0 (TID 3). 4012 bytes result sent to driver
+[18:06:53,495] INFO  {TaskSetManager} Finished task 0.0 in stage 3.0 (TID 3) in 29 ms on localhost (1/1)
+[18:06:53,495] INFO  {TaskSchedulerImpl} Removed TaskSet 3.0, whose tasks have all completed, from pool 
+[18:06:53,496] INFO  {DAGScheduler} ResultStage 3 (show at Main.scala:61) finished in 0.030 s
+[18:06:53,497] INFO  {DAGScheduler} Job 3 finished: show at Main.scala:61, took 0.043906 s
+[18:06:53,517] INFO  {CodeGenerator} Code generated in 17.733705 ms
+[18:06:53,672] INFO  {CodeGenerator} Code generated in 26.162821 ms
+[18:06:53,723] INFO  {CodeGenerator} Code generated in 37.272594 ms
+[18:06:53,802] INFO  {SparkContext} Starting job: collect at Main.scala:66
+[18:06:53,812] INFO  {DAGScheduler} Registering RDD 17 (collect at Main.scala:66)
+[18:06:53,813] INFO  {DAGScheduler} Got job 4 (collect at Main.scala:66) with 1 output partitions
+[18:06:53,813] INFO  {DAGScheduler} Final stage: ResultStage 5 (collect at Main.scala:66)
+[18:06:53,813] INFO  {DAGScheduler} Parents of final stage: List(ShuffleMapStage 4)
+[18:06:53,813] INFO  {DAGScheduler} Missing parents: List(ShuffleMapStage 4)
+[18:06:53,815] INFO  {DAGScheduler} Submitting ShuffleMapStage 4 (MapPartitionsRDD[17] at collect at Main.scala:66), which has no missing parents
+[18:06:53,826] INFO  {MemoryStore} Block broadcast_5 stored as values in memory (estimated size 24.5 KB, free 1127.4 MB)
+[18:06:53,828] INFO  {MemoryStore} Block broadcast_5_piece0 stored as bytes in memory (estimated size 10.1 KB, free 1127.4 MB)
+[18:06:53,829] INFO  {BlockManagerInfo} Added broadcast_5_piece0 in memory on 192.168.0.103:44681 (size: 10.1 KB, free: 1127.6 MB)
+[18:06:53,829] INFO  {SparkContext} Created broadcast 5 from broadcast at DAGScheduler.scala:1012
+[18:06:53,832] INFO  {DAGScheduler} Submitting 1 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[17] at collect at Main.scala:66)
+[18:06:53,832] INFO  {TaskSchedulerImpl} Adding task set 4.0 with 1 tasks
+[18:06:53,837] INFO  {TaskSetManager} Starting task 0.0 in stage 4.0 (TID 4, localhost, partition 0, PROCESS_LOCAL, 5978 bytes)
+[18:06:53,837] INFO  {Executor} Running task 0.0 in stage 4.0 (TID 4)
+[18:06:53,846] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:06:54,354] INFO  {Executor} Finished task 0.0 in stage 4.0 (TID 4). 2411 bytes result sent to driver
+[18:06:54,356] INFO  {TaskSetManager} Finished task 0.0 in stage 4.0 (TID 4) in 523 ms on localhost (1/1)
+[18:06:54,356] INFO  {TaskSchedulerImpl} Removed TaskSet 4.0, whose tasks have all completed, from pool 
+[18:06:54,358] INFO  {DAGScheduler} ShuffleMapStage 4 (collect at Main.scala:66) finished in 0.522 s
+[18:06:54,358] INFO  {DAGScheduler} looking for newly runnable stages
+[18:06:54,358] INFO  {DAGScheduler} running: Set()
+[18:06:54,359] INFO  {DAGScheduler} waiting: Set(ResultStage 5)
+[18:06:54,359] INFO  {DAGScheduler} failed: Set()
+[18:06:54,360] INFO  {DAGScheduler} Submitting ResultStage 5 (MapPartitionsRDD[20] at collect at Main.scala:66), which has no missing parents
+[18:06:54,364] INFO  {MemoryStore} Block broadcast_6 stored as values in memory (estimated size 7.3 KB, free 1127.4 MB)
+[18:06:54,366] INFO  {MemoryStore} Block broadcast_6_piece0 stored as bytes in memory (estimated size 3.9 KB, free 1127.4 MB)
+[18:06:54,366] INFO  {BlockManagerInfo} Added broadcast_6_piece0 in memory on 192.168.0.103:44681 (size: 3.9 KB, free: 1127.6 MB)
+[18:06:54,367] INFO  {SparkContext} Created broadcast 6 from broadcast at DAGScheduler.scala:1012
+[18:06:54,367] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[20] at collect at Main.scala:66)
+[18:06:54,367] INFO  {TaskSchedulerImpl} Adding task set 5.0 with 1 tasks
+[18:06:54,370] INFO  {TaskSetManager} Starting task 0.0 in stage 5.0 (TID 5, localhost, partition 0, ANY, 5317 bytes)
+[18:06:54,371] INFO  {Executor} Running task 0.0 in stage 5.0 (TID 5)
+[18:06:54,382] INFO  {ShuffleBlockFetcherIterator} Getting 1 non-empty blocks out of 1 blocks
+[18:06:54,383] INFO  {ShuffleBlockFetcherIterator} Started 0 remote fetches in 4 ms
+[18:06:54,395] INFO  {Executor} Finished task 0.0 in stage 5.0 (TID 5). 1955 bytes result sent to driver
+[18:06:54,396] INFO  {TaskSetManager} Finished task 0.0 in stage 5.0 (TID 5) in 28 ms on localhost (1/1)
+[18:06:54,396] INFO  {TaskSchedulerImpl} Removed TaskSet 5.0, whose tasks have all completed, from pool 
+[18:06:54,396] INFO  {DAGScheduler} ResultStage 5 (collect at Main.scala:66) finished in 0.028 s
+[18:06:54,397] INFO  {DAGScheduler} Job 4 finished: collect at Main.scala:66, took 0.594737 s
+[18:06:54,405] INFO  {CodeGenerator} Code generated in 5.645816 ms
+[18:06:54,471] INFO  {CodeGenerator} Code generated in 20.916238 ms
+[18:06:54,520] INFO  {CodeGenerator} Code generated in 39.01319 ms
+[18:06:54,557] INFO  {SparkContext} Starting job: collect at Main.scala:67
+[18:06:54,558] INFO  {DAGScheduler} Registering RDD 23 (collect at Main.scala:67)
+[18:06:54,559] INFO  {DAGScheduler} Got job 5 (collect at Main.scala:67) with 1 output partitions
+[18:06:54,559] INFO  {DAGScheduler} Final stage: ResultStage 7 (collect at Main.scala:67)
+[18:06:54,559] INFO  {DAGScheduler} Parents of final stage: List(ShuffleMapStage 6)
+[18:06:54,559] INFO  {DAGScheduler} Missing parents: List(ShuffleMapStage 6)
+[18:06:54,561] INFO  {DAGScheduler} Submitting ShuffleMapStage 6 (MapPartitionsRDD[23] at collect at Main.scala:67), which has no missing parents
+[18:06:54,566] INFO  {MemoryStore} Block broadcast_7 stored as values in memory (estimated size 24.5 KB, free 1127.4 MB)
+[18:06:54,568] INFO  {MemoryStore} Block broadcast_7_piece0 stored as bytes in memory (estimated size 10.2 KB, free 1127.4 MB)
+[18:06:54,569] INFO  {BlockManagerInfo} Added broadcast_7_piece0 in memory on 192.168.0.103:44681 (size: 10.2 KB, free: 1127.6 MB)
+[18:06:54,570] INFO  {SparkContext} Created broadcast 7 from broadcast at DAGScheduler.scala:1012
+[18:06:54,570] INFO  {DAGScheduler} Submitting 1 missing tasks from ShuffleMapStage 6 (MapPartitionsRDD[23] at collect at Main.scala:67)
+[18:06:54,571] INFO  {TaskSchedulerImpl} Adding task set 6.0 with 1 tasks
+[18:06:54,574] INFO  {TaskSetManager} Starting task 0.0 in stage 6.0 (TID 6, localhost, partition 0, PROCESS_LOCAL, 5978 bytes)
+[18:06:54,575] INFO  {Executor} Running task 0.0 in stage 6.0 (TID 6)
+[18:06:54,581] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:06:54,817] INFO  {ContextCleaner} Cleaned accumulator 197
+[18:06:54,817] INFO  {ContextCleaner} Cleaned accumulator 198
+[18:06:54,818] INFO  {ContextCleaner} Cleaned accumulator 199
+[18:06:54,825] INFO  {ContextCleaner} Cleaned shuffle 0
+[18:06:54,827] INFO  {BlockManagerInfo} Removed broadcast_5_piece0 on 192.168.0.103:44681 in memory (size: 10.1 KB, free: 1127.6 MB)
+[18:06:54,830] INFO  {BlockManagerInfo} Removed broadcast_6_piece0 on 192.168.0.103:44681 in memory (size: 3.9 KB, free: 1127.6 MB)
+[18:06:54,831] INFO  {ContextCleaner} Cleaned accumulator 288
+[18:06:54,832] INFO  {BlockManagerInfo} Removed broadcast_3_piece0 on 192.168.0.103:44681 in memory (size: 11.7 KB, free: 1127.7 MB)
+[18:06:54,833] INFO  {ContextCleaner} Cleaned accumulator 141
+[18:06:54,834] INFO  {ContextCleaner} Cleaned accumulator 142
+[18:06:54,835] INFO  {BlockManagerInfo} Removed broadcast_4_piece0 on 192.168.0.103:44681 in memory (size: 13.3 KB, free: 1127.7 MB)
+[18:06:54,836] INFO  {ContextCleaner} Cleaned accumulator 187
+[18:06:54,837] INFO  {ContextCleaner} Cleaned accumulator 188
+[18:06:54,837] INFO  {ContextCleaner} Cleaned accumulator 189
+[18:06:54,837] INFO  {ContextCleaner} Cleaned accumulator 190
+[18:06:54,837] INFO  {ContextCleaner} Cleaned accumulator 191
+[18:06:54,837] INFO  {ContextCleaner} Cleaned accumulator 192
+[18:06:54,837] INFO  {ContextCleaner} Cleaned accumulator 193
+[18:06:54,838] INFO  {ContextCleaner} Cleaned accumulator 194
+[18:06:54,838] INFO  {ContextCleaner} Cleaned accumulator 195
+[18:06:54,838] INFO  {ContextCleaner} Cleaned accumulator 196
+[18:06:54,838] INFO  {ContextCleaner} Cleaned accumulator 95
+[18:06:54,838] INFO  {ContextCleaner} Cleaned accumulator 96
+[18:06:54,867] INFO  {Executor} Finished task 0.0 in stage 6.0 (TID 6). 2397 bytes result sent to driver
+[18:06:54,869] INFO  {TaskSetManager} Finished task 0.0 in stage 6.0 (TID 6) in 297 ms on localhost (1/1)
+[18:06:54,870] INFO  {TaskSchedulerImpl} Removed TaskSet 6.0, whose tasks have all completed, from pool 
+[18:06:54,871] INFO  {DAGScheduler} ShuffleMapStage 6 (collect at Main.scala:67) finished in 0.299 s
+[18:06:54,871] INFO  {DAGScheduler} looking for newly runnable stages
+[18:06:54,872] INFO  {DAGScheduler} running: Set()
+[18:06:54,872] INFO  {DAGScheduler} waiting: Set(ResultStage 7)
+[18:06:54,872] INFO  {DAGScheduler} failed: Set()
+[18:06:54,872] INFO  {DAGScheduler} Submitting ResultStage 7 (MapPartitionsRDD[26] at collect at Main.scala:67), which has no missing parents
+[18:06:54,875] INFO  {MemoryStore} Block broadcast_8 stored as values in memory (estimated size 7.3 KB, free 1127.5 MB)
+[18:06:54,878] INFO  {MemoryStore} Block broadcast_8_piece0 stored as bytes in memory (estimated size 3.9 KB, free 1127.5 MB)
+[18:06:54,879] INFO  {BlockManagerInfo} Added broadcast_8_piece0 in memory on 192.168.0.103:44681 (size: 3.9 KB, free: 1127.7 MB)
+[18:06:54,880] INFO  {SparkContext} Created broadcast 8 from broadcast at DAGScheduler.scala:1012
+[18:06:54,880] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[26] at collect at Main.scala:67)
+[18:06:54,880] INFO  {TaskSchedulerImpl} Adding task set 7.0 with 1 tasks
+[18:06:54,883] INFO  {TaskSetManager} Starting task 0.0 in stage 7.0 (TID 7, localhost, partition 0, ANY, 5317 bytes)
+[18:06:54,883] INFO  {Executor} Running task 0.0 in stage 7.0 (TID 7)
+[18:06:54,888] INFO  {ShuffleBlockFetcherIterator} Getting 1 non-empty blocks out of 1 blocks
+[18:06:54,889] INFO  {ShuffleBlockFetcherIterator} Started 0 remote fetches in 1 ms
+[18:06:54,894] INFO  {Executor} Finished task 0.0 in stage 7.0 (TID 7). 1868 bytes result sent to driver
+[18:06:54,896] INFO  {TaskSetManager} Finished task 0.0 in stage 7.0 (TID 7) in 15 ms on localhost (1/1)
+[18:06:54,896] INFO  {TaskSchedulerImpl} Removed TaskSet 7.0, whose tasks have all completed, from pool 
+[18:06:54,897] INFO  {DAGScheduler} ResultStage 7 (collect at Main.scala:67) finished in 0.016 s
+[18:06:54,897] INFO  {DAGScheduler} Job 5 finished: collect at Main.scala:67, took 0.340396 s
+[18:06:55,164] INFO  {CodeGenerator} Code generated in 121.542216 ms
+[18:06:55,191] INFO  {SparkContext} Starting job: show at Main.scala:82
+[18:06:55,192] INFO  {DAGScheduler} Got job 6 (show at Main.scala:82) with 1 output partitions
+[18:06:55,192] INFO  {DAGScheduler} Final stage: ResultStage 8 (show at Main.scala:82)
+[18:06:55,193] INFO  {DAGScheduler} Parents of final stage: List()
+[18:06:55,193] INFO  {DAGScheduler} Missing parents: List()
+[18:06:55,194] INFO  {DAGScheduler} Submitting ResultStage 8 (MapPartitionsRDD[29] at show at Main.scala:82), which has no missing parents
+[18:06:55,199] INFO  {MemoryStore} Block broadcast_9 stored as values in memory (estimated size 53.4 KB, free 1127.5 MB)
+[18:06:55,201] INFO  {MemoryStore} Block broadcast_9_piece0 stored as bytes in memory (estimated size 15.0 KB, free 1127.4 MB)
+[18:06:55,203] INFO  {BlockManagerInfo} Added broadcast_9_piece0 in memory on 192.168.0.103:44681 (size: 15.0 KB, free: 1127.6 MB)
+[18:06:55,203] INFO  {SparkContext} Created broadcast 9 from broadcast at DAGScheduler.scala:1012
+[18:06:55,204] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 8 (MapPartitionsRDD[29] at show at Main.scala:82)
+[18:06:55,204] INFO  {TaskSchedulerImpl} Adding task set 8.0 with 1 tasks
+[18:06:55,207] INFO  {TaskSetManager} Starting task 0.0 in stage 8.0 (TID 8, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:06:55,208] INFO  {Executor} Running task 0.0 in stage 8.0 (TID 8)
+[18:06:55,219] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:06:55,233] WARN  {Executor} 1 block locks were not released by TID = 8:
+[rdd_2_0]
+[18:06:55,235] INFO  {Executor} Finished task 0.0 in stage 8.0 (TID 8). 4020 bytes result sent to driver
+[18:06:55,236] INFO  {TaskSetManager} Finished task 0.0 in stage 8.0 (TID 8) in 31 ms on localhost (1/1)
+[18:06:55,237] INFO  {TaskSchedulerImpl} Removed TaskSet 8.0, whose tasks have all completed, from pool 
+[18:06:55,238] INFO  {DAGScheduler} ResultStage 8 (show at Main.scala:82) finished in 0.033 s
+[18:06:55,239] INFO  {DAGScheduler} Job 6 finished: show at Main.scala:82, took 0.047219 s
+[18:06:55,271] INFO  {CodeGenerator} Code generated in 28.377149 ms
+[18:06:55,437] INFO  {CodeGenerator} Code generated in 58.496349 ms
+[18:06:55,447] INFO  {SparkContext} Starting job: show at Main.scala:91
+[18:06:55,447] INFO  {DAGScheduler} Got job 7 (show at Main.scala:91) with 1 output partitions
+[18:06:55,448] INFO  {DAGScheduler} Final stage: ResultStage 9 (show at Main.scala:91)
+[18:06:55,448] INFO  {DAGScheduler} Parents of final stage: List()
+[18:06:55,448] INFO  {DAGScheduler} Missing parents: List()
+[18:06:55,449] INFO  {DAGScheduler} Submitting ResultStage 9 (MapPartitionsRDD[32] at show at Main.scala:91), which has no missing parents
+[18:06:55,452] INFO  {MemoryStore} Block broadcast_10 stored as values in memory (estimated size 62.1 KB, free 1127.4 MB)
+[18:06:55,454] INFO  {MemoryStore} Block broadcast_10_piece0 stored as bytes in memory (estimated size 16.4 KB, free 1127.4 MB)
+[18:06:55,455] INFO  {BlockManagerInfo} Added broadcast_10_piece0 in memory on 192.168.0.103:44681 (size: 16.4 KB, free: 1127.6 MB)
+[18:06:55,455] INFO  {SparkContext} Created broadcast 10 from broadcast at DAGScheduler.scala:1012
+[18:06:55,455] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 9 (MapPartitionsRDD[32] at show at Main.scala:91)
+[18:06:55,455] INFO  {TaskSchedulerImpl} Adding task set 9.0 with 1 tasks
+[18:06:55,460] INFO  {TaskSetManager} Starting task 0.0 in stage 9.0 (TID 9, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:06:55,461] INFO  {Executor} Running task 0.0 in stage 9.0 (TID 9)
+[18:06:55,466] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:06:55,475] WARN  {Executor} 1 block locks were not released by TID = 9:
+[rdd_2_0]
+[18:06:55,476] INFO  {Executor} Finished task 0.0 in stage 9.0 (TID 9). 4083 bytes result sent to driver
+[18:06:55,478] INFO  {TaskSetManager} Finished task 0.0 in stage 9.0 (TID 9) in 22 ms on localhost (1/1)
+[18:06:55,478] INFO  {TaskSchedulerImpl} Removed TaskSet 9.0, whose tasks have all completed, from pool 
+[18:06:55,479] INFO  {DAGScheduler} ResultStage 9 (show at Main.scala:91) finished in 0.023 s
+[18:06:55,480] INFO  {DAGScheduler} Job 7 finished: show at Main.scala:91, took 0.032727 s
+[18:06:55,503] INFO  {CodeGenerator} Code generated in 20.662627 ms
+[18:06:56,310] INFO  {CodeGenerator} Code generated in 33.952326 ms
+[18:06:56,361] INFO  {CodeGenerator} Code generated in 25.629163 ms
+[18:06:56,426] INFO  {CodeGenerator} Code generated in 15.202211 ms
+[18:06:56,447] INFO  {CodeGenerator} Code generated in 8.126347 ms
+[18:06:56,459] INFO  {SparkContext} Invoking stop() from shutdown hook
+[18:06:56,468] INFO  {ServerConnector} Stopped ServerConnector@4b2a01d4{HTTP/1.1}{0.0.0.0:4040}
+[18:06:56,472] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3016fd5e{/stages/stage/kill,null,UNAVAILABLE}
+[18:06:56,473] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3b00856b{/api,null,UNAVAILABLE}
+[18:06:56,473] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3bcbb589{/,null,UNAVAILABLE}
+[18:06:56,473] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@1d730606{/static,null,UNAVAILABLE}
+[18:06:56,473] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@4dc8caa7{/executors/threadDump/json,null,UNAVAILABLE}
+[18:06:56,474] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@626c44e7{/executors/threadDump,null,UNAVAILABLE}
+[18:06:56,474] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@542e560f{/executors/json,null,UNAVAILABLE}
+[18:06:56,474] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@241e8ea6{/executors,null,UNAVAILABLE}
+[18:06:56,475] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3243b914{/environment/json,null,UNAVAILABLE}
+[18:06:56,475] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@31d0e481{/environment,null,UNAVAILABLE}
+[18:06:56,475] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@59252cb6{/storage/rdd/json,null,UNAVAILABLE}
+[18:06:56,476] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@6d9f7a80{/storage/rdd,null,UNAVAILABLE}
+[18:06:56,476] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5ccbeb64{/storage/json,null,UNAVAILABLE}
+[18:06:56,476] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@112f364d{/storage,null,UNAVAILABLE}
+[18:06:56,476] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@362045c0{/stages/pool/json,null,UNAVAILABLE}
+[18:06:56,477] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5a9d6f02{/stages/pool,null,UNAVAILABLE}
+[18:06:56,477] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@189aa67a{/stages/stage/json,null,UNAVAILABLE}
+[18:06:56,477] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@c4ed84{/stages/stage,null,UNAVAILABLE}
+[18:06:56,477] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5f9678e1{/stages/json,null,UNAVAILABLE}
+[18:06:56,478] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@373ebf74{/stages,null,UNAVAILABLE}
+[18:06:56,478] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5669c5fb{/jobs/job/json,null,UNAVAILABLE}
+[18:06:56,478] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@56113384{/jobs/job,null,UNAVAILABLE}
+[18:06:56,478] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@340b9973{/jobs/json,null,UNAVAILABLE}
+[18:06:56,479] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@52066604{/jobs,null,UNAVAILABLE}
+[18:06:56,481] INFO  {SparkUI} Stopped Spark web UI at http://192.168.0.103:4040
+[18:06:56,500] INFO  {MapOutputTrackerMasterEndpoint} MapOutputTrackerMasterEndpoint stopped!
+[18:06:56,524] INFO  {MemoryStore} MemoryStore cleared
+[18:06:56,525] INFO  {BlockManager} BlockManager stopped
+[18:06:56,528] INFO  {BlockManagerMaster} BlockManagerMaster stopped
+[18:06:56,533] INFO  {OutputCommitCoordinator$OutputCommitCoordinatorEndpoint} OutputCommitCoordinator stopped!
+[18:06:56,541] INFO  {SparkContext} Successfully stopped SparkContext
+[18:06:56,542] INFO  {ShutdownHookManager} Shutdown hook called
+[18:06:56,544] INFO  {ShutdownHookManager} Deleting directory /tmp/spark-992e271d-7451-4578-b0ce-8d3579c8628b
+[18:10:04,277] INFO  {SparkContext} Running Spark version 2.0.1
+[18:10:04,915] WARN  {NativeCodeLoader} Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[18:10:05,231] WARN  {Utils} Your hostname, victor resolves to a loopback address: 127.0.1.1; using 192.168.0.103 instead (on interface wlp4s0)
+[18:10:05,234] WARN  {Utils} Set SPARK_LOCAL_IP if you need to bind to another address
+[18:10:05,455] INFO  {SecurityManager} Changing view acls to: victor
+[18:10:05,457] INFO  {SecurityManager} Changing modify acls to: victor
+[18:10:05,459] INFO  {SecurityManager} Changing view acls groups to: 
+[18:10:05,461] INFO  {SecurityManager} Changing modify acls groups to: 
+[18:10:05,463] INFO  {SecurityManager} SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(victor); groups with view permissions: Set(); users  with modify permissions: Set(victor); groups with modify permissions: Set()
+[18:10:06,463] INFO  {Utils} Successfully started service 'sparkDriver' on port 38331.
+[18:10:06,505] INFO  {SparkEnv} Registering MapOutputTracker
+[18:10:06,546] INFO  {SparkEnv} Registering BlockManagerMaster
+[18:10:06,580] INFO  {DiskBlockManager} Created local directory at /tmp/blockmgr-359c41df-e634-486a-ba94-4ec0ee12b3db
+[18:10:06,616] INFO  {MemoryStore} MemoryStore started with capacity 1128.9 MB
+[18:10:06,750] INFO  {SparkEnv} Registering OutputCommitCoordinator
+[18:10:06,938] INFO  {log} Logging initialized @4660ms
+[18:10:07,240] INFO  {Server} jetty-9.2.z-SNAPSHOT
+[18:10:07,279] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@52066604{/jobs,null,AVAILABLE}
+[18:10:07,280] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@340b9973{/jobs/json,null,AVAILABLE}
+[18:10:07,280] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@56113384{/jobs/job,null,AVAILABLE}
+[18:10:07,281] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5669c5fb{/jobs/job/json,null,AVAILABLE}
+[18:10:07,281] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@373ebf74{/stages,null,AVAILABLE}
+[18:10:07,282] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5f9678e1{/stages/json,null,AVAILABLE}
+[18:10:07,282] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@c4ed84{/stages/stage,null,AVAILABLE}
+[18:10:07,282] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@189aa67a{/stages/stage/json,null,AVAILABLE}
+[18:10:07,283] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5a9d6f02{/stages/pool,null,AVAILABLE}
+[18:10:07,283] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@362045c0{/stages/pool/json,null,AVAILABLE}
+[18:10:07,284] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@112f364d{/storage,null,AVAILABLE}
+[18:10:07,284] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5ccbeb64{/storage/json,null,AVAILABLE}
+[18:10:07,285] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6d9f7a80{/storage/rdd,null,AVAILABLE}
+[18:10:07,285] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@59252cb6{/storage/rdd/json,null,AVAILABLE}
+[18:10:07,286] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@31d0e481{/environment,null,AVAILABLE}
+[18:10:07,286] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3243b914{/environment/json,null,AVAILABLE}
+[18:10:07,287] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@241e8ea6{/executors,null,AVAILABLE}
+[18:10:07,287] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@542e560f{/executors/json,null,AVAILABLE}
+[18:10:07,287] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@626c44e7{/executors/threadDump,null,AVAILABLE}
+[18:10:07,288] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@4dc8caa7{/executors/threadDump/json,null,AVAILABLE}
+[18:10:07,303] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@1d730606{/static,null,AVAILABLE}
+[18:10:07,304] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3bcbb589{/,null,AVAILABLE}
+[18:10:07,306] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3b00856b{/api,null,AVAILABLE}
+[18:10:07,307] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3016fd5e{/stages/stage/kill,null,AVAILABLE}
+[18:10:07,322] INFO  {ServerConnector} Started ServerConnector@56d0efc3{HTTP/1.1}{0.0.0.0:4040}
+[18:10:07,322] INFO  {Server} Started @5047ms
+[18:10:07,323] INFO  {Utils} Successfully started service 'SparkUI' on port 4040.
+[18:10:07,334] INFO  {SparkUI} Bound SparkUI to 0.0.0.0, and started at http://192.168.0.103:4040
+[18:10:07,584] INFO  {Executor} Starting executor ID driver on host localhost
+[18:10:07,655] INFO  {Utils} Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43325.
+[18:10:07,657] INFO  {NettyBlockTransferService} Server created on 192.168.0.103:43325
+[18:10:07,663] INFO  {BlockManagerMaster} Registering BlockManager BlockManagerId(driver, 192.168.0.103, 43325)
+[18:10:07,671] INFO  {BlockManagerMasterEndpoint} Registering block manager 192.168.0.103:43325 with 1128.9 MB RAM, BlockManagerId(driver, 192.168.0.103, 43325)
+[18:10:07,679] INFO  {BlockManagerMaster} Registered BlockManager BlockManagerId(driver, 192.168.0.103, 43325)
+[18:10:08,014] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@72ccd81a{/metrics/json,null,AVAILABLE}
+[18:10:08,175] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5ae76500{/SQL,null,AVAILABLE}
+[18:10:08,177] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@1133ec6e{/SQL/json,null,AVAILABLE}
+[18:10:08,180] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@60cf80e7{/SQL/execution,null,AVAILABLE}
+[18:10:08,181] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@770d0ea6{/SQL/execution/json,null,AVAILABLE}
+[18:10:08,186] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3bd7f8dc{/static/sql,null,AVAILABLE}
+[18:10:08,236] INFO  {SharedState} Warehouse path is '/home/victor/Desktop/ML/vt17-lab1/spark-warehouse'.
+[18:10:10,802] INFO  {FileSourceStrategy} Pruning directories with: 
+[18:10:10,805] INFO  {FileSourceStrategy} Post-Scan Filters: 
+[18:10:10,810] INFO  {FileSourceStrategy} Pruned Data Schema: struct<value: string>
+[18:10:10,810] INFO  {FileSourceStrategy} Pushed Filters: 
+[18:10:10,929] INFO  {MemoryStore} Block broadcast_0 stored as values in memory (estimated size 131.0 KB, free 1128.8 MB)
+[18:10:10,981] INFO  {MemoryStore} Block broadcast_0_piece0 stored as bytes in memory (estimated size 14.6 KB, free 1128.8 MB)
+[18:10:11,000] INFO  {BlockManagerInfo} Added broadcast_0_piece0 in memory on 192.168.0.103:43325 (size: 14.6 KB, free: 1128.9 MB)
+[18:10:11,007] INFO  {SparkContext} Created broadcast 0 from cache at Main.scala:23
+[18:10:11,011] INFO  {FileSourceStrategy} Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[18:10:11,538] INFO  {CodeGenerator} Code generated in 230.39368 ms
+[18:10:11,758] INFO  {CodeGenerator} Code generated in 27.056114 ms
+[18:10:11,811] INFO  {SparkContext} Starting job: show at Main.scala:33
+[18:10:11,837] INFO  {DAGScheduler} Got job 0 (show at Main.scala:33) with 1 output partitions
+[18:10:11,838] INFO  {DAGScheduler} Final stage: ResultStage 0 (show at Main.scala:33)
+[18:10:11,839] INFO  {DAGScheduler} Parents of final stage: List()
+[18:10:11,846] INFO  {DAGScheduler} Missing parents: List()
+[18:10:11,855] INFO  {DAGScheduler} Submitting ResultStage 0 (MapPartitionsRDD[5] at show at Main.scala:33), which has no missing parents
+[18:10:11,938] INFO  {MemoryStore} Block broadcast_1 stored as values in memory (estimated size 18.3 KB, free 1128.7 MB)
+[18:10:11,940] INFO  {MemoryStore} Block broadcast_1_piece0 stored as bytes in memory (estimated size 8.5 KB, free 1128.7 MB)
+[18:10:11,941] INFO  {BlockManagerInfo} Added broadcast_1_piece0 in memory on 192.168.0.103:43325 (size: 8.5 KB, free: 1128.9 MB)
+[18:10:11,942] INFO  {SparkContext} Created broadcast 1 from broadcast at DAGScheduler.scala:1012
+[18:10:11,947] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[5] at show at Main.scala:33)
+[18:10:11,949] INFO  {TaskSchedulerImpl} Adding task set 0.0 with 1 tasks
+[18:10:11,988] INFO  {TaskSetManager} Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:10:11,995] INFO  {Executor} Running task 0.0 in stage 0.0 (TID 0)
+[18:10:12,038] INFO  {FileScanRDD} Reading File path: file:///home/victor/Desktop/ML/vt17-lab1/src/main/resources/millionsong.txt, range: 0-1248115, partition values: [empty row]
+[18:10:12,051] INFO  {CodeGenerator} Code generated in 10.278184 ms
+[18:10:12,193] INFO  {MemoryStore} Block rdd_2_0 stored as values in memory (estimated size 1239.2 KB, free 1127.5 MB)
+[18:10:12,194] INFO  {BlockManagerInfo} Added rdd_2_0 in memory on 192.168.0.103:43325 (size: 1239.2 KB, free: 1127.7 MB)
+[18:10:12,205] INFO  {CodeGenerator} Code generated in 4.382689 ms
+[18:10:12,236] INFO  {CodeGenerator} Code generated in 24.972605 ms
+[18:10:12,263] WARN  {Executor} 1 block locks were not released by TID = 0:
+[rdd_2_0]
+[18:10:12,270] INFO  {Executor} Finished task 0.0 in stage 0.0 (TID 0). 4550 bytes result sent to driver
+[18:10:12,279] INFO  {TaskSetManager} Finished task 0.0 in stage 0.0 (TID 0) in 306 ms on localhost (1/1)
+[18:10:12,280] INFO  {TaskSchedulerImpl} Removed TaskSet 0.0, whose tasks have all completed, from pool 
+[18:10:12,290] INFO  {DAGScheduler} ResultStage 0 (show at Main.scala:33) finished in 0.328 s
+[18:10:12,301] INFO  {DAGScheduler} Job 0 finished: show at Main.scala:33, took 0.489134 s
+[18:10:12,370] INFO  {BlockManagerInfo} Removed broadcast_1_piece0 on 192.168.0.103:43325 in memory (size: 8.5 KB, free: 1127.7 MB)
+[18:10:12,378] INFO  {CodeGenerator} Code generated in 32.941228 ms
+[18:10:12,506] INFO  {CodeGenerator} Code generated in 47.106899 ms
+[18:10:12,530] INFO  {SparkContext} Starting job: show at Main.scala:42
+[18:10:12,531] INFO  {DAGScheduler} Got job 1 (show at Main.scala:42) with 1 output partitions
+[18:10:12,531] INFO  {DAGScheduler} Final stage: ResultStage 1 (show at Main.scala:42)
+[18:10:12,531] INFO  {DAGScheduler} Parents of final stage: List()
+[18:10:12,534] INFO  {DAGScheduler} Missing parents: List()
+[18:10:12,535] INFO  {DAGScheduler} Submitting ResultStage 1 (MapPartitionsRDD[8] at show at Main.scala:42), which has no missing parents
+[18:10:12,545] INFO  {MemoryStore} Block broadcast_2 stored as values in memory (estimated size 25.6 KB, free 1127.5 MB)
+[18:10:12,547] INFO  {MemoryStore} Block broadcast_2_piece0 stored as bytes in memory (estimated size 10.0 KB, free 1127.5 MB)
+[18:10:12,548] INFO  {BlockManagerInfo} Added broadcast_2_piece0 in memory on 192.168.0.103:43325 (size: 10.0 KB, free: 1127.7 MB)
+[18:10:12,549] INFO  {SparkContext} Created broadcast 2 from broadcast at DAGScheduler.scala:1012
+[18:10:12,549] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[8] at show at Main.scala:42)
+[18:10:12,549] INFO  {TaskSchedulerImpl} Adding task set 1.0 with 1 tasks
+[18:10:12,561] INFO  {TaskSetManager} Starting task 0.0 in stage 1.0 (TID 1, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:10:12,562] INFO  {Executor} Running task 0.0 in stage 1.0 (TID 1)
+[18:10:12,580] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:10:12,600] WARN  {Executor} 1 block locks were not released by TID = 1:
+[rdd_2_0]
+[18:10:12,602] INFO  {Executor} Finished task 0.0 in stage 1.0 (TID 1). 3929 bytes result sent to driver
+[18:10:12,604] INFO  {TaskSetManager} Finished task 0.0 in stage 1.0 (TID 1) in 48 ms on localhost (1/1)
+[18:10:12,604] INFO  {TaskSchedulerImpl} Removed TaskSet 1.0, whose tasks have all completed, from pool 
+[18:10:12,604] INFO  {DAGScheduler} ResultStage 1 (show at Main.scala:42) finished in 0.048 s
+[18:10:12,605] INFO  {DAGScheduler} Job 1 finished: show at Main.scala:42, took 0.074739 s
+[18:10:12,640] INFO  {CodeGenerator} Code generated in 27.398747 ms
+[18:10:12,814] INFO  {ContextCleaner} Cleaned accumulator 3
+[18:10:12,814] INFO  {ContextCleaner} Cleaned accumulator 4
+[18:10:12,814] INFO  {ContextCleaner} Cleaned accumulator 49
+[18:10:12,814] INFO  {ContextCleaner} Cleaned accumulator 50
+[18:10:12,816] INFO  {BlockManagerInfo} Removed broadcast_2_piece0 on 192.168.0.103:43325 in memory (size: 10.0 KB, free: 1127.7 MB)
+[18:10:12,976] INFO  {CodeGenerator} Code generated in 84.40868 ms
+[18:10:12,996] INFO  {SparkContext} Starting job: show at Main.scala:51
+[18:10:12,997] INFO  {DAGScheduler} Got job 2 (show at Main.scala:51) with 1 output partitions
+[18:10:12,998] INFO  {DAGScheduler} Final stage: ResultStage 2 (show at Main.scala:51)
+[18:10:12,998] INFO  {DAGScheduler} Parents of final stage: List()
+[18:10:13,002] INFO  {DAGScheduler} Missing parents: List()
+[18:10:13,003] INFO  {DAGScheduler} Submitting ResultStage 2 (MapPartitionsRDD[11] at show at Main.scala:51), which has no missing parents
+[18:10:13,011] INFO  {MemoryStore} Block broadcast_3 stored as values in memory (estimated size 34.3 KB, free 1127.5 MB)
+[18:10:13,015] INFO  {MemoryStore} Block broadcast_3_piece0 stored as bytes in memory (estimated size 11.7 KB, free 1127.5 MB)
+[18:10:13,016] INFO  {BlockManagerInfo} Added broadcast_3_piece0 in memory on 192.168.0.103:43325 (size: 11.7 KB, free: 1127.7 MB)
+[18:10:13,018] INFO  {SparkContext} Created broadcast 3 from broadcast at DAGScheduler.scala:1012
+[18:10:13,019] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[11] at show at Main.scala:51)
+[18:10:13,020] INFO  {TaskSchedulerImpl} Adding task set 2.0 with 1 tasks
+[18:10:13,033] INFO  {TaskSetManager} Starting task 0.0 in stage 2.0 (TID 2, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:10:13,037] INFO  {Executor} Running task 0.0 in stage 2.0 (TID 2)
+[18:10:13,046] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:10:13,072] WARN  {Executor} 1 block locks were not released by TID = 2:
+[rdd_2_0]
+[18:10:13,074] INFO  {Executor} Finished task 0.0 in stage 2.0 (TID 2). 4003 bytes result sent to driver
+[18:10:13,076] INFO  {TaskSetManager} Finished task 0.0 in stage 2.0 (TID 2) in 51 ms on localhost (1/1)
+[18:10:13,076] INFO  {TaskSchedulerImpl} Removed TaskSet 2.0, whose tasks have all completed, from pool 
+[18:10:13,077] INFO  {DAGScheduler} ResultStage 2 (show at Main.scala:51) finished in 0.042 s
+[18:10:13,077] INFO  {DAGScheduler} Job 2 finished: show at Main.scala:51, took 0.081307 s
+[18:10:13,147] INFO  {CodeGenerator} Code generated in 57.049169 ms
+[18:10:13,438] INFO  {CodeGenerator} Code generated in 130.38733 ms
+[18:10:13,472] INFO  {SparkContext} Starting job: show at Main.scala:61
+[18:10:13,475] INFO  {DAGScheduler} Got job 3 (show at Main.scala:61) with 1 output partitions
+[18:10:13,475] INFO  {DAGScheduler} Final stage: ResultStage 3 (show at Main.scala:61)
+[18:10:13,475] INFO  {DAGScheduler} Parents of final stage: List()
+[18:10:13,476] INFO  {DAGScheduler} Missing parents: List()
+[18:10:13,477] INFO  {DAGScheduler} Submitting ResultStage 3 (MapPartitionsRDD[14] at show at Main.scala:61), which has no missing parents
+[18:10:13,486] INFO  {MemoryStore} Block broadcast_4 stored as values in memory (estimated size 40.2 KB, free 1127.5 MB)
+[18:10:13,491] INFO  {MemoryStore} Block broadcast_4_piece0 stored as bytes in memory (estimated size 13.3 KB, free 1127.5 MB)
+[18:10:13,493] INFO  {BlockManagerInfo} Added broadcast_4_piece0 in memory on 192.168.0.103:43325 (size: 13.3 KB, free: 1127.7 MB)
+[18:10:13,494] INFO  {SparkContext} Created broadcast 4 from broadcast at DAGScheduler.scala:1012
+[18:10:13,494] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[14] at show at Main.scala:61)
+[18:10:13,495] INFO  {TaskSchedulerImpl} Adding task set 3.0 with 1 tasks
+[18:10:13,499] INFO  {TaskSetManager} Starting task 0.0 in stage 3.0 (TID 3, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:10:13,500] INFO  {Executor} Running task 0.0 in stage 3.0 (TID 3)
+[18:10:13,517] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:10:13,534] WARN  {Executor} 1 block locks were not released by TID = 3:
+[rdd_2_0]
+[18:10:13,536] INFO  {Executor} Finished task 0.0 in stage 3.0 (TID 3). 4012 bytes result sent to driver
+[18:10:13,538] INFO  {TaskSetManager} Finished task 0.0 in stage 3.0 (TID 3) in 42 ms on localhost (1/1)
+[18:10:13,539] INFO  {TaskSchedulerImpl} Removed TaskSet 3.0, whose tasks have all completed, from pool 
+[18:10:13,539] INFO  {DAGScheduler} ResultStage 3 (show at Main.scala:61) finished in 0.043 s
+[18:10:13,540] INFO  {DAGScheduler} Job 3 finished: show at Main.scala:61, took 0.067198 s
+[18:10:13,582] INFO  {CodeGenerator} Code generated in 35.563591 ms
+[18:10:13,701] INFO  {CodeGenerator} Code generated in 15.282691 ms
+[18:10:13,740] INFO  {CodeGenerator} Code generated in 32.437085 ms
+[18:10:13,812] INFO  {SparkContext} Starting job: collect at Main.scala:66
+[18:10:13,821] INFO  {DAGScheduler} Registering RDD 17 (collect at Main.scala:66)
+[18:10:13,824] INFO  {DAGScheduler} Got job 4 (collect at Main.scala:66) with 1 output partitions
+[18:10:13,825] INFO  {DAGScheduler} Final stage: ResultStage 5 (collect at Main.scala:66)
+[18:10:13,825] INFO  {DAGScheduler} Parents of final stage: List(ShuffleMapStage 4)
+[18:10:13,826] INFO  {DAGScheduler} Missing parents: List(ShuffleMapStage 4)
+[18:10:13,834] INFO  {DAGScheduler} Submitting ShuffleMapStage 4 (MapPartitionsRDD[17] at collect at Main.scala:66), which has no missing parents
+[18:10:13,852] INFO  {MemoryStore} Block broadcast_5 stored as values in memory (estimated size 24.5 KB, free 1127.4 MB)
+[18:10:13,856] INFO  {MemoryStore} Block broadcast_5_piece0 stored as bytes in memory (estimated size 10.2 KB, free 1127.4 MB)
+[18:10:13,857] INFO  {BlockManagerInfo} Added broadcast_5_piece0 in memory on 192.168.0.103:43325 (size: 10.2 KB, free: 1127.6 MB)
+[18:10:13,858] INFO  {SparkContext} Created broadcast 5 from broadcast at DAGScheduler.scala:1012
+[18:10:13,865] INFO  {DAGScheduler} Submitting 1 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[17] at collect at Main.scala:66)
+[18:10:13,866] INFO  {TaskSchedulerImpl} Adding task set 4.0 with 1 tasks
+[18:10:13,873] INFO  {TaskSetManager} Starting task 0.0 in stage 4.0 (TID 4, localhost, partition 0, PROCESS_LOCAL, 5978 bytes)
+[18:10:13,873] INFO  {Executor} Running task 0.0 in stage 4.0 (TID 4)
+[18:10:13,891] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:10:14,383] INFO  {Executor} Finished task 0.0 in stage 4.0 (TID 4). 2411 bytes result sent to driver
+[18:10:14,390] INFO  {TaskSetManager} Finished task 0.0 in stage 4.0 (TID 4) in 522 ms on localhost (1/1)
+[18:10:14,390] INFO  {TaskSchedulerImpl} Removed TaskSet 4.0, whose tasks have all completed, from pool 
+[18:10:14,392] INFO  {DAGScheduler} ShuffleMapStage 4 (collect at Main.scala:66) finished in 0.525 s
+[18:10:14,393] INFO  {DAGScheduler} looking for newly runnable stages
+[18:10:14,394] INFO  {DAGScheduler} running: Set()
+[18:10:14,396] INFO  {DAGScheduler} waiting: Set(ResultStage 5)
+[18:10:14,397] INFO  {DAGScheduler} failed: Set()
+[18:10:14,399] INFO  {DAGScheduler} Submitting ResultStage 5 (MapPartitionsRDD[20] at collect at Main.scala:66), which has no missing parents
+[18:10:14,409] INFO  {MemoryStore} Block broadcast_6 stored as values in memory (estimated size 7.3 KB, free 1127.4 MB)
+[18:10:14,414] INFO  {MemoryStore} Block broadcast_6_piece0 stored as bytes in memory (estimated size 3.9 KB, free 1127.4 MB)
+[18:10:14,416] INFO  {BlockManagerInfo} Added broadcast_6_piece0 in memory on 192.168.0.103:43325 (size: 3.9 KB, free: 1127.6 MB)
+[18:10:14,418] INFO  {SparkContext} Created broadcast 6 from broadcast at DAGScheduler.scala:1012
+[18:10:14,419] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[20] at collect at Main.scala:66)
+[18:10:14,419] INFO  {TaskSchedulerImpl} Adding task set 5.0 with 1 tasks
+[18:10:14,429] INFO  {TaskSetManager} Starting task 0.0 in stage 5.0 (TID 5, localhost, partition 0, ANY, 5317 bytes)
+[18:10:14,430] INFO  {Executor} Running task 0.0 in stage 5.0 (TID 5)
+[18:10:14,458] INFO  {ShuffleBlockFetcherIterator} Getting 1 non-empty blocks out of 1 blocks
+[18:10:14,461] INFO  {ShuffleBlockFetcherIterator} Started 0 remote fetches in 9 ms
+[18:10:14,496] INFO  {Executor} Finished task 0.0 in stage 5.0 (TID 5). 1955 bytes result sent to driver
+[18:10:14,498] INFO  {TaskSetManager} Finished task 0.0 in stage 5.0 (TID 5) in 74 ms on localhost (1/1)
+[18:10:14,498] INFO  {TaskSchedulerImpl} Removed TaskSet 5.0, whose tasks have all completed, from pool 
+[18:10:14,499] INFO  {DAGScheduler} ResultStage 5 (collect at Main.scala:66) finished in 0.077 s
+[18:10:14,500] INFO  {DAGScheduler} Job 4 finished: collect at Main.scala:66, took 0.687211 s
+[18:10:14,519] INFO  {CodeGenerator} Code generated in 12.366777 ms
+[18:10:14,612] INFO  {CodeGenerator} Code generated in 21.27186 ms
+[18:10:14,665] INFO  {CodeGenerator} Code generated in 40.339276 ms
+[18:10:14,706] INFO  {SparkContext} Starting job: collect at Main.scala:67
+[18:10:14,707] INFO  {DAGScheduler} Registering RDD 23 (collect at Main.scala:67)
+[18:10:14,708] INFO  {DAGScheduler} Got job 5 (collect at Main.scala:67) with 1 output partitions
+[18:10:14,708] INFO  {DAGScheduler} Final stage: ResultStage 7 (collect at Main.scala:67)
+[18:10:14,708] INFO  {DAGScheduler} Parents of final stage: List(ShuffleMapStage 6)
+[18:10:14,708] INFO  {DAGScheduler} Missing parents: List(ShuffleMapStage 6)
+[18:10:14,709] INFO  {DAGScheduler} Submitting ShuffleMapStage 6 (MapPartitionsRDD[23] at collect at Main.scala:67), which has no missing parents
+[18:10:14,718] INFO  {MemoryStore} Block broadcast_7 stored as values in memory (estimated size 24.5 KB, free 1127.4 MB)
+[18:10:14,720] INFO  {MemoryStore} Block broadcast_7_piece0 stored as bytes in memory (estimated size 10.2 KB, free 1127.4 MB)
+[18:10:14,721] INFO  {BlockManagerInfo} Added broadcast_7_piece0 in memory on 192.168.0.103:43325 (size: 10.2 KB, free: 1127.6 MB)
+[18:10:14,722] INFO  {SparkContext} Created broadcast 7 from broadcast at DAGScheduler.scala:1012
+[18:10:14,722] INFO  {DAGScheduler} Submitting 1 missing tasks from ShuffleMapStage 6 (MapPartitionsRDD[23] at collect at Main.scala:67)
+[18:10:14,723] INFO  {TaskSchedulerImpl} Adding task set 6.0 with 1 tasks
+[18:10:14,726] INFO  {TaskSetManager} Starting task 0.0 in stage 6.0 (TID 6, localhost, partition 0, PROCESS_LOCAL, 5978 bytes)
+[18:10:14,726] INFO  {Executor} Running task 0.0 in stage 6.0 (TID 6)
+[18:10:14,733] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:10:15,020] INFO  {Executor} Finished task 0.0 in stage 6.0 (TID 6). 2324 bytes result sent to driver
+[18:10:15,022] INFO  {TaskSetManager} Finished task 0.0 in stage 6.0 (TID 6) in 298 ms on localhost (1/1)
+[18:10:15,022] INFO  {TaskSchedulerImpl} Removed TaskSet 6.0, whose tasks have all completed, from pool 
+[18:10:15,024] INFO  {DAGScheduler} ShuffleMapStage 6 (collect at Main.scala:67) finished in 0.301 s
+[18:10:15,024] INFO  {DAGScheduler} looking for newly runnable stages
+[18:10:15,024] INFO  {DAGScheduler} running: Set()
+[18:10:15,025] INFO  {DAGScheduler} waiting: Set(ResultStage 7)
+[18:10:15,025] INFO  {DAGScheduler} failed: Set()
+[18:10:15,026] INFO  {DAGScheduler} Submitting ResultStage 7 (MapPartitionsRDD[26] at collect at Main.scala:67), which has no missing parents
+[18:10:15,029] INFO  {MemoryStore} Block broadcast_8 stored as values in memory (estimated size 7.3 KB, free 1127.4 MB)
+[18:10:15,033] INFO  {MemoryStore} Block broadcast_8_piece0 stored as bytes in memory (estimated size 3.9 KB, free 1127.4 MB)
+[18:10:15,034] INFO  {BlockManagerInfo} Added broadcast_8_piece0 in memory on 192.168.0.103:43325 (size: 3.9 KB, free: 1127.6 MB)
+[18:10:15,035] INFO  {SparkContext} Created broadcast 8 from broadcast at DAGScheduler.scala:1012
+[18:10:15,036] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[26] at collect at Main.scala:67)
+[18:10:15,036] INFO  {TaskSchedulerImpl} Adding task set 7.0 with 1 tasks
+[18:10:15,038] INFO  {TaskSetManager} Starting task 0.0 in stage 7.0 (TID 7, localhost, partition 0, ANY, 5317 bytes)
+[18:10:15,039] INFO  {Executor} Running task 0.0 in stage 7.0 (TID 7)
+[18:10:15,045] INFO  {ShuffleBlockFetcherIterator} Getting 1 non-empty blocks out of 1 blocks
+[18:10:15,045] INFO  {ShuffleBlockFetcherIterator} Started 0 remote fetches in 0 ms
+[18:10:15,052] INFO  {Executor} Finished task 0.0 in stage 7.0 (TID 7). 1868 bytes result sent to driver
+[18:10:15,054] INFO  {TaskSetManager} Finished task 0.0 in stage 7.0 (TID 7) in 17 ms on localhost (1/1)
+[18:10:15,054] INFO  {TaskSchedulerImpl} Removed TaskSet 7.0, whose tasks have all completed, from pool 
+[18:10:15,055] INFO  {DAGScheduler} ResultStage 7 (collect at Main.scala:67) finished in 0.015 s
+[18:10:15,055] INFO  {DAGScheduler} Job 5 finished: collect at Main.scala:67, took 0.349183 s
+[18:10:15,114] INFO  {BlockManagerInfo} Removed broadcast_8_piece0 on 192.168.0.103:43325 in memory (size: 3.9 KB, free: 1127.6 MB)
+[18:10:15,117] INFO  {BlockManagerInfo} Removed broadcast_7_piece0 on 192.168.0.103:43325 in memory (size: 10.2 KB, free: 1127.6 MB)
+[18:10:15,120] INFO  {BlockManagerInfo} Removed broadcast_6_piece0 on 192.168.0.103:43325 in memory (size: 3.9 KB, free: 1127.6 MB)
+[18:10:15,121] INFO  {ContextCleaner} Cleaned accumulator 288
+[18:10:15,121] INFO  {ContextCleaner} Cleaned accumulator 289
+[18:10:15,121] INFO  {ContextCleaner} Cleaned accumulator 290
+[18:10:15,121] INFO  {ContextCleaner} Cleaned accumulator 291
+[18:10:15,122] INFO  {ContextCleaner} Cleaned accumulator 292
+[18:10:15,122] INFO  {ContextCleaner} Cleaned accumulator 293
+[18:10:15,122] INFO  {ContextCleaner} Cleaned accumulator 294
+[18:10:15,122] INFO  {ContextCleaner} Cleaned accumulator 295
+[18:10:15,123] INFO  {ContextCleaner} Cleaned accumulator 296
+[18:10:15,123] INFO  {ContextCleaner} Cleaned accumulator 297
+[18:10:15,123] INFO  {ContextCleaner} Cleaned accumulator 298
+[18:10:15,123] INFO  {ContextCleaner} Cleaned accumulator 299
+[18:10:15,123] INFO  {ContextCleaner} Cleaned accumulator 300
+[18:10:15,129] INFO  {ContextCleaner} Cleaned shuffle 1
+[18:10:15,129] INFO  {ContextCleaner} Cleaned accumulator 95
+[18:10:15,129] INFO  {ContextCleaner} Cleaned accumulator 96
+[18:10:15,132] INFO  {BlockManagerInfo} Removed broadcast_3_piece0 on 192.168.0.103:43325 in memory (size: 11.7 KB, free: 1127.7 MB)
+[18:10:15,134] INFO  {ContextCleaner} Cleaned accumulator 141
+[18:10:15,134] INFO  {ContextCleaner} Cleaned accumulator 142
+[18:10:15,138] INFO  {BlockManagerInfo} Removed broadcast_4_piece0 on 192.168.0.103:43325 in memory (size: 13.3 KB, free: 1127.7 MB)
+[18:10:15,139] INFO  {ContextCleaner} Cleaned accumulator 187
+[18:10:15,139] INFO  {ContextCleaner} Cleaned accumulator 188
+[18:10:15,139] INFO  {ContextCleaner} Cleaned accumulator 189
+[18:10:15,140] INFO  {ContextCleaner} Cleaned accumulator 190
+[18:10:15,140] INFO  {ContextCleaner} Cleaned accumulator 191
+[18:10:15,140] INFO  {ContextCleaner} Cleaned accumulator 192
+[18:10:15,140] INFO  {ContextCleaner} Cleaned accumulator 193
+[18:10:15,140] INFO  {ContextCleaner} Cleaned accumulator 194
+[18:10:15,140] INFO  {ContextCleaner} Cleaned accumulator 195
+[18:10:15,141] INFO  {ContextCleaner} Cleaned accumulator 196
+[18:10:15,141] INFO  {ContextCleaner} Cleaned accumulator 197
+[18:10:15,141] INFO  {ContextCleaner} Cleaned accumulator 198
+[18:10:15,141] INFO  {ContextCleaner} Cleaned accumulator 199
+[18:10:15,142] INFO  {ContextCleaner} Cleaned shuffle 0
+[18:10:15,146] INFO  {BlockManagerInfo} Removed broadcast_5_piece0 on 192.168.0.103:43325 in memory (size: 10.2 KB, free: 1127.7 MB)
+[18:10:15,320] INFO  {CodeGenerator} Code generated in 89.982258 ms
+[18:10:15,337] INFO  {SparkContext} Starting job: show at Main.scala:82
+[18:10:15,338] INFO  {DAGScheduler} Got job 6 (show at Main.scala:82) with 1 output partitions
+[18:10:15,338] INFO  {DAGScheduler} Final stage: ResultStage 8 (show at Main.scala:82)
+[18:10:15,338] INFO  {DAGScheduler} Parents of final stage: List()
+[18:10:15,339] INFO  {DAGScheduler} Missing parents: List()
+[18:10:15,341] INFO  {DAGScheduler} Submitting ResultStage 8 (MapPartitionsRDD[29] at show at Main.scala:82), which has no missing parents
+[18:10:15,347] INFO  {MemoryStore} Block broadcast_9 stored as values in memory (estimated size 53.4 KB, free 1127.5 MB)
+[18:10:15,352] INFO  {MemoryStore} Block broadcast_9_piece0 stored as bytes in memory (estimated size 15.1 KB, free 1127.5 MB)
+[18:10:15,354] INFO  {BlockManagerInfo} Added broadcast_9_piece0 in memory on 192.168.0.103:43325 (size: 15.1 KB, free: 1127.7 MB)
+[18:10:15,355] INFO  {SparkContext} Created broadcast 9 from broadcast at DAGScheduler.scala:1012
+[18:10:15,355] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 8 (MapPartitionsRDD[29] at show at Main.scala:82)
+[18:10:15,355] INFO  {TaskSchedulerImpl} Adding task set 8.0 with 1 tasks
+[18:10:15,358] INFO  {TaskSetManager} Starting task 0.0 in stage 8.0 (TID 8, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:10:15,358] INFO  {Executor} Running task 0.0 in stage 8.0 (TID 8)
+[18:10:15,365] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:10:15,373] WARN  {Executor} 1 block locks were not released by TID = 8:
+[rdd_2_0]
+[18:10:15,375] INFO  {Executor} Finished task 0.0 in stage 8.0 (TID 8). 4020 bytes result sent to driver
+[18:10:15,376] INFO  {TaskSetManager} Finished task 0.0 in stage 8.0 (TID 8) in 20 ms on localhost (1/1)
+[18:10:15,376] INFO  {TaskSchedulerImpl} Removed TaskSet 8.0, whose tasks have all completed, from pool 
+[18:10:15,377] INFO  {DAGScheduler} ResultStage 8 (show at Main.scala:82) finished in 0.020 s
+[18:10:15,377] INFO  {DAGScheduler} Job 6 finished: show at Main.scala:82, took 0.040298 s
+[18:10:15,400] INFO  {CodeGenerator} Code generated in 19.661227 ms
+[18:10:15,658] INFO  {CodeGenerator} Code generated in 124.230249 ms
+[18:10:15,671] INFO  {SparkContext} Starting job: show at Main.scala:91
+[18:10:15,675] INFO  {DAGScheduler} Got job 7 (show at Main.scala:91) with 1 output partitions
+[18:10:15,676] INFO  {DAGScheduler} Final stage: ResultStage 9 (show at Main.scala:91)
+[18:10:15,676] INFO  {DAGScheduler} Parents of final stage: List()
+[18:10:15,677] INFO  {DAGScheduler} Missing parents: List()
+[18:10:15,678] INFO  {DAGScheduler} Submitting ResultStage 9 (MapPartitionsRDD[32] at show at Main.scala:91), which has no missing parents
+[18:10:15,687] INFO  {MemoryStore} Block broadcast_10 stored as values in memory (estimated size 62.1 KB, free 1127.4 MB)
+[18:10:15,693] INFO  {MemoryStore} Block broadcast_10_piece0 stored as bytes in memory (estimated size 16.4 KB, free 1127.4 MB)
+[18:10:15,695] INFO  {BlockManagerInfo} Added broadcast_10_piece0 in memory on 192.168.0.103:43325 (size: 16.4 KB, free: 1127.6 MB)
+[18:10:15,696] INFO  {SparkContext} Created broadcast 10 from broadcast at DAGScheduler.scala:1012
+[18:10:15,696] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 9 (MapPartitionsRDD[32] at show at Main.scala:91)
+[18:10:15,696] INFO  {TaskSchedulerImpl} Adding task set 9.0 with 1 tasks
+[18:10:15,698] INFO  {TaskSetManager} Starting task 0.0 in stage 9.0 (TID 9, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:10:15,699] INFO  {Executor} Running task 0.0 in stage 9.0 (TID 9)
+[18:10:15,706] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:10:15,715] WARN  {Executor} 1 block locks were not released by TID = 9:
+[rdd_2_0]
+[18:10:15,716] INFO  {Executor} Finished task 0.0 in stage 9.0 (TID 9). 4083 bytes result sent to driver
+[18:10:15,718] INFO  {TaskSetManager} Finished task 0.0 in stage 9.0 (TID 9) in 20 ms on localhost (1/1)
+[18:10:15,718] INFO  {TaskSchedulerImpl} Removed TaskSet 9.0, whose tasks have all completed, from pool 
+[18:10:15,719] INFO  {DAGScheduler} ResultStage 9 (show at Main.scala:91) finished in 0.022 s
+[18:10:15,719] INFO  {DAGScheduler} Job 7 finished: show at Main.scala:91, took 0.047438 s
+[18:10:15,746] INFO  {CodeGenerator} Code generated in 22.152698 ms
+[18:10:16,588] INFO  {SparkContext} Starting job: show at Main.scala:118
+[18:10:16,590] INFO  {DAGScheduler} Got job 8 (show at Main.scala:118) with 1 output partitions
+[18:10:16,590] INFO  {DAGScheduler} Final stage: ResultStage 10 (show at Main.scala:118)
+[18:10:16,590] INFO  {DAGScheduler} Parents of final stage: List()
+[18:10:16,592] INFO  {DAGScheduler} Missing parents: List()
+[18:10:16,593] INFO  {DAGScheduler} Submitting ResultStage 10 (MapPartitionsRDD[35] at show at Main.scala:118), which has no missing parents
+[18:10:16,604] INFO  {MemoryStore} Block broadcast_11 stored as values in memory (estimated size 62.1 KB, free 1127.3 MB)
+[18:10:16,609] INFO  {MemoryStore} Block broadcast_11_piece0 stored as bytes in memory (estimated size 16.4 KB, free 1127.3 MB)
+[18:10:16,610] INFO  {BlockManagerInfo} Added broadcast_11_piece0 in memory on 192.168.0.103:43325 (size: 16.4 KB, free: 1127.6 MB)
+[18:10:16,612] INFO  {SparkContext} Created broadcast 11 from broadcast at DAGScheduler.scala:1012
+[18:10:16,612] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 10 (MapPartitionsRDD[35] at show at Main.scala:118)
+[18:10:16,613] INFO  {TaskSchedulerImpl} Adding task set 10.0 with 1 tasks
+[18:10:16,616] INFO  {TaskSetManager} Starting task 0.0 in stage 10.0 (TID 10, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:10:16,617] INFO  {Executor} Running task 0.0 in stage 10.0 (TID 10)
+[18:10:16,636] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:10:16,646] WARN  {Executor} 1 block locks were not released by TID = 10:
+[rdd_2_0]
+[18:10:16,648] INFO  {Executor} Finished task 0.0 in stage 10.0 (TID 10). 4083 bytes result sent to driver
+[18:10:16,652] INFO  {TaskSetManager} Finished task 0.0 in stage 10.0 (TID 10) in 37 ms on localhost (1/1)
+[18:10:16,652] INFO  {TaskSchedulerImpl} Removed TaskSet 10.0, whose tasks have all completed, from pool 
+[18:10:16,656] INFO  {DAGScheduler} ResultStage 10 (show at Main.scala:118) finished in 0.040 s
+[18:10:16,658] INFO  {DAGScheduler} Job 8 finished: show at Main.scala:118, took 0.070153 s
+[18:10:16,704] INFO  {CodeGenerator} Code generated in 38.964646 ms
+[18:10:16,866] INFO  {CodeGenerator} Code generated in 63.119456 ms
+[18:10:16,883] INFO  {SparkContext} Starting job: show at Main.scala:122
+[18:10:16,886] INFO  {DAGScheduler} Got job 9 (show at Main.scala:122) with 1 output partitions
+[18:10:16,886] INFO  {DAGScheduler} Final stage: ResultStage 11 (show at Main.scala:122)
+[18:10:16,886] INFO  {DAGScheduler} Parents of final stage: List()
+[18:10:16,890] INFO  {DAGScheduler} Missing parents: List()
+[18:10:16,891] INFO  {DAGScheduler} Submitting ResultStage 11 (MapPartitionsRDD[38] at show at Main.scala:122), which has no missing parents
+[18:10:16,899] INFO  {MemoryStore} Block broadcast_12 stored as values in memory (estimated size 37.5 KB, free 1127.3 MB)
+[18:10:16,903] INFO  {MemoryStore} Block broadcast_12_piece0 stored as bytes in memory (estimated size 12.3 KB, free 1127.3 MB)
+[18:10:16,904] INFO  {BlockManagerInfo} Added broadcast_12_piece0 in memory on 192.168.0.103:43325 (size: 12.3 KB, free: 1127.6 MB)
+[18:10:16,906] INFO  {SparkContext} Created broadcast 12 from broadcast at DAGScheduler.scala:1012
+[18:10:16,906] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 11 (MapPartitionsRDD[38] at show at Main.scala:122)
+[18:10:16,906] INFO  {TaskSchedulerImpl} Adding task set 11.0 with 1 tasks
+[18:10:16,910] INFO  {TaskSetManager} Starting task 0.0 in stage 11.0 (TID 11, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:10:16,911] INFO  {Executor} Running task 0.0 in stage 11.0 (TID 11)
+[18:10:16,925] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:10:16,938] WARN  {Executor} 1 block locks were not released by TID = 11:
+[rdd_2_0]
+[18:10:16,940] INFO  {Executor} Finished task 0.0 in stage 11.0 (TID 11). 1991 bytes result sent to driver
+[18:10:16,942] INFO  {TaskSetManager} Finished task 0.0 in stage 11.0 (TID 11) in 34 ms on localhost (1/1)
+[18:10:16,942] INFO  {TaskSchedulerImpl} Removed TaskSet 11.0, whose tasks have all completed, from pool 
+[18:10:16,943] INFO  {DAGScheduler} ResultStage 11 (show at Main.scala:122) finished in 0.034 s
+[18:10:16,943] INFO  {DAGScheduler} Job 9 finished: show at Main.scala:122, took 0.059656 s
+[18:10:16,958] INFO  {CodeGenerator} Code generated in 13.468625 ms
+[18:10:16,984] INFO  {SparkContext} Invoking stop() from shutdown hook
+[18:10:16,996] INFO  {ServerConnector} Stopped ServerConnector@56d0efc3{HTTP/1.1}{0.0.0.0:4040}
+[18:10:17,011] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3016fd5e{/stages/stage/kill,null,UNAVAILABLE}
+[18:10:17,012] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3b00856b{/api,null,UNAVAILABLE}
+[18:10:17,013] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3bcbb589{/,null,UNAVAILABLE}
+[18:10:17,014] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@1d730606{/static,null,UNAVAILABLE}
+[18:10:17,014] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@4dc8caa7{/executors/threadDump/json,null,UNAVAILABLE}
+[18:10:17,015] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@626c44e7{/executors/threadDump,null,UNAVAILABLE}
+[18:10:17,015] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@542e560f{/executors/json,null,UNAVAILABLE}
+[18:10:17,017] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@241e8ea6{/executors,null,UNAVAILABLE}
+[18:10:17,021] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3243b914{/environment/json,null,UNAVAILABLE}
+[18:10:17,024] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@31d0e481{/environment,null,UNAVAILABLE}
+[18:10:17,025] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@59252cb6{/storage/rdd/json,null,UNAVAILABLE}
+[18:10:17,025] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@6d9f7a80{/storage/rdd,null,UNAVAILABLE}
+[18:10:17,027] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5ccbeb64{/storage/json,null,UNAVAILABLE}
+[18:10:17,027] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@112f364d{/storage,null,UNAVAILABLE}
+[18:10:17,028] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@362045c0{/stages/pool/json,null,UNAVAILABLE}
+[18:10:17,029] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5a9d6f02{/stages/pool,null,UNAVAILABLE}
+[18:10:17,031] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@189aa67a{/stages/stage/json,null,UNAVAILABLE}
+[18:10:17,032] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@c4ed84{/stages/stage,null,UNAVAILABLE}
+[18:10:17,034] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5f9678e1{/stages/json,null,UNAVAILABLE}
+[18:10:17,036] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@373ebf74{/stages,null,UNAVAILABLE}
+[18:10:17,037] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5669c5fb{/jobs/job/json,null,UNAVAILABLE}
+[18:10:17,038] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@56113384{/jobs/job,null,UNAVAILABLE}
+[18:10:17,038] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@340b9973{/jobs/json,null,UNAVAILABLE}
+[18:10:17,038] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@52066604{/jobs,null,UNAVAILABLE}
+[18:10:17,042] INFO  {SparkUI} Stopped Spark web UI at http://192.168.0.103:4040
+[18:10:17,086] INFO  {MapOutputTrackerMasterEndpoint} MapOutputTrackerMasterEndpoint stopped!
+[18:10:17,111] INFO  {MemoryStore} MemoryStore cleared
+[18:10:17,112] INFO  {BlockManager} BlockManager stopped
+[18:10:17,113] INFO  {BlockManagerMaster} BlockManagerMaster stopped
+[18:10:17,118] INFO  {OutputCommitCoordinator$OutputCommitCoordinatorEndpoint} OutputCommitCoordinator stopped!
+[18:10:17,134] INFO  {SparkContext} Successfully stopped SparkContext
+[18:10:17,136] INFO  {ShutdownHookManager} Shutdown hook called
+[18:10:17,138] INFO  {ShutdownHookManager} Deleting directory /tmp/spark-f4db5a17-14e1-46fe-a423-f65de507df5e
+[18:11:59,468] INFO  {SparkContext} Running Spark version 2.0.1
+[18:12:00,112] WARN  {NativeCodeLoader} Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[18:12:00,405] WARN  {Utils} Your hostname, victor resolves to a loopback address: 127.0.1.1; using 192.168.0.103 instead (on interface wlp4s0)
+[18:12:00,407] WARN  {Utils} Set SPARK_LOCAL_IP if you need to bind to another address
+[18:12:00,646] INFO  {SecurityManager} Changing view acls to: victor
+[18:12:00,649] INFO  {SecurityManager} Changing modify acls to: victor
+[18:12:00,651] INFO  {SecurityManager} Changing view acls groups to: 
+[18:12:00,653] INFO  {SecurityManager} Changing modify acls groups to: 
+[18:12:00,655] INFO  {SecurityManager} SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(victor); groups with view permissions: Set(); users  with modify permissions: Set(victor); groups with modify permissions: Set()
+[18:12:01,751] INFO  {Utils} Successfully started service 'sparkDriver' on port 40915.
+[18:12:01,798] INFO  {SparkEnv} Registering MapOutputTracker
+[18:12:01,848] INFO  {SparkEnv} Registering BlockManagerMaster
+[18:12:01,884] INFO  {DiskBlockManager} Created local directory at /tmp/blockmgr-05e9dc2c-da7c-42d0-9fdd-4a2471896680
+[18:12:01,918] INFO  {MemoryStore} MemoryStore started with capacity 1128.9 MB
+[18:12:02,066] INFO  {SparkEnv} Registering OutputCommitCoordinator
+[18:12:02,248] INFO  {log} Logging initialized @4525ms
+[18:12:02,538] INFO  {Server} jetty-9.2.z-SNAPSHOT
+[18:12:02,579] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@52066604{/jobs,null,AVAILABLE}
+[18:12:02,580] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@340b9973{/jobs/json,null,AVAILABLE}
+[18:12:02,580] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@56113384{/jobs/job,null,AVAILABLE}
+[18:12:02,581] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5669c5fb{/jobs/job/json,null,AVAILABLE}
+[18:12:02,582] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@373ebf74{/stages,null,AVAILABLE}
+[18:12:02,582] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5f9678e1{/stages/json,null,AVAILABLE}
+[18:12:02,583] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@c4ed84{/stages/stage,null,AVAILABLE}
+[18:12:02,584] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@189aa67a{/stages/stage/json,null,AVAILABLE}
+[18:12:02,584] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5a9d6f02{/stages/pool,null,AVAILABLE}
+[18:12:02,585] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@362045c0{/stages/pool/json,null,AVAILABLE}
+[18:12:02,585] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@112f364d{/storage,null,AVAILABLE}
+[18:12:02,586] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@5ccbeb64{/storage/json,null,AVAILABLE}
+[18:12:02,586] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6d9f7a80{/storage/rdd,null,AVAILABLE}
+[18:12:02,587] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@59252cb6{/storage/rdd/json,null,AVAILABLE}
+[18:12:02,587] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@31d0e481{/environment,null,AVAILABLE}
+[18:12:02,588] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3243b914{/environment/json,null,AVAILABLE}
+[18:12:02,588] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@241e8ea6{/executors,null,AVAILABLE}
+[18:12:02,588] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@542e560f{/executors/json,null,AVAILABLE}
+[18:12:02,589] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@626c44e7{/executors/threadDump,null,AVAILABLE}
+[18:12:02,590] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@4dc8caa7{/executors/threadDump/json,null,AVAILABLE}
+[18:12:02,609] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@1d730606{/static,null,AVAILABLE}
+[18:12:02,610] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3bcbb589{/,null,AVAILABLE}
+[18:12:02,613] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3b00856b{/api,null,AVAILABLE}
+[18:12:02,614] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@3016fd5e{/stages/stage/kill,null,AVAILABLE}
+[18:12:02,633] INFO  {ServerConnector} Started ServerConnector@4b2a01d4{HTTP/1.1}{0.0.0.0:4040}
+[18:12:02,635] INFO  {Server} Started @4914ms
+[18:12:02,636] INFO  {Utils} Successfully started service 'SparkUI' on port 4040.
+[18:12:02,640] INFO  {SparkUI} Bound SparkUI to 0.0.0.0, and started at http://192.168.0.103:4040
+[18:12:02,841] INFO  {Executor} Starting executor ID driver on host localhost
+[18:12:02,904] INFO  {Utils} Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43041.
+[18:12:02,906] INFO  {NettyBlockTransferService} Server created on 192.168.0.103:43041
+[18:12:02,910] INFO  {BlockManagerMaster} Registering BlockManager BlockManagerId(driver, 192.168.0.103, 43041)
+[18:12:02,917] INFO  {BlockManagerMasterEndpoint} Registering block manager 192.168.0.103:43041 with 1128.9 MB RAM, BlockManagerId(driver, 192.168.0.103, 43041)
+[18:12:02,925] INFO  {BlockManagerMaster} Registered BlockManager BlockManagerId(driver, 192.168.0.103, 43041)
+[18:12:03,295] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6d8792db{/metrics/json,null,AVAILABLE}
+[18:12:03,428] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@6063d80a{/SQL,null,AVAILABLE}
+[18:12:03,429] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@355e34c7{/SQL/json,null,AVAILABLE}
+[18:12:03,433] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@302fec27{/SQL/execution,null,AVAILABLE}
+[18:12:03,435] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@48c40605{/SQL/execution/json,null,AVAILABLE}
+[18:12:03,439] INFO  {ContextHandler} Started o.s.j.s.ServletContextHandler@2f2bf0e2{/static/sql,null,AVAILABLE}
+[18:12:03,481] INFO  {SharedState} Warehouse path is '/home/victor/Desktop/ML/vt17-lab1/spark-warehouse'.
+[18:12:07,482] INFO  {FileSourceStrategy} Pruning directories with: 
+[18:12:07,486] INFO  {FileSourceStrategy} Post-Scan Filters: 
+[18:12:07,497] INFO  {FileSourceStrategy} Pruned Data Schema: struct<value: string>
+[18:12:07,497] INFO  {FileSourceStrategy} Pushed Filters: 
+[18:12:07,640] INFO  {MemoryStore} Block broadcast_0 stored as values in memory (estimated size 131.0 KB, free 1128.8 MB)
+[18:12:07,692] INFO  {MemoryStore} Block broadcast_0_piece0 stored as bytes in memory (estimated size 14.6 KB, free 1128.8 MB)
+[18:12:07,695] INFO  {BlockManagerInfo} Added broadcast_0_piece0 in memory on 192.168.0.103:43041 (size: 14.6 KB, free: 1128.9 MB)
+[18:12:07,701] INFO  {SparkContext} Created broadcast 0 from cache at Main.scala:23
+[18:12:07,705] INFO  {FileSourceStrategy} Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[18:12:08,253] INFO  {CodeGenerator} Code generated in 261.17349 ms
+[18:12:08,493] INFO  {CodeGenerator} Code generated in 33.96645 ms
+[18:12:08,543] INFO  {SparkContext} Starting job: show at Main.scala:33
+[18:12:08,576] INFO  {DAGScheduler} Got job 0 (show at Main.scala:33) with 1 output partitions
+[18:12:08,577] INFO  {DAGScheduler} Final stage: ResultStage 0 (show at Main.scala:33)
+[18:12:08,577] INFO  {DAGScheduler} Parents of final stage: List()
+[18:12:08,584] INFO  {DAGScheduler} Missing parents: List()
+[18:12:08,588] INFO  {DAGScheduler} Submitting ResultStage 0 (MapPartitionsRDD[5] at show at Main.scala:33), which has no missing parents
+[18:12:08,667] INFO  {MemoryStore} Block broadcast_1 stored as values in memory (estimated size 18.3 KB, free 1128.7 MB)
+[18:12:08,670] INFO  {MemoryStore} Block broadcast_1_piece0 stored as bytes in memory (estimated size 8.5 KB, free 1128.7 MB)
+[18:12:08,671] INFO  {BlockManagerInfo} Added broadcast_1_piece0 in memory on 192.168.0.103:43041 (size: 8.5 KB, free: 1128.9 MB)
+[18:12:08,672] INFO  {SparkContext} Created broadcast 1 from broadcast at DAGScheduler.scala:1012
+[18:12:08,680] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[5] at show at Main.scala:33)
+[18:12:08,684] INFO  {TaskSchedulerImpl} Adding task set 0.0 with 1 tasks
+[18:12:08,718] INFO  {TaskSetManager} Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:12:08,727] INFO  {Executor} Running task 0.0 in stage 0.0 (TID 0)
+[18:12:08,781] INFO  {FileScanRDD} Reading File path: file:///home/victor/Desktop/ML/vt17-lab1/src/main/resources/millionsong.txt, range: 0-1248115, partition values: [empty row]
+[18:12:08,794] INFO  {CodeGenerator} Code generated in 9.178017 ms
+[18:12:08,984] INFO  {MemoryStore} Block rdd_2_0 stored as values in memory (estimated size 1239.2 KB, free 1127.5 MB)
+[18:12:08,984] INFO  {BlockManagerInfo} Added rdd_2_0 in memory on 192.168.0.103:43041 (size: 1239.2 KB, free: 1127.7 MB)
+[18:12:08,995] INFO  {CodeGenerator} Code generated in 4.315352 ms
+[18:12:09,029] INFO  {CodeGenerator} Code generated in 25.861458 ms
+[18:12:09,052] WARN  {Executor} 1 block locks were not released by TID = 0:
+[rdd_2_0]
+[18:12:09,059] INFO  {Executor} Finished task 0.0 in stage 0.0 (TID 0). 4623 bytes result sent to driver
+[18:12:09,074] INFO  {TaskSetManager} Finished task 0.0 in stage 0.0 (TID 0) in 368 ms on localhost (1/1)
+[18:12:09,079] INFO  {TaskSchedulerImpl} Removed TaskSet 0.0, whose tasks have all completed, from pool 
+[18:12:09,086] INFO  {DAGScheduler} ResultStage 0 (show at Main.scala:33) finished in 0.393 s
+[18:12:09,092] INFO  {DAGScheduler} Job 0 finished: show at Main.scala:33, took 0.549033 s
+[18:12:09,124] INFO  {CodeGenerator} Code generated in 16.168695 ms
+[18:12:09,276] INFO  {CodeGenerator} Code generated in 47.404432 ms
+[18:12:09,299] INFO  {SparkContext} Starting job: show at Main.scala:42
+[18:12:09,300] INFO  {DAGScheduler} Got job 1 (show at Main.scala:42) with 1 output partitions
+[18:12:09,301] INFO  {DAGScheduler} Final stage: ResultStage 1 (show at Main.scala:42)
+[18:12:09,301] INFO  {DAGScheduler} Parents of final stage: List()
+[18:12:09,303] INFO  {DAGScheduler} Missing parents: List()
+[18:12:09,304] INFO  {DAGScheduler} Submitting ResultStage 1 (MapPartitionsRDD[8] at show at Main.scala:42), which has no missing parents
+[18:12:09,319] INFO  {MemoryStore} Block broadcast_2 stored as values in memory (estimated size 25.6 KB, free 1127.5 MB)
+[18:12:09,324] INFO  {MemoryStore} Block broadcast_2_piece0 stored as bytes in memory (estimated size 10.0 KB, free 1127.5 MB)
+[18:12:09,325] INFO  {BlockManagerInfo} Added broadcast_2_piece0 in memory on 192.168.0.103:43041 (size: 10.0 KB, free: 1127.7 MB)
+[18:12:09,325] INFO  {SparkContext} Created broadcast 2 from broadcast at DAGScheduler.scala:1012
+[18:12:09,325] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[8] at show at Main.scala:42)
+[18:12:09,326] INFO  {TaskSchedulerImpl} Adding task set 1.0 with 1 tasks
+[18:12:09,331] INFO  {TaskSetManager} Starting task 0.0 in stage 1.0 (TID 1, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:12:09,332] INFO  {Executor} Running task 0.0 in stage 1.0 (TID 1)
+[18:12:09,361] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:12:09,394] WARN  {Executor} 1 block locks were not released by TID = 1:
+[rdd_2_0]
+[18:12:09,395] INFO  {Executor} Finished task 0.0 in stage 1.0 (TID 1). 3929 bytes result sent to driver
+[18:12:09,398] INFO  {TaskSetManager} Finished task 0.0 in stage 1.0 (TID 1) in 69 ms on localhost (1/1)
+[18:12:09,399] INFO  {TaskSchedulerImpl} Removed TaskSet 1.0, whose tasks have all completed, from pool 
+[18:12:09,399] INFO  {DAGScheduler} ResultStage 1 (show at Main.scala:42) finished in 0.070 s
+[18:12:09,400] INFO  {DAGScheduler} Job 1 finished: show at Main.scala:42, took 0.100920 s
+[18:12:09,440] INFO  {CodeGenerator} Code generated in 17.512202 ms
+[18:12:09,727] INFO  {ContextCleaner} Cleaned accumulator 3
+[18:12:09,727] INFO  {ContextCleaner} Cleaned accumulator 4
+[18:12:09,772] INFO  {BlockManagerInfo} Removed broadcast_1_piece0 on 192.168.0.103:43041 in memory (size: 8.5 KB, free: 1127.7 MB)
+[18:12:09,778] INFO  {ContextCleaner} Cleaned accumulator 49
+[18:12:09,779] INFO  {ContextCleaner} Cleaned accumulator 50
+[18:12:09,780] INFO  {BlockManagerInfo} Removed broadcast_2_piece0 on 192.168.0.103:43041 in memory (size: 10.0 KB, free: 1127.7 MB)
+[18:12:09,881] INFO  {CodeGenerator} Code generated in 95.786725 ms
+[18:12:09,915] INFO  {SparkContext} Starting job: show at Main.scala:51
+[18:12:09,917] INFO  {DAGScheduler} Got job 2 (show at Main.scala:51) with 1 output partitions
+[18:12:09,917] INFO  {DAGScheduler} Final stage: ResultStage 2 (show at Main.scala:51)
+[18:12:09,918] INFO  {DAGScheduler} Parents of final stage: List()
+[18:12:09,919] INFO  {DAGScheduler} Missing parents: List()
+[18:12:09,921] INFO  {DAGScheduler} Submitting ResultStage 2 (MapPartitionsRDD[11] at show at Main.scala:51), which has no missing parents
+[18:12:09,933] INFO  {MemoryStore} Block broadcast_3 stored as values in memory (estimated size 34.3 KB, free 1127.5 MB)
+[18:12:09,940] INFO  {MemoryStore} Block broadcast_3_piece0 stored as bytes in memory (estimated size 11.7 KB, free 1127.5 MB)
+[18:12:09,942] INFO  {BlockManagerInfo} Added broadcast_3_piece0 in memory on 192.168.0.103:43041 (size: 11.7 KB, free: 1127.7 MB)
+[18:12:09,944] INFO  {SparkContext} Created broadcast 3 from broadcast at DAGScheduler.scala:1012
+[18:12:09,945] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[11] at show at Main.scala:51)
+[18:12:09,945] INFO  {TaskSchedulerImpl} Adding task set 2.0 with 1 tasks
+[18:12:09,951] INFO  {TaskSetManager} Starting task 0.0 in stage 2.0 (TID 2, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:12:09,951] INFO  {Executor} Running task 0.0 in stage 2.0 (TID 2)
+[18:12:09,973] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:12:09,995] WARN  {Executor} 1 block locks were not released by TID = 2:
+[rdd_2_0]
+[18:12:09,997] INFO  {Executor} Finished task 0.0 in stage 2.0 (TID 2). 4003 bytes result sent to driver
+[18:12:10,002] INFO  {TaskSetManager} Finished task 0.0 in stage 2.0 (TID 2) in 55 ms on localhost (1/1)
+[18:12:10,003] INFO  {TaskSchedulerImpl} Removed TaskSet 2.0, whose tasks have all completed, from pool 
+[18:12:10,005] INFO  {DAGScheduler} ResultStage 2 (show at Main.scala:51) finished in 0.058 s
+[18:12:10,006] INFO  {DAGScheduler} Job 2 finished: show at Main.scala:51, took 0.090911 s
+[18:12:10,059] INFO  {CodeGenerator} Code generated in 42.492901 ms
+[18:12:10,398] INFO  {CodeGenerator} Code generated in 155.615942 ms
+[18:12:10,436] INFO  {SparkContext} Starting job: show at Main.scala:61
+[18:12:10,439] INFO  {DAGScheduler} Got job 3 (show at Main.scala:61) with 1 output partitions
+[18:12:10,439] INFO  {DAGScheduler} Final stage: ResultStage 3 (show at Main.scala:61)
+[18:12:10,439] INFO  {DAGScheduler} Parents of final stage: List()
+[18:12:10,440] INFO  {DAGScheduler} Missing parents: List()
+[18:12:10,441] INFO  {DAGScheduler} Submitting ResultStage 3 (MapPartitionsRDD[14] at show at Main.scala:61), which has no missing parents
+[18:12:10,449] INFO  {MemoryStore} Block broadcast_4 stored as values in memory (estimated size 40.2 KB, free 1127.5 MB)
+[18:12:10,453] INFO  {MemoryStore} Block broadcast_4_piece0 stored as bytes in memory (estimated size 13.3 KB, free 1127.5 MB)
+[18:12:10,454] INFO  {BlockManagerInfo} Added broadcast_4_piece0 in memory on 192.168.0.103:43041 (size: 13.3 KB, free: 1127.7 MB)
+[18:12:10,455] INFO  {SparkContext} Created broadcast 4 from broadcast at DAGScheduler.scala:1012
+[18:12:10,456] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[14] at show at Main.scala:61)
+[18:12:10,456] INFO  {TaskSchedulerImpl} Adding task set 3.0 with 1 tasks
+[18:12:10,459] INFO  {TaskSetManager} Starting task 0.0 in stage 3.0 (TID 3, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:12:10,460] INFO  {Executor} Running task 0.0 in stage 3.0 (TID 3)
+[18:12:10,476] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:12:10,500] WARN  {Executor} 1 block locks were not released by TID = 3:
+[rdd_2_0]
+[18:12:10,501] INFO  {Executor} Finished task 0.0 in stage 3.0 (TID 3). 4012 bytes result sent to driver
+[18:12:10,505] INFO  {TaskSetManager} Finished task 0.0 in stage 3.0 (TID 3) in 47 ms on localhost (1/1)
+[18:12:10,505] INFO  {TaskSchedulerImpl} Removed TaskSet 3.0, whose tasks have all completed, from pool 
+[18:12:10,506] INFO  {DAGScheduler} ResultStage 3 (show at Main.scala:61) finished in 0.049 s
+[18:12:10,507] INFO  {DAGScheduler} Job 3 finished: show at Main.scala:61, took 0.070657 s
+[18:12:10,558] INFO  {CodeGenerator} Code generated in 44.376294 ms
+[18:12:10,855] INFO  {CodeGenerator} Code generated in 34.279719 ms
+[18:12:10,922] INFO  {CodeGenerator} Code generated in 50.955031 ms
+[18:12:11,012] INFO  {SparkContext} Starting job: collect at Main.scala:66
+[18:12:11,020] INFO  {DAGScheduler} Registering RDD 17 (collect at Main.scala:66)
+[18:12:11,022] INFO  {DAGScheduler} Got job 4 (collect at Main.scala:66) with 1 output partitions
+[18:12:11,022] INFO  {DAGScheduler} Final stage: ResultStage 5 (collect at Main.scala:66)
+[18:12:11,022] INFO  {DAGScheduler} Parents of final stage: List(ShuffleMapStage 4)
+[18:12:11,023] INFO  {DAGScheduler} Missing parents: List(ShuffleMapStage 4)
+[18:12:11,032] INFO  {DAGScheduler} Submitting ShuffleMapStage 4 (MapPartitionsRDD[17] at collect at Main.scala:66), which has no missing parents
+[18:12:11,049] INFO  {MemoryStore} Block broadcast_5 stored as values in memory (estimated size 24.5 KB, free 1127.4 MB)
+[18:12:11,053] INFO  {MemoryStore} Block broadcast_5_piece0 stored as bytes in memory (estimated size 10.1 KB, free 1127.4 MB)
+[18:12:11,055] INFO  {BlockManagerInfo} Added broadcast_5_piece0 in memory on 192.168.0.103:43041 (size: 10.1 KB, free: 1127.6 MB)
+[18:12:11,056] INFO  {SparkContext} Created broadcast 5 from broadcast at DAGScheduler.scala:1012
+[18:12:11,062] INFO  {DAGScheduler} Submitting 1 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[17] at collect at Main.scala:66)
+[18:12:11,062] INFO  {TaskSchedulerImpl} Adding task set 4.0 with 1 tasks
+[18:12:11,070] INFO  {TaskSetManager} Starting task 0.0 in stage 4.0 (TID 4, localhost, partition 0, PROCESS_LOCAL, 5978 bytes)
+[18:12:11,071] INFO  {Executor} Running task 0.0 in stage 4.0 (TID 4)
+[18:12:11,085] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:12:11,914] INFO  {Executor} Finished task 0.0 in stage 4.0 (TID 4). 2411 bytes result sent to driver
+[18:12:11,926] INFO  {DAGScheduler} ShuffleMapStage 4 (collect at Main.scala:66) finished in 0.862 s
+[18:12:11,928] INFO  {DAGScheduler} looking for newly runnable stages
+[18:12:11,932] INFO  {DAGScheduler} running: Set()
+[18:12:11,934] INFO  {TaskSetManager} Finished task 0.0 in stage 4.0 (TID 4) in 858 ms on localhost (1/1)
+[18:12:11,935] INFO  {TaskSchedulerImpl} Removed TaskSet 4.0, whose tasks have all completed, from pool 
+[18:12:11,936] INFO  {DAGScheduler} waiting: Set(ResultStage 5)
+[18:12:11,938] INFO  {DAGScheduler} failed: Set()
+[18:12:11,947] INFO  {DAGScheduler} Submitting ResultStage 5 (MapPartitionsRDD[20] at collect at Main.scala:66), which has no missing parents
+[18:12:11,961] INFO  {MemoryStore} Block broadcast_6 stored as values in memory (estimated size 7.3 KB, free 1127.4 MB)
+[18:12:11,965] INFO  {MemoryStore} Block broadcast_6_piece0 stored as bytes in memory (estimated size 3.9 KB, free 1127.4 MB)
+[18:12:11,966] INFO  {BlockManagerInfo} Added broadcast_6_piece0 in memory on 192.168.0.103:43041 (size: 3.9 KB, free: 1127.6 MB)
+[18:12:11,967] INFO  {SparkContext} Created broadcast 6 from broadcast at DAGScheduler.scala:1012
+[18:12:11,968] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[20] at collect at Main.scala:66)
+[18:12:11,968] INFO  {TaskSchedulerImpl} Adding task set 5.0 with 1 tasks
+[18:12:11,975] INFO  {TaskSetManager} Starting task 0.0 in stage 5.0 (TID 5, localhost, partition 0, ANY, 5317 bytes)
+[18:12:11,975] INFO  {Executor} Running task 0.0 in stage 5.0 (TID 5)
+[18:12:12,019] INFO  {ShuffleBlockFetcherIterator} Getting 1 non-empty blocks out of 1 blocks
+[18:12:12,025] INFO  {ShuffleBlockFetcherIterator} Started 0 remote fetches in 20 ms
+[18:12:12,064] INFO  {Executor} Finished task 0.0 in stage 5.0 (TID 5). 1868 bytes result sent to driver
+[18:12:12,067] INFO  {TaskSetManager} Finished task 0.0 in stage 5.0 (TID 5) in 96 ms on localhost (1/1)
+[18:12:12,069] INFO  {DAGScheduler} ResultStage 5 (collect at Main.scala:66) finished in 0.098 s
+[18:12:12,069] INFO  {TaskSchedulerImpl} Removed TaskSet 5.0, whose tasks have all completed, from pool 
+[18:12:12,070] INFO  {DAGScheduler} Job 4 finished: collect at Main.scala:66, took 1.058341 s
+[18:12:12,096] INFO  {CodeGenerator} Code generated in 17.47239 ms
+[18:12:12,216] INFO  {CodeGenerator} Code generated in 29.39043 ms
+[18:12:12,286] INFO  {CodeGenerator} Code generated in 55.819533 ms
+[18:12:12,336] INFO  {SparkContext} Starting job: collect at Main.scala:67
+[18:12:12,339] INFO  {DAGScheduler} Registering RDD 23 (collect at Main.scala:67)
+[18:12:12,340] INFO  {DAGScheduler} Got job 5 (collect at Main.scala:67) with 1 output partitions
+[18:12:12,340] INFO  {DAGScheduler} Final stage: ResultStage 7 (collect at Main.scala:67)
+[18:12:12,340] INFO  {DAGScheduler} Parents of final stage: List(ShuffleMapStage 6)
+[18:12:12,341] INFO  {DAGScheduler} Missing parents: List(ShuffleMapStage 6)
+[18:12:12,348] INFO  {DAGScheduler} Submitting ShuffleMapStage 6 (MapPartitionsRDD[23] at collect at Main.scala:67), which has no missing parents
+[18:12:12,357] INFO  {MemoryStore} Block broadcast_7 stored as values in memory (estimated size 24.5 KB, free 1127.4 MB)
+[18:12:12,362] INFO  {MemoryStore} Block broadcast_7_piece0 stored as bytes in memory (estimated size 10.1 KB, free 1127.4 MB)
+[18:12:12,364] INFO  {BlockManagerInfo} Added broadcast_7_piece0 in memory on 192.168.0.103:43041 (size: 10.1 KB, free: 1127.6 MB)
+[18:12:12,366] INFO  {SparkContext} Created broadcast 7 from broadcast at DAGScheduler.scala:1012
+[18:12:12,366] INFO  {DAGScheduler} Submitting 1 missing tasks from ShuffleMapStage 6 (MapPartitionsRDD[23] at collect at Main.scala:67)
+[18:12:12,366] INFO  {TaskSchedulerImpl} Adding task set 6.0 with 1 tasks
+[18:12:12,371] INFO  {TaskSetManager} Starting task 0.0 in stage 6.0 (TID 6, localhost, partition 0, PROCESS_LOCAL, 5978 bytes)
+[18:12:12,371] INFO  {Executor} Running task 0.0 in stage 6.0 (TID 6)
+[18:12:12,383] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:12:12,621] INFO  {BlockManagerInfo} Removed broadcast_5_piece0 on 192.168.0.103:43041 in memory (size: 10.1 KB, free: 1127.6 MB)
+[18:12:12,624] INFO  {BlockManagerInfo} Removed broadcast_6_piece0 on 192.168.0.103:43041 in memory (size: 3.9 KB, free: 1127.6 MB)
+[18:12:12,626] INFO  {ContextCleaner} Cleaned accumulator 288
+[18:12:12,628] INFO  {BlockManagerInfo} Removed broadcast_4_piece0 on 192.168.0.103:43041 in memory (size: 13.3 KB, free: 1127.7 MB)
+[18:12:12,629] INFO  {ContextCleaner} Cleaned accumulator 187
+[18:12:12,629] INFO  {ContextCleaner} Cleaned accumulator 188
+[18:12:12,629] INFO  {ContextCleaner} Cleaned accumulator 189
+[18:12:12,630] INFO  {ContextCleaner} Cleaned accumulator 190
+[18:12:12,630] INFO  {ContextCleaner} Cleaned accumulator 191
+[18:12:12,630] INFO  {ContextCleaner} Cleaned accumulator 192
+[18:12:12,630] INFO  {ContextCleaner} Cleaned accumulator 193
+[18:12:12,631] INFO  {ContextCleaner} Cleaned accumulator 194
+[18:12:12,631] INFO  {ContextCleaner} Cleaned accumulator 195
+[18:12:12,631] INFO  {ContextCleaner} Cleaned accumulator 196
+[18:12:12,631] INFO  {ContextCleaner} Cleaned accumulator 197
+[18:12:12,632] INFO  {ContextCleaner} Cleaned accumulator 198
+[18:12:12,632] INFO  {ContextCleaner} Cleaned accumulator 199
+[18:12:12,643] INFO  {ContextCleaner} Cleaned shuffle 0
+[18:12:12,650] INFO  {BlockManagerInfo} Removed broadcast_3_piece0 on 192.168.0.103:43041 in memory (size: 11.7 KB, free: 1127.7 MB)
+[18:12:12,653] INFO  {ContextCleaner} Cleaned accumulator 141
+[18:12:12,653] INFO  {ContextCleaner} Cleaned accumulator 142
+[18:12:12,692] INFO  {Executor} Finished task 0.0 in stage 6.0 (TID 6). 2397 bytes result sent to driver
+[18:12:12,694] INFO  {TaskSetManager} Finished task 0.0 in stage 6.0 (TID 6) in 326 ms on localhost (1/1)
+[18:12:12,695] INFO  {TaskSchedulerImpl} Removed TaskSet 6.0, whose tasks have all completed, from pool 
+[18:12:12,696] INFO  {DAGScheduler} ShuffleMapStage 6 (collect at Main.scala:67) finished in 0.329 s
+[18:12:12,696] INFO  {DAGScheduler} looking for newly runnable stages
+[18:12:12,696] INFO  {DAGScheduler} running: Set()
+[18:12:12,696] INFO  {DAGScheduler} waiting: Set(ResultStage 7)
+[18:12:12,696] INFO  {DAGScheduler} failed: Set()
+[18:12:12,697] INFO  {DAGScheduler} Submitting ResultStage 7 (MapPartitionsRDD[26] at collect at Main.scala:67), which has no missing parents
+[18:12:12,701] INFO  {MemoryStore} Block broadcast_8 stored as values in memory (estimated size 7.3 KB, free 1127.5 MB)
+[18:12:12,704] INFO  {MemoryStore} Block broadcast_8_piece0 stored as bytes in memory (estimated size 3.9 KB, free 1127.5 MB)
+[18:12:12,705] INFO  {BlockManagerInfo} Added broadcast_8_piece0 in memory on 192.168.0.103:43041 (size: 3.9 KB, free: 1127.7 MB)
+[18:12:12,706] INFO  {SparkContext} Created broadcast 8 from broadcast at DAGScheduler.scala:1012
+[18:12:12,707] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[26] at collect at Main.scala:67)
+[18:12:12,707] INFO  {TaskSchedulerImpl} Adding task set 7.0 with 1 tasks
+[18:12:12,710] INFO  {TaskSetManager} Starting task 0.0 in stage 7.0 (TID 7, localhost, partition 0, ANY, 5317 bytes)
+[18:12:12,711] INFO  {Executor} Running task 0.0 in stage 7.0 (TID 7)
+[18:12:12,717] INFO  {ShuffleBlockFetcherIterator} Getting 1 non-empty blocks out of 1 blocks
+[18:12:12,717] INFO  {ShuffleBlockFetcherIterator} Started 0 remote fetches in 1 ms
+[18:12:12,727] INFO  {Executor} Finished task 0.0 in stage 7.0 (TID 7). 1868 bytes result sent to driver
+[18:12:12,729] INFO  {TaskSetManager} Finished task 0.0 in stage 7.0 (TID 7) in 21 ms on localhost (1/1)
+[18:12:12,730] INFO  {TaskSchedulerImpl} Removed TaskSet 7.0, whose tasks have all completed, from pool 
+[18:12:12,732] INFO  {DAGScheduler} ResultStage 7 (collect at Main.scala:67) finished in 0.024 s
+[18:12:12,735] INFO  {DAGScheduler} Job 5 finished: collect at Main.scala:67, took 0.398570 s
+[18:12:13,075] INFO  {CodeGenerator} Code generated in 167.577055 ms
+[18:12:13,094] INFO  {SparkContext} Starting job: show at Main.scala:82
+[18:12:13,096] INFO  {DAGScheduler} Got job 6 (show at Main.scala:82) with 1 output partitions
+[18:12:13,096] INFO  {DAGScheduler} Final stage: ResultStage 8 (show at Main.scala:82)
+[18:12:13,096] INFO  {DAGScheduler} Parents of final stage: List()
+[18:12:13,097] INFO  {DAGScheduler} Missing parents: List()
+[18:12:13,098] INFO  {DAGScheduler} Submitting ResultStage 8 (MapPartitionsRDD[29] at show at Main.scala:82), which has no missing parents
+[18:12:13,104] INFO  {MemoryStore} Block broadcast_9 stored as values in memory (estimated size 53.4 KB, free 1127.5 MB)
+[18:12:13,107] INFO  {MemoryStore} Block broadcast_9_piece0 stored as bytes in memory (estimated size 15.0 KB, free 1127.4 MB)
+[18:12:13,108] INFO  {BlockManagerInfo} Added broadcast_9_piece0 in memory on 192.168.0.103:43041 (size: 15.0 KB, free: 1127.6 MB)
+[18:12:13,109] INFO  {SparkContext} Created broadcast 9 from broadcast at DAGScheduler.scala:1012
+[18:12:13,109] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 8 (MapPartitionsRDD[29] at show at Main.scala:82)
+[18:12:13,110] INFO  {TaskSchedulerImpl} Adding task set 8.0 with 1 tasks
+[18:12:13,118] INFO  {TaskSetManager} Starting task 0.0 in stage 8.0 (TID 8, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:12:13,119] INFO  {Executor} Running task 0.0 in stage 8.0 (TID 8)
+[18:12:13,132] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:12:13,148] WARN  {Executor} 1 block locks were not released by TID = 8:
+[rdd_2_0]
+[18:12:13,150] INFO  {Executor} Finished task 0.0 in stage 8.0 (TID 8). 4020 bytes result sent to driver
+[18:12:13,153] INFO  {TaskSetManager} Finished task 0.0 in stage 8.0 (TID 8) in 39 ms on localhost (1/1)
+[18:12:13,153] INFO  {TaskSchedulerImpl} Removed TaskSet 8.0, whose tasks have all completed, from pool 
+[18:12:13,154] INFO  {DAGScheduler} ResultStage 8 (show at Main.scala:82) finished in 0.041 s
+[18:12:13,156] INFO  {DAGScheduler} Job 6 finished: show at Main.scala:82, took 0.061270 s
+[18:12:13,205] INFO  {CodeGenerator} Code generated in 42.606155 ms
+[18:12:13,523] INFO  {CodeGenerator} Code generated in 147.670803 ms
+[18:12:13,555] INFO  {SparkContext} Starting job: show at Main.scala:91
+[18:12:13,558] INFO  {DAGScheduler} Got job 7 (show at Main.scala:91) with 1 output partitions
+[18:12:13,558] INFO  {DAGScheduler} Final stage: ResultStage 9 (show at Main.scala:91)
+[18:12:13,558] INFO  {DAGScheduler} Parents of final stage: List()
+[18:12:13,560] INFO  {DAGScheduler} Missing parents: List()
+[18:12:13,561] INFO  {DAGScheduler} Submitting ResultStage 9 (MapPartitionsRDD[32] at show at Main.scala:91), which has no missing parents
+[18:12:13,577] INFO  {MemoryStore} Block broadcast_10 stored as values in memory (estimated size 62.1 KB, free 1127.4 MB)
+[18:12:13,582] INFO  {MemoryStore} Block broadcast_10_piece0 stored as bytes in memory (estimated size 16.4 KB, free 1127.4 MB)
+[18:12:13,584] INFO  {BlockManagerInfo} Added broadcast_10_piece0 in memory on 192.168.0.103:43041 (size: 16.4 KB, free: 1127.6 MB)
+[18:12:13,586] INFO  {SparkContext} Created broadcast 10 from broadcast at DAGScheduler.scala:1012
+[18:12:13,587] INFO  {DAGScheduler} Submitting 1 missing tasks from ResultStage 9 (MapPartitionsRDD[32] at show at Main.scala:91)
+[18:12:13,588] INFO  {TaskSchedulerImpl} Adding task set 9.0 with 1 tasks
+[18:12:13,592] INFO  {TaskSetManager} Starting task 0.0 in stage 9.0 (TID 9, localhost, partition 0, PROCESS_LOCAL, 5904 bytes)
+[18:12:13,592] INFO  {Executor} Running task 0.0 in stage 9.0 (TID 9)
+[18:12:13,607] INFO  {BlockManager} Found block rdd_2_0 locally
+[18:12:13,628] WARN  {Executor} 1 block locks were not released by TID = 9:
+[rdd_2_0]
+[18:12:13,630] INFO  {Executor} Finished task 0.0 in stage 9.0 (TID 9). 4083 bytes result sent to driver
+[18:12:13,633] INFO  {TaskSetManager} Finished task 0.0 in stage 9.0 (TID 9) in 42 ms on localhost (1/1)
+[18:12:13,633] INFO  {TaskSchedulerImpl} Removed TaskSet 9.0, whose tasks have all completed, from pool 
+[18:12:13,635] INFO  {DAGScheduler} ResultStage 9 (show at Main.scala:91) finished in 0.045 s
+[18:12:13,636] INFO  {DAGScheduler} Job 7 finished: show at Main.scala:91, took 0.080549 s
+[18:12:13,689] INFO  {CodeGenerator} Code generated in 45.523623 ms
+[18:12:14,672] INFO  {CodeGenerator} Code generated in 60.012582 ms
+[18:12:14,744] INFO  {CodeGenerator} Code generated in 41.794102 ms
+[18:12:14,854] INFO  {CodeGenerator} Code generated in 28.091203 ms
+[18:12:14,887] INFO  {CodeGenerator} Code generated in 13.89306 ms
+[18:12:14,908] INFO  {SparkContext} Invoking stop() from shutdown hook
+[18:12:14,927] INFO  {ServerConnector} Stopped ServerConnector@4b2a01d4{HTTP/1.1}{0.0.0.0:4040}
+[18:12:14,938] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3016fd5e{/stages/stage/kill,null,UNAVAILABLE}
+[18:12:14,939] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3b00856b{/api,null,UNAVAILABLE}
+[18:12:14,940] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3bcbb589{/,null,UNAVAILABLE}
+[18:12:14,940] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@1d730606{/static,null,UNAVAILABLE}
+[18:12:14,941] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@4dc8caa7{/executors/threadDump/json,null,UNAVAILABLE}
+[18:12:14,942] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@626c44e7{/executors/threadDump,null,UNAVAILABLE}
+[18:12:14,943] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@542e560f{/executors/json,null,UNAVAILABLE}
+[18:12:14,944] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@241e8ea6{/executors,null,UNAVAILABLE}
+[18:12:14,946] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@3243b914{/environment/json,null,UNAVAILABLE}
+[18:12:14,946] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@31d0e481{/environment,null,UNAVAILABLE}
+[18:12:14,947] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@59252cb6{/storage/rdd/json,null,UNAVAILABLE}
+[18:12:14,948] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@6d9f7a80{/storage/rdd,null,UNAVAILABLE}
+[18:12:14,951] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5ccbeb64{/storage/json,null,UNAVAILABLE}
+[18:12:14,952] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@112f364d{/storage,null,UNAVAILABLE}
+[18:12:14,952] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@362045c0{/stages/pool/json,null,UNAVAILABLE}
+[18:12:14,953] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5a9d6f02{/stages/pool,null,UNAVAILABLE}
+[18:12:14,954] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@189aa67a{/stages/stage/json,null,UNAVAILABLE}
+[18:12:14,954] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@c4ed84{/stages/stage,null,UNAVAILABLE}
+[18:12:14,959] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5f9678e1{/stages/json,null,UNAVAILABLE}
+[18:12:14,964] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@373ebf74{/stages,null,UNAVAILABLE}
+[18:12:14,964] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@5669c5fb{/jobs/job/json,null,UNAVAILABLE}
+[18:12:14,964] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@56113384{/jobs/job,null,UNAVAILABLE}
+[18:12:14,965] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@340b9973{/jobs/json,null,UNAVAILABLE}
+[18:12:14,973] INFO  {ContextHandler} Stopped o.s.j.s.ServletContextHandler@52066604{/jobs,null,UNAVAILABLE}
+[18:12:14,986] INFO  {SparkUI} Stopped Spark web UI at http://192.168.0.103:4040
+[18:12:15,053] INFO  {MapOutputTrackerMasterEndpoint} MapOutputTrackerMasterEndpoint stopped!
+[18:12:15,139] INFO  {MemoryStore} MemoryStore cleared
+[18:12:15,141] INFO  {BlockManager} BlockManager stopped
+[18:12:15,149] INFO  {BlockManagerMaster} BlockManagerMaster stopped
+[18:12:15,162] INFO  {OutputCommitCoordinator$OutputCommitCoordinatorEndpoint} OutputCommitCoordinator stopped!
+[18:12:15,175] INFO  {SparkContext} Successfully stopped SparkContext
+[18:12:15,177] INFO  {ShutdownHookManager} Shutdown hook called
+[18:12:15,179] INFO  {ShutdownHookManager} Deleting directory /tmp/spark-9cd24043-13c5-4760-8800-50df2dc9a6ca

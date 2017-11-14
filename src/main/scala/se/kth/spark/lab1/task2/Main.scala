@@ -5,7 +5,6 @@ import se.kth.spark.lab1._
 import org.apache.spark.ml.feature.{RegexTokenizer, VectorSlicer}
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
-import org.apache.spark.ml.regression.LinearRegression
 import org.apache.spark.ml.{Pipeline, linalg}
 import org.apache.spark.sql.{DataFrame, Row, SQLContext}
 import se.kth.spark.lab1.Vector2DoubleUDF
@@ -109,8 +108,8 @@ object Main {
 
     //Real year is 2001 and 1997
     val test = sqlContext.createDataFrame(Seq(
-      (1, "1902.0,0.884123733793,0.610454259079,0.600498416968,0.474669212493,0.247232680947,0.357306088914,0.344136412234,0.339641227335,0.600858840135,0.425704689024,0.60491501652,0.419193351817"),
-      (2, "1902.0,0.5777096107,0.589552603413,0.558605119245,0.529434582861,0.24984801906,0.482406913339,0.469210612701,0.39354097987,0.554281437919,0.487293307165,0.588379466842,0.469291436908")
+      (1, "2001.0,0.884123733793,0.610454259079,0.600498416968,0.474669212493,0.247232680947,0.357306088914,0.344136412234,0.339641227335,0.600858840135,0.425704689024,0.60491501652,0.419193351817"),
+      (2, "1997.0,0.5777096107,0.589552603413,0.558605119245,0.529434582861,0.24984801906,0.482406913339,0.469210612701,0.39354097987,0.554281437919,0.487293307165,0.588379466842,0.469291436908")
     )).toDF("id", "row")
 
 
@@ -119,10 +118,14 @@ object Main {
     prediction.show(5)
 
     //Step11: drop all columns from the dataframe other than label and features
-    prediction.select("features", "label")
-      .collect()
-      .foreach{case Row(features, prediction: Double) => {
-        println("Prediction: " + (firstYear + prediction) + " . Features: " + features)
-      }}
+    val modelDf = prediction.select("features", "label")
+    modelDf.show(5)
+
+    pipelineModel.write.overwrite().save("src/main/resources/fittedTransformationModel")
+
+    /*
+      model.write.overwrite().save("/tmp/spark-logistic-regression-model")
+      pipeline.write.overwrite().save("/tmp/unfit-lr-model")
+    */
   }
 }
