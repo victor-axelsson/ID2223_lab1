@@ -59,6 +59,7 @@ object Main {
     val firstYear:Double = v2d.agg(min("year")).collect()(0).get(0).asInstanceOf[Double]
     //val lastYear:Double = v2d.agg(max("year")).collect()(0).get(0).asInstanceOf[Double]
     //val span = lastYear - firstYear
+    println("FirstYear => " + firstYear)
 
     val lShifter = new DoubleUDF((f: Double) => {
       f - firstYear
@@ -72,7 +73,7 @@ object Main {
     val fSlicer = new VectorSlicer()
       .setInputCol("fields")
       .setOutputCol("features")
-      .setIndices(Array(1, 2, 3))
+      .setIndices(Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 
     val featruesDf = fSlicer.transform(normalizedDf)
 
@@ -91,7 +92,7 @@ object Main {
         v2dTr,
         lShifter,
         fSlicer,
-        lrStage
+        myLR
       ))
     val pipelineModel: PipelineModel = pipeline.fit(obsDF)
     val lrModel = pipelineModel.stages(6).asInstanceOf[LinearRegressionModel]
@@ -100,7 +101,19 @@ object Main {
     println(s"numIterations: ${trainingSummary.totalIterations}")
     //print rmse of our model
     println(s"RMSE: ${trainingSummary.rootMeanSquaredError}")
+
     //do prediction - print first k
+    //Real year is 2001
+    val data = sqlContext.createDataFrame(Seq(
+      (1, Array("0.884123733793","0.610454259079","0.600498416968", "0.474669212493","0.247232680947","0.357306088914")),
+      (2, Array("0.854411946129","0.604124786151","0.593634078776", "0.495885413963","0.266307830936","0.261472105188"))
+    )).toDF("id", "features_arr")
+    val arr2Vector = new Array2Vector()
+      .setInputCol("features_arr")
+      .setOutputCol("features")
+
+    val test = arr2Vector.transform(data)
+
     lrModel.transform(featruesDf).show(20)
   }
 }
