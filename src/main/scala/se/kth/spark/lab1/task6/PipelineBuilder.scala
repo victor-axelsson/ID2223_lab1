@@ -1,26 +1,24 @@
-package se.kth.spark.lab1.task5
+package se.kth.spark.lab1.task6
 
-import org.apache.spark._
 import org.apache.spark.ml.evaluation.RegressionEvaluator
-import org.apache.spark.sql.{DataFrame, SQLContext}
-import org.apache.spark.ml.tuning.{CrossValidator, CrossValidatorModel, ParamGridBuilder}
-import org.apache.spark.ml.regression.{LinearRegression, LinearRegressionModel}
-import org.apache.spark.ml.{Pipeline, PipelineModel, Transformer, linalg}
 import org.apache.spark.ml.feature.{PolynomialExpansion, RegexTokenizer, VectorSlicer}
+import org.apache.spark.ml.{Pipeline, PipelineModel, linalg}
+import org.apache.spark.ml.regression.{LinearRegression, LinearRegressionModel}
+import org.apache.spark.ml.tuning.{CrossValidator, CrossValidatorModel, ParamGridBuilder}
+import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions.min
 import se.kth.spark.lab1.{Array2Vector, DoubleUDF, Vector2DoubleUDF}
 
-object Main {
-  def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("lab1").setMaster("local")
-    val sc = new SparkContext(conf)
-    val sqlContext = new SQLContext(sc)
+object PipelineBuilder {
 
-    import sqlContext.implicits._
-    import sqlContext._
+  val MAX_ITER = 50
+  val REG_PARAM = 0.1
+  val myLR = new LinearRegression()
+    .setMaxIter(MAX_ITER)
+    .setRegParam(REG_PARAM)
 
-    val filePath = "src/main/resources/millionsong.txt"
-    val obsDF: DataFrame = sqlContext.read.text(filePath).toDF("row").cache()
+
+  def build(obsDF: DataFrame): Pipeline = {
 
     //Step1: tokenize each row
     val regexTokenizer = new RegexTokenizer()
@@ -55,7 +53,6 @@ object Main {
       .setOutputCol("year")
     val v2d = v2dTr.transform(withYearDf)
 
-
     //Step6: shift all labels by the value of minimum label such that the value of the smallest becomes 0 (use our DoubleUDF)
     val firstYear:Double = v2d.agg(min("year")).collect()(0).get(0).asInstanceOf[Double]
     //val lastYear:Double = v2d.agg(max("year")).collect()(0).get(0).asInstanceOf[Double]
@@ -82,14 +79,11 @@ object Main {
       .setOutputCol("features")
       .setDegree(2)
 
-    val featruesDf = fSlicer.transform(normalizedDf)
+    //val featruesDf = fSlicer.transform(normalizedDf)
 
-    val myLR = new LinearRegression()
-      .setMaxIter(50)
-      .setRegParam(0.1)
-      .setElasticNetParam(0.1)
 
-    val pipeline: Pipeline = new Pipeline().setStages(
+
+    val pipeline = new Pipeline().setStages(
       Array(
         regexTokenizer,
         vectorTr,
@@ -100,9 +94,11 @@ object Main {
         polynomialExpansionT,
         myLR
       ))
-    val pipelineModel: PipelineModel = pipeline.fit(obsDF)
 
+    pipeline
+  }
 
+  def getBestModel(pipeline:Pipeline, obsDF: DataFrame): LinearRegressionModel = {
     val paramGrid = new ParamGridBuilder()
       .addGrid(myLR.maxIter, Array(1, 20, 40, 60, 80, 100))
       .addGrid(myLR.regParam, Array(0.01, 0.05, 0.09, 0.15, 0.25, 0.45))
@@ -114,13 +110,8 @@ object Main {
       .setEstimatorParamMaps(paramGrid)
       .fit(obsDF)
 
-    val lrModel: LinearRegressionModel = cvModel.bestModel.asInstanceOf[PipelineModel].stages(7).asInstanceOf[LinearRegressionModel]
-    println("RMSE => " + lrModel.summary.rootMeanSquaredError)
-    println("bestModel.getRegParam => " + lrModel.getRegParam)
-    println("bestModel.maxIter => " + lrModel.getMaxIter)
-
-    //println(???)
-    //print rmse of our model
-    //do prediction - print first k
+    val lrModel = cvModel.bestModel.asInstanceOf[PipelineModel].stages(7).asInstanceOf[LinearRegressionModel]
+    lrModel
   }
+
 }
