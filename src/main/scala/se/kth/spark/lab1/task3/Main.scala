@@ -19,7 +19,11 @@ object Main {
     import sqlContext._
 
     val filePath = "src/main/resources/millionsong.txt"
-    val obsDF: DataFrame = sqlContext.read.text(filePath).toDF("row").cache()
+
+    val splits = sqlContext.read.text(filePath).toDF("row").randomSplit(Array(0.7, 0.3))
+
+    val obsDF = splits(0)
+    val testDF = splits(1)
 
     //Step1: tokenize each row
     val regexTokenizer = new RegexTokenizer()
@@ -75,14 +79,14 @@ object Main {
       .setOutputCol("features")
       .setIndices(Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 
-    val featruesDf = fSlicer.transform(normalizedDf)
+    //val featruesDf = fSlicer.transform(normalizedDf)
 
     val myLR = new LinearRegression()
-      .setMaxIter(50)
-      .setRegParam(0.1)
+      .setMaxIter(10)
+      .setRegParam(0.9)
       .setElasticNetParam(0.1)
 
-    val lrStage : Transformer = myLR.fit(featruesDf)
+    //val lrStage : Transformer = myLR.fit(featruesDf)
 
     val pipeline = new Pipeline().setStages(
       Array(
@@ -99,21 +103,11 @@ object Main {
 
     val trainingSummary = lrModel.summary
     println(s"numIterations: ${trainingSummary.totalIterations}")
+
     //print rmse of our model
     println(s"RMSE: ${trainingSummary.rootMeanSquaredError}")
 
     //do prediction - print first k
-    //Real year is 2001
-    val data = sqlContext.createDataFrame(Seq(
-      (1, Array("0.884123733793","0.610454259079","0.600498416968", "0.474669212493","0.247232680947","0.357306088914")),
-      (2, Array("0.854411946129","0.604124786151","0.593634078776", "0.495885413963","0.266307830936","0.261472105188"))
-    )).toDF("id", "features_arr")
-    val arr2Vector = new Array2Vector()
-      .setInputCol("features_arr")
-      .setOutputCol("features")
-
-    val test = arr2Vector.transform(data)
-
-    lrModel.transform(featruesDf).show(20)
+    lrModel.transform(pipelineModel.transform(testDF).select("row", "features")).show(5)
   }
 }

@@ -14,7 +14,11 @@ object Main {
     import sqlContext._
 
     val filePath = "src/main/resources/millionsong.txt"
-    val obsDF: DataFrame = sqlContext.read.text(filePath).toDF("row").cache()
+
+    val splits = sqlContext.read.text(filePath).toDF("row").randomSplit(Array(0.7, 0.3))
+
+    val obsDF = splits(0)
+    val testDF = splits(1)
 
     val pipeline = PipelineBuilder.build(obsDF)
 
@@ -23,5 +27,7 @@ object Main {
     lReg.trainingError.foreach(e => {
       println("RMSE => " + e)
     })
+
+    lReg.transform(pipelineModel.transform(testDF).select("row", "features")).show(5)
   }
 }
