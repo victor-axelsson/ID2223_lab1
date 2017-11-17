@@ -11,12 +11,14 @@ import se.kth.spark.lab1.{Array2Vector, DoubleUDF, Vector2DoubleUDF}
 
 object PipelineBuilder {
 
+  /*
   val MAX_ITER = 50
-  val REG_PARAM = 0.1
+  val REG_PARAM = 0.09
+
   val myLR = new LinearRegression()
     .setMaxIter(MAX_ITER)
     .setRegParam(REG_PARAM)
-
+*/
 
   def build(obsDF: DataFrame): Pipeline = {
 
@@ -81,6 +83,7 @@ object PipelineBuilder {
 
     //val featruesDf = fSlicer.transform(normalizedDf)
 
+    val myLR = new MyLinearRegressionImpl()
 
 
     val pipeline = new Pipeline().setStages(
@@ -98,6 +101,7 @@ object PipelineBuilder {
     pipeline
   }
 
+  /*
   def getBestModel(pipeline:Pipeline, obsDF: DataFrame): LinearRegressionModel = {
     val paramGrid = new ParamGridBuilder()
       .addGrid(myLR.maxIter, Array(1, 20, 40, 60, 80, 100))
@@ -113,5 +117,6 @@ object PipelineBuilder {
     val lrModel = cvModel.bestModel.asInstanceOf[PipelineModel].stages(7).asInstanceOf[LinearRegressionModel]
     lrModel
   }
+  */
 
 }

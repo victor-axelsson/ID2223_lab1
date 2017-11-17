@@ -49,13 +49,7 @@ object Main {
         .groupBy{case(y, _, _) => y}
         .map{case (y:Int, iter:Iterable[(Int, _, _)]) => {
 
-          //Reduce
-          var sum = 0
-          iter.foreach {case (_y:Int, _, _) => {
-            sum += _y
-          }}
-
-          (y, sum)
+          (y, iter.size)
         }}.sortBy(f => f._1).foreach(f => {
           println("Year: " + f._1 + " => " + f._2)
         })
