@@ -1,4 +1,4 @@
-package se.kth.spark.lab1.task6
+package se.kth.spark.lab1.task7
 
 import org.apache.spark.ml.evaluation.RegressionEvaluator
 import org.apache.spark.ml.feature.{PolynomialExpansion, RegexTokenizer, VectorSlicer}
@@ -10,15 +10,6 @@ import org.apache.spark.sql.functions.min
 import se.kth.spark.lab1.{Array2Vector, DoubleUDF, Vector2DoubleUDF}
 
 object PipelineBuilder {
-
-  /*
-  val MAX_ITER = 50
-  val REG_PARAM = 0.09
-
-  val myLR = new LinearRegression()
-    .setMaxIter(MAX_ITER)
-    .setRegParam(REG_PARAM)
-*/
 
   def build(obsDF: DataFrame): Pipeline = {
 
@@ -58,8 +49,6 @@ object PipelineBuilder {
     //Step6: shift all labels by the value of minimum label such that the value of the smallest becomes 0 (use our DoubleUDF)
     //val firstYear:Double = v2d.agg(min("year")).collect()(0).get(0).asInstanceOf[Double]
     val firstYear:Double = 1922.0d
-    //val lastYear:Double = v2d.agg(max("year")).collect()(0).get(0).asInstanceOf[Double]
-    //val span = lastYear - firstYear
     println("FirstYear => " + firstYear)
 
     val lShifter = new DoubleUDF((f: Double) => {
@@ -82,15 +71,7 @@ object PipelineBuilder {
       .setOutputCol("features")
       .setDegree(2)
 
-    //val featruesDf = fSlicer.transform(normalizedDf)
-
     val myLR = new MyLinearRegressionImpl()
-    /*
-    val myLR = new LinearRegression()
-      .setMaxIter(50)
-      .setRegParam(0.1)
-      .setElasticNetParam(0.1)
-    */
 
     val pipeline = new Pipeline().setStages(
       Array(
@@ -106,23 +87,4 @@ object PipelineBuilder {
 
     pipeline
   }
-
-  /*
-  def getBestModel(pipeline:Pipeline, obsDF: DataFrame): LinearRegressionModel = {
-    val paramGrid = new ParamGridBuilder()
-      .addGrid(myLR.maxIter, Array(1, 20, 40, 60, 80, 100))
-      .addGrid(myLR.regParam, Array(0.01, 0.05, 0.09, 0.15, 0.25, 0.45))
-      .build()
-
-    val cvModel: CrossValidatorModel = new CrossValidator()
-      .setEstimator(pipeline)
-      .setEvaluator(new RegressionEvaluator)
-      .setEstimatorParamMaps(paramGrid)
-      .fit(obsDF)
-
-    val lrModel = cvModel.bestModel.asInstanceOf[PipelineModel].stages(7).asInstanceOf[LinearRegressionModel]
-    lrModel
-  }
-  */
-
 }

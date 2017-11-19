@@ -1,4 +1,4 @@
-package se.kth.spark.lab1.task6
+package se.kth.spark.lab1.task7
 
 import org.apache.spark._
 import org.apache.spark.ml.PipelineModel
@@ -16,7 +16,6 @@ import se.kth.spark.lab1.Array2Vector
 
 import scala.util.Try
 
-
 object Main {
   def main(args: Array[String]) {
     //val conf = new SparkConf().setAppName("lab1")
@@ -26,7 +25,6 @@ object Main {
 
     import sqlContext.implicits._
     import sqlContext._
-
 
     //val files: Vector[String] = getPaths("D:\\tmp\\millionsongsubset_full.tar\\millionsongsubset_full\\MillionSongSubset\\data\\")
     val files: Vector[String] = getPaths("/home/victor/Desktop/dataset/MillionSongSubset/data")
@@ -39,6 +37,7 @@ object Main {
         val analysis  = f.compounds().read("/analysis/songs", classOf[HDF5CompoundDataMap])
         val mb  = f.compounds().read("/musicbrainz/songs", classOf[HDF5CompoundDataMap])
 
+        /* These are possible features you can use */
         /*
         (mb.get("year"),
           analysis.get("mode_confidence"),
@@ -93,7 +92,7 @@ object Main {
       }).map(r => {
       Row(
         r._1.toString.toDouble,
-        r._2.toString.toDouble + 50,
+        r._2.toString.toDouble,
         r._3.toString.toDouble,
         r._4.toString.toDouble,
         r._5.toString.toDouble,
@@ -126,15 +125,12 @@ object Main {
 
     //Normalize
     val featuresRDD = songsDF.rdd.map{row =>
-      //      (row.get(0), row.get(1), row.get(2), row.get(3), row.get(4), row.get(5),
-      //      row.get(6), row.get(7), row.get(8), row.get(9), row.get(10), row.get(11), row.get(12))
       (row.toSeq.head, row.toSeq.tail)
     }
 
     val schema2 = StructType(
       StructField("label", DoubleType, false) ::
         StructField("fields", ArrayType(StringType), false) :: Nil)
-
 
     val featuresRDDforNormalization =
       featuresRDD.map(r => {
@@ -144,8 +140,6 @@ object Main {
       })
 
     val featuresDFforNormalization = sqlContext.createDataFrame(featuresRDDforNormalization, schema2)
-
-    featuresDFforNormalization.take(5).foreach(println)
 
     val arr2Vect = new Array2Vector()
     val vectorTr = arr2Vect
@@ -166,59 +160,29 @@ object Main {
 
     // Normalize each feature to have unit standard deviation.
     val scaledData = scalerModel.transform(vectorDF)
-    scaledData.take(5).foreach(println)
-
-    /*
-    val normalizer = new Normalizer()
-      .setInputCol("features")
-      .setOutputCol("normFeatures")
-      .setP(2.0)
-
-    val l1NormData = normalizer.transform(vectorDF)
-    l1NormData.take(5).foreach(println)
-    */
+    //scaledData.take(5).foreach(println)
 
     val songDFforPipeline = scaledData.select("label", "scaledFeatures").rdd.map{row =>
       row.get(0) + "," + row.get(1).asInstanceOf[DenseVector].toArray.foldRight(z = "")((z, a1) => if (a1.nonEmpty) z+","+a1 else z+"")
     }
 
-    songDFforPipeline.take(5).foreach(println)
-
+    //Split the data into working set and test set
     val splits = songDFforPipeline.toDF("row").randomSplit(Array(0.7, 0.3))
-
     val obsDF = splits(0).persist(StorageLevel.MEMORY_AND_DISK)
     val testDF = splits(1)
-
-    obsDF.show(5)
-    testDF.show(5)
-
-
-
-    val pipeline = PipelineBuilder.build(obsDF)
-
-
+PipelineBuilder
+    //Build the pipeline model
+    val pipeline = se.kth.spark.lab1.task7.PipelineBuilder.build(obsDF)
     val pipelineModel: PipelineModel = pipeline.fit(obsDF)
 
-    /*
-    val lrModel = pipelineModel.stages(7).asInstanceOf[LinearRegressionModel]
-    val trainingSummary = lrModel.summary
-    println(s"numIterations: ${trainingSummary.totalIterations}")
-
-    lrModel.transform(pipelineModel.transform(testDF).select("row", "features")).show(5)
-    */
-
-    //val lReg = pipelineModel.stages(7).asInstanceOf[MyLinearModelImpl]
-    val lReg = pipelineModel.stages(7).asInstanceOf[MyLinearModelImpl]
-
+    //Print the RMSE and run the transformation on th test data
+    val lReg = pipelineModel.stages(7).asInstanceOf[se.kth.spark.lab1.task7.MyLinearModelImpl]
     lReg.trainingError.foreach(e => {
       println("RMSE => " + e)
     })
 
     lReg.transform(pipelineModel.transform(testDF).select("row", "features")).show(5)
-
   }
-
-
 
   def open(filename: String): Try[IHDF5Reader] = Try{HDF5FactoryProvider.get().openForReading(new File(filename))}
 

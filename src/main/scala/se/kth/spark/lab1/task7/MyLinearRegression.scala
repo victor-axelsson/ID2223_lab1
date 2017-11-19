@@ -1,4 +1,4 @@
-package se.kth.spark.lab1.task6
+package se.kth.spark.lab1.task7
 
 import org.apache.spark.ml.{PredictionModel, Predictor}
 

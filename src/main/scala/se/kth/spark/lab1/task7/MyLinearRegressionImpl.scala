@@ -1,7 +1,6 @@
-package se.kth.spark.lab1.task6
+package se.kth.spark.lab1.task7
 
 import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.ml.PredictorParams
 import org.apache.spark.ml.param.ParamMap
 import org.apache.spark.ml.util._
 import org.apache.spark.rdd.RDD
@@ -10,9 +9,6 @@ import org.apache.spark.sql.functions._
 
 import org.apache.spark.hack._
 import org.apache.spark.sql.Row
-import org.apache.spark.ml.linalg.Vectors
-import org.apache.spark.ml.linalg.Matrices
-import org.apache.spark.mllib.evaluation.RegressionMetrics
 
 case class Instance(label: Double, features: Vector)
 
@@ -63,7 +59,7 @@ class MyLinearRegressionImpl(override val uid: String)
     val n = trainData.count()
     val d = trainData.take(1)(0).features.size
     var weights = VectorHelper.fill(d, 0)
-    val alpha = 0.0001
+    val alpha = 0.00001
     val errorTrain = Array.fill[Double](numIters)(0.0)
 
     for (i <- 0 until numIters) {

@@ -21,6 +21,7 @@ object Main {
     import sqlContext.implicits._
     import sqlContext._
 
+    /*
     val bankText = sc.parallelize(
       IOUtils.toString(
         new URL("https://s3.amazonaws.com/apache-zeppelin/tutorial/bank/bank.csv"),
@@ -35,5 +36,6 @@ object Main {
     bank.registerTempTable("bank")
     bank.show(5)
     sqlContext.sql("select age, count(1) from bank where age < 70 group by age order by age").show()
+    */
   }
 }
