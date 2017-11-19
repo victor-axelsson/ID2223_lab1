@@ -7,6 +7,7 @@ import ch.systemsx.cisd.hdf5._
 import java.io.File
 
 import org.apache.spark.ml.feature.{Normalizer, StandardScaler}
+import org.apache.spark.ml.linalg.DenseVector
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.types._
 import se.kth.spark.lab1.Array2Vector
@@ -35,8 +36,6 @@ object Main {
         val analysis  = f.compounds().read("/analysis/songs", classOf[HDF5CompoundDataMap])
         val mb  = f.compounds().read("/musicbrainz/songs", classOf[HDF5CompoundDataMap])
 
-        val f1 = a.get("artist_familiarity")
-        val f2 = a.get("song_hotttnesss")
         /*
         (mb.get("year"),
           analysis.get("mode_confidence"),
@@ -70,21 +69,23 @@ object Main {
           analysis.get("idx_tatums_start"),
           analysis.get("idx_sections_confidence"))
           */
-
-        (mb.get("year"),
-          analysis.get("loudness"),
-          analysis.get("tempo"),
-          analysis.get("danceability"),
-          analysis.get("duration"),
-          analysis.get("mode"),
-          analysis.get("start_of_fade_out"),
-          analysis.get("key"),
-          analysis.get("energy"),
-          analysis.get("time_signature"),
-          analysis.get("end_of_fade_in"),
-          analysis.get("analysis_sample_rate"),
-          a.get("song_hotttnesss"))
-      }).filter((r: (AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef)) => {
+        val f1 = mb.get("year")
+        val f2 = analysis.get("loudness")
+        val f3 = analysis.get("tempo")
+        val f4 = analysis.get("danceability")
+        val f5 = analysis.get("duration")
+        val f6 = analysis.get("mode")
+        val f7 = analysis.get("start_of_fade_out")
+        val f8 = analysis.get("key")
+        val f9 = analysis.get("energy")
+        val f10 = analysis.get("time_signature")
+        val f11= analysis.get("end_of_fade_in")
+        val f12 =  analysis.get("analysis_sample_rate")
+        val f13= a.get("song_hotttnesss")
+        f.close()
+        (f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13)
+      })
+      .filter((r: (AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef, AnyRef)) => {
         r._1.toString.toInt > 0 && !r._13.toString.toDouble.isNaN
       }).map(r => {
         Row(
@@ -120,7 +121,6 @@ object Main {
 
     val songsDF = sqlContext.createDataFrame(songsRDD, schema)
 
-    /*
     //Normalize
     val featuresRDD = songsDF.rdd.map{row =>
 //      (row.get(0), row.get(1), row.get(2), row.get(3), row.get(4), row.get(5),
@@ -156,7 +156,7 @@ object Main {
       .setInputCol("features")
       .setOutputCol("scaledFeatures")
       .setWithStd(true)
-      .setWithMean(true)
+      .setWithMean(false)
 
     // Compute summary statistics by fitting the StandardScaler
     val scalerModel = scaler.fit(vectorDF)
@@ -164,6 +164,8 @@ object Main {
     // Normalize each feature to have unit standard deviation.
     val scaledData = scalerModel.transform(vectorDF)
     scaledData.take(5).foreach(println)
+
+    /*
     val normalizer = new Normalizer()
       .setInputCol("features")
       .setOutputCol("normFeatures")
@@ -173,8 +175,8 @@ object Main {
     l1NormData.take(5).foreach(println)
     */
 
-    val songDFforPipeline = songsDF.rdd.map{row =>
-      row.toSeq.foldRight(z = "")((z, a1) => if (a1.nonEmpty) z+","+a1 else z+"")
+    val songDFforPipeline = scaledData.select("label", "scaledFeatures").rdd.map{row =>
+      row.get(0) + "," + row.get(1).asInstanceOf[DenseVector].toArray.foldRight(z = "")((z, a1) => if (a1.nonEmpty) z+","+a1 else z+"")
     }
 
     songDFforPipeline.take(5).foreach(println)
