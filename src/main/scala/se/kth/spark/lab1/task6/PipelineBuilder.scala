@@ -56,7 +56,8 @@ object PipelineBuilder {
     val v2d = v2dTr.transform(withYearDf)
 
     //Step6: shift all labels by the value of minimum label such that the value of the smallest becomes 0 (use our DoubleUDF)
-    val firstYear:Double = v2d.agg(min("year")).collect()(0).get(0).asInstanceOf[Double]
+    //val firstYear:Double = v2d.agg(min("year")).collect()(0).get(0).asInstanceOf[Double]
+    val firstYear:Double = 1922.0d
     //val lastYear:Double = v2d.agg(max("year")).collect()(0).get(0).asInstanceOf[Double]
     //val span = lastYear - firstYear
     println("FirstYear => " + firstYear)
@@ -84,7 +85,12 @@ object PipelineBuilder {
     //val featruesDf = fSlicer.transform(normalizedDf)
 
     val myLR = new MyLinearRegressionImpl()
-
+    /*
+    val myLR = new LinearRegression()
+      .setMaxIter(50)
+      .setRegParam(0.1)
+      .setElasticNetParam(0.1)
+    */
 
     val pipeline = new Pipeline().setStages(
       Array(

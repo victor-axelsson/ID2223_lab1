@@ -8,8 +8,10 @@ import java.io.File
 
 import org.apache.spark.ml.feature.{Normalizer, StandardScaler}
 import org.apache.spark.ml.linalg.DenseVector
+import org.apache.spark.ml.regression.LinearRegressionModel
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.types._
+import org.apache.spark.storage.StorageLevel
 import se.kth.spark.lab1.Array2Vector
 
 import scala.util.Try
@@ -18,7 +20,7 @@ import scala.util.Try
 object Main {
   def main(args: Array[String]) {
     //val conf = new SparkConf().setAppName("lab1")
-    val conf = new SparkConf().setAppName("lab1").setMaster("local")
+    val conf = new SparkConf().setAppName("lab1").setMaster("local[*]")
     val sc = new SparkContext(conf)
     val sqlContext = new SQLContext(sc)
 
@@ -26,8 +28,9 @@ object Main {
     import sqlContext._
 
 
-    val files: Vector[String] = getPaths("D:\\tmp\\millionsongsubset_full.tar\\millionsongsubset_full\\MillionSongSubset\\data\\")
-    val h5PathRDD = sc.parallelize(files, 5)
+    //val files: Vector[String] = getPaths("D:\\tmp\\millionsongsubset_full.tar\\millionsongsubset_full\\MillionSongSubset\\data\\")
+    val files: Vector[String] = getPaths("/home/victor/Desktop/dataset/MillionSongSubset/data")
+    val h5PathRDD = sc.parallelize(files, 10)
 
     val songsRDD: RDD[Row] = h5PathRDD.map(open).flatMap(_.toOption)
       .map((f: IHDF5Reader) => {
@@ -90,7 +93,7 @@ object Main {
       }).map(r => {
         Row(
           r._1.toString.toDouble,
-          r._2.toString.toDouble,
+          r._2.toString.toDouble + 50,
           r._3.toString.toDouble,
           r._4.toString.toDouble,
           r._5.toString.toDouble,
@@ -102,7 +105,7 @@ object Main {
           r._11.toString.toDouble,
           r._12.toString.toDouble,
           r._13.toString.toDouble)
-      })
+      }).persist(StorageLevel.MEMORY_AND_DISK)
 
     val schema = StructType(
           StructField("year", DoubleType, false) ::
@@ -183,18 +186,36 @@ object Main {
 
     val splits = songDFforPipeline.toDF("row").randomSplit(Array(0.7, 0.3))
 
-    val obsDF = splits(0)
+    val obsDF = splits(0).persist(StorageLevel.MEMORY_AND_DISK)
     val testDF = splits(1)
+
+    obsDF.show(5)
+    testDF.show(5)
+
+
 
     val pipeline = PipelineBuilder.build(obsDF)
 
+
     val pipelineModel: PipelineModel = pipeline.fit(obsDF)
+
+    /*
+    val lrModel = pipelineModel.stages(7).asInstanceOf[LinearRegressionModel]
+    val trainingSummary = lrModel.summary
+    println(s"numIterations: ${trainingSummary.totalIterations}")
+
+    lrModel.transform(pipelineModel.transform(testDF).select("row", "features")).show(5)
+    */
+
+    //val lReg = pipelineModel.stages(7).asInstanceOf[MyLinearModelImpl]
     val lReg = pipelineModel.stages(7).asInstanceOf[MyLinearModelImpl]
+
     lReg.trainingError.foreach(e => {
       println("RMSE => " + e)
     })
 
     lReg.transform(pipelineModel.transform(testDF).select("row", "features")).show(5)
+
   }
 
 

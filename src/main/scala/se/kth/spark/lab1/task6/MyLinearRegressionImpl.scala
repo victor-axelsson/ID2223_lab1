@@ -19,13 +19,13 @@ case class Instance(label: Double, features: Vector)
 object Helper {
   def rmse(labelsAndPreds: RDD[(Double, Double)]): Double = {
 
-    val sum = labelsAndPreds.map{case(label:Double, prediction:Double) => {
-      Math.pow(label - prediction, 2)
+    val sum: Double = labelsAndPreds.map{case(label:Double, prediction:Double) => {
+      scala.math.pow(label - prediction, 2)
     }}.sum()
 
-    val n = labelsAndPreds.count()
+    val n: Double = labelsAndPreds.count().toDouble
 
-    Math.sqrt(sum / n)
+    scala.math.sqrt(sum / n)
   }
 
   def predictOne(weights: Vector, features: Vector): Double = {
@@ -63,7 +63,7 @@ class MyLinearRegressionImpl(override val uid: String)
     val n = trainData.count()
     val d = trainData.take(1)(0).features.size
     var weights = VectorHelper.fill(d, 0)
-    val alpha = 1.0
+    val alpha = 0.0001
     val errorTrain = Array.fill[Double](numIters)(0.0)
 
     for (i <- 0 until numIters) {
