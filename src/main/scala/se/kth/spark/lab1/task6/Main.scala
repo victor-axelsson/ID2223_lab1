@@ -1,11 +1,17 @@
 package se.kth.spark.lab1.task6
 
 import org.apache.spark._
-import org.apache.spark.ml.{PipelineModel}
+import org.apache.spark.ml.PipelineModel
 import org.apache.spark.sql.{DataFrame, SQLContext}
+import ch.systemsx.cisd.hdf5.{HDF5Factory, HDF5FactoryProvider, IHDF5Reader, IHDF5SimpleReader}
+import java.io.File
+
+import scala.util.Try
+
 
 object Main {
   def main(args: Array[String]) {
+    //val conf = new SparkConf().setAppName("lab1")
     val conf = new SparkConf().setAppName("lab1").setMaster("local")
     val sc = new SparkContext(conf)
     val sqlContext = new SQLContext(sc)
@@ -13,21 +19,39 @@ object Main {
     import sqlContext.implicits._
     import sqlContext._
 
-    val filePath = "src/main/resources/millionsong.txt"
 
-    val splits = sqlContext.read.text(filePath).toDF("row").randomSplit(Array(0.7, 0.3))
+    val files: Vector[String] = getPaths("/home/victor/Desktop/dataset/MillionSongSubset/data/")
+    //val files: Vector[String] = getPaths("hdfs:///Projects/labs/million_song/huge_dataset/")
+    val h5PathRDD = sc.parallelize(files, 5)
 
-    val obsDF = splits(0)
-    val testDF = splits(1)
+    val songsRDD = h5PathRDD.map(open).flatMap(_.toOption)
+      .map((f: IHDF5Reader) => {
+        println(f)
+      }).collect()
 
-    val pipeline = PipelineBuilder.build(obsDF)
+  }
 
-    val pipelineModel: PipelineModel = pipeline.fit(obsDF)
-    val lReg = pipelineModel.stages(7).asInstanceOf[MyLinearModelImpl]
-    lReg.trainingError.foreach(e => {
-      println("RMSE => " + e)
-    })
+  def open(filename: String): Try[IHDF5Reader] = Try{HDF5FactoryProvider.get().openForReading(new File(filename))}
 
-    lReg.transform(pipelineModel.transform(testDF).select("row", "features")).show(5)
+  def getPaths(path: String): Vector[String] = {
+    val dir = new java.io.File(path)
+    getFiles(dir).map(_.getAbsolutePath)
+  }
+
+  // Retrieve collection of all files within this directory
+  def getFiles(dir: File): Vector[File] = {
+    val dirs = collection.mutable.Stack[File]()
+    val these = collection.mutable.ArrayBuffer[File]()
+    dirs.push(dir)
+
+    while (dirs.nonEmpty) {
+      val dir = dirs.pop()
+      val children = dir.listFiles
+      val files = children.filterNot(_.isDirectory)
+      val subDirectories = children.filter(_.isDirectory)
+      these ++= files
+      dirs.pushAll(subDirectories)
+    }
+    these.result().toVector
   }
 }
