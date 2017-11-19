@@ -59,7 +59,7 @@ class MyLinearRegressionImpl(override val uid: String)
     val n = trainData.count()
     val d = trainData.take(1)(0).features.size
     var weights = VectorHelper.fill(d, 0)
-    val alpha = 0.00001
+    val alpha = 0.0001
     val errorTrain = Array.fill[Double](numIters)(0.0)
 
     for (i <- 0 until numIters) {

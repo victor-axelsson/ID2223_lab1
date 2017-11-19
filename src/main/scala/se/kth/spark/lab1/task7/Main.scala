@@ -92,7 +92,7 @@ object Main {
       }).map(r => {
       Row(
         r._1.toString.toDouble,
-        r._2.toString.toDouble,
+        r._2.toString.toDouble + 50,
         r._3.toString.toDouble,
         r._4.toString.toDouble,
         r._5.toString.toDouble,
